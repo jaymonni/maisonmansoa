@@ -675,3 +675,45 @@ footer {
   }
 
 }
+/* =====================================================
+   BADGES PRODUITS
+===================================================== */
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+.badge.unique {
+  background: #f4e8dc;
+  color: #765348;
+}
+
+.badge.disponible {
+  background: #eef2e8;
+  color: #4f6044;
+}
+
+.badge.vendu {
+  background: #eee;
+  color: #777;
+}
+
+.add.sold {
+  background: #aaa;
+  cursor: not-allowed;
+}
