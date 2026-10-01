@@ -66,9 +66,9 @@ const products = [
 
     pieceUnique: true,
 
-    images: [
-      "sac-besace-femme-vert-taupe-01.jpg"
-    ]
+   images: [
+  "images/SAC001/01.jpg"
+]
   }
 
 ];
