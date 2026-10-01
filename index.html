@@ -11,13 +11,18 @@
     content="width=device-width, initial-scale=1"
   >
 
+  <meta
+    name="description"
+    content="Maison Mansoa — Créations textiles faites main, pièces uniques et petites séries."
+  >
+
   <title>
     Maison Mansoa — Créations faites main
   </title>
 
   <link
     rel="stylesheet"
-    href="style.css"
+    href="css/style.css"
   >
 
 </head>
@@ -27,12 +32,14 @@
 
 
 <!-- ==================================================
-     PETIT BANDEAU SUPÉRIEUR
+     BANDEAU SUPÉRIEUR
 ================================================== -->
 
-<div class="top">
+<div class="announcement">
 
-  ♡ Des créations uniques, faites main avec passion ♡
+  <p>
+    ♡ Des créations uniques, faites main avec passion ♡
+  </p>
 
   <span>
     Livraison en France
@@ -48,40 +55,50 @@
 
 <header class="site-header">
 
-  <a class="brand" href="#">
+  <a
+    class="brand"
+    href="index.html"
+    aria-label="Maison Mansoa - Accueil"
+  >
 
-    <span>
+    <span class="brand-name">
       Maison Mansoa
     </span>
 
-    <small>
+    <span class="brand-subtitle">
       CRÉATIONS FAITES MAIN
-    </small>
+    </span>
 
   </a>
 
 
   <button
-    id="menu"
     class="menu-button"
+    id="menuButton"
+    type="button"
     aria-label="Ouvrir le menu"
+    aria-expanded="false"
   >
     ☰
   </button>
 
 
-  <nav>
+  <nav
+    class="main-nav"
+    id="mainNav"
+    aria-label="Navigation principale"
+  >
 
-    <a href="#">
+    <a href="#accueil">
       Accueil
-    </a>
-
-    <a href="#boutique">
-      Boutique
     </a>
 
     <a href="#univers">
       Nos créations
+    </a>
+
+    <a href="#boutique">
+      Boutique
     </a>
 
     <a href="#histoire">
@@ -96,15 +113,18 @@
 
 
   <button
-    class="cart"
-    id="cartBtn"
+    class="cart-button"
+    id="cartButton"
+    type="button"
   >
 
-    Panier
+    <span>
+      Panier
+    </span>
 
-    <b id="count">
+    <strong id="cartCount">
       0
-    </b>
+    </strong>
 
   </button>
 
@@ -116,14 +136,17 @@
 
 
 <!-- ==================================================
-     GRANDE BANNIÈRE MANSOA
+     BANNIÈRE
 ================================================== -->
 
-<section class="hero-banner">
+<section
+  class="hero"
+  id="accueil"
+>
 
   <img
     src="banniere-mansoa.png"
-    alt="Maison Mansoa - Créations faites main"
+    alt="Maison Mansoa, créations textiles faites main"
   >
 
 </section>
@@ -131,81 +154,132 @@
 
 
 <!-- ==================================================
-     NOS UNIVERS
+     INTRODUCTION
 ================================================== -->
 
-<section id="univers">
+<section class="intro">
 
-  <div class="section-title">
+  <p class="eyebrow">
+    L'univers Maison Mansoa
+  </p>
+
+  <h1>
+    Des créations faites main,
+    pensées pour accompagner votre quotidien
+  </h1>
+
+  <p class="intro-text">
+    Découvrez des accessoires textiles confectionnés
+    avec soin, en pièces uniques ou en petites séries.
+  </p>
+
+  <a
+    class="primary-button"
+    href="#boutique"
+  >
+    Découvrir la boutique
+  </a>
+
+</section>
+
+
+
+<!-- ==================================================
+     UNIVERS / CATÉGORIES
+================================================== -->
+
+<section
+  class="univers"
+  id="univers"
+>
+
+  <div class="section-heading">
+
+    <p class="eyebrow">
+      Explorer
+    </p>
 
     <h2>
       Nos univers
     </h2>
 
     <p>
-      Découvrez les créations Maison Mansoa.
+      Choisissez votre univers et découvrez
+      les créations disponibles.
     </p>
 
   </div>
 
 
-  <div class="categories">
+  <div class="category-grid">
 
 
-    <article
+    <button
       class="category-card"
+      type="button"
       data-category="protege-livres"
     >
 
-      📚
+      <span class="category-icon">
+        📚
+      </span>
 
-      <h3>
+      <span class="category-name">
         Protège-livres & liseuses
-      </h3>
+      </span>
 
-    </article>
+    </button>
 
 
-    <article
+    <button
       class="category-card"
+      type="button"
       data-category="pochettes"
     >
 
-      🧵
+      <span class="category-icon">
+        🧵
+      </span>
 
-      <h3>
+      <span class="category-name">
         Pochettes
-      </h3>
+      </span>
 
-    </article>
+    </button>
 
 
-    <article
+    <button
       class="category-card"
+      type="button"
       data-category="sacs"
     >
 
-      👜
+      <span class="category-icon">
+        👜
+      </span>
 
-      <h3>
+      <span class="category-name">
         Sacs & bandoulières
-      </h3>
+      </span>
 
-    </article>
+    </button>
 
 
-    <article
+    <button
       class="category-card"
+      type="button"
       data-category="trousses"
     >
 
-      ✂️
+      <span class="category-icon">
+        ✂️
+      </span>
 
-      <h3>
+      <span class="category-name">
         Trousses
-      </h3>
+      </span>
 
-    </article>
+    </button>
 
 
   </div>
@@ -218,61 +292,117 @@
      BOUTIQUE
 ================================================== -->
 
-<section id="boutique">
+<section
+  class="shop"
+  id="boutique"
+>
 
-  <div class="section-title">
+  <div class="section-heading">
 
-    <h2>
+    <p class="eyebrow">
+      La boutique
+    </p>
+
+    <h2 id="shopTitle">
       Toutes nos créations
     </h2>
 
     <p>
-      Des créations textiles faites main,
-      imaginées avec soin et proposées
-      en pièces uniques ou petites séries.
+      Chaque pièce est confectionnée avec attention
+      dans l'univers Maison Mansoa.
     </p>
 
+  </div>
+
+
+  <div class="shop-controls">
 
     <button
-      class="show-all"
-      id="showAll"
+      class="filter-button active"
+      type="button"
+      data-filter="all"
     >
-      Toutes les créations
+      Toutes
+    </button>
+
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="protege-livres"
+    >
+      Protège-livres
+    </button>
+
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="pochettes"
+    >
+      Pochettes
+    </button>
+
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="sacs"
+    >
+      Sacs
+    </button>
+
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="trousses"
+    >
+      Trousses
     </button>
 
   </div>
 
 
-  <!-- Les produits sont ajoutés automatiquement
-       par app.js -->
+  <!--
+    Les créations seront générées automatiquement
+    depuis js/products.js
+  -->
 
   <div
-    class="products"
-    id="products"
+    class="product-grid"
+    id="productGrid"
   >
   </div>
+
+
+  <p
+    class="empty-message"
+    id="emptyMessage"
+    hidden
+  >
+    Aucune création disponible dans cette catégorie
+    pour le moment.
+  </p>
 
 </section>
 
 
 
 <!-- ==================================================
-     NOS VALEURS
+     VALEURS
 ================================================== -->
 
 <section class="values">
 
-
   <article>
 
-    ♡
+    <span>
+      ♡
+    </span>
 
     <h3>
       Fait main
     </h3>
 
     <p>
-      Chaque création est réalisée avec soin.
+      Chaque création est confectionnée avec soin.
     </p>
 
   </article>
@@ -280,14 +410,16 @@
 
   <article>
 
-    ❧
+    <span>
+      ❧
+    </span>
 
     <h3>
       Pièces uniques
     </h3>
 
     <p>
-      Petites séries et modèles uniques.
+      Des modèles uniques et des petites séries.
     </p>
 
   </article>
@@ -295,7 +427,9 @@
 
   <article>
 
-    ✿
+    <span>
+      ✿
+    </span>
 
     <h3>
       Matières choisies
@@ -310,40 +444,41 @@
 
   <article>
 
-    ⌂
+    <span>
+      ⌂
+    </span>
 
     <h3>
       Créé en France
     </h3>
 
     <p>
-      Une petite marque artisanale indépendante.
+      Une marque artisanale indépendante.
     </p>
 
   </article>
-
 
 </section>
 
 
 
 <!-- ==================================================
-     NOTRE HISTOIRE
+     HISTOIRE
 ================================================== -->
 
 <section
-  id="histoire"
   class="story"
+  id="histoire"
 >
 
-  <div>
+  <div class="story-content">
 
-    <p class="script">
-      Merci de faire partie de l’aventure Mansoa ♡
+    <p class="eyebrow">
+      Notre histoire
     </p>
 
     <h2>
-      Des créations pensées pour accompagner le quotidien
+      L'univers Mansoa
     </h2>
 
     <p>
@@ -351,6 +486,10 @@
       des accessoires textiles avec une attention
       particulière portée aux associations de tissus,
       aux détails et à la fonctionnalité.
+    </p>
+
+    <p class="signature">
+      Merci de faire partie de l'aventure Mansoa ♡
     </p>
 
   </div>
@@ -366,10 +505,12 @@
      PIED DE PAGE
 ================================================== -->
 
-<footer id="contact">
+<footer
+  class="site-footer"
+  id="contact"
+>
 
-
-  <div>
+  <div class="footer-brand">
 
     <strong>
       Maison Mansoa
@@ -382,72 +523,130 @@
   </div>
 
 
-  <div>
-    Accueil · Boutique · Notre histoire · Contact
+  <nav aria-label="Navigation de pied de page">
+
+    <a href="#accueil">
+      Accueil
+    </a>
+
+    <a href="#boutique">
+      Boutique
+    </a>
+
+    <a href="#histoire">
+      Notre histoire
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <div class="footer-legal">
+
+    <p>
+      © 2026 Maison Mansoa
+    </p>
+
   </div>
-
-
-  <div>
-    © 2026 Maison Mansoa
-  </div>
-
 
 </footer>
 
 
 
 <!-- ==================================================
-     PANIER LATÉRAL
+     PANIER
 ================================================== -->
 
-<aside id="drawer">
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  hidden
+>
+</div>
 
-  <button
-    id="close"
-    aria-label="Fermer le panier"
+
+<aside
+  class="cart-drawer"
+  id="cartDrawer"
+  aria-label="Votre panier"
+  aria-hidden="true"
+>
+
+  <div class="cart-header">
+
+    <h2>
+      Votre panier
+    </h2>
+
+    <button
+      class="cart-close"
+      id="cartClose"
+      type="button"
+      aria-label="Fermer le panier"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
   >
-    ×
-  </button>
 
-
-  <h2>
-    Votre panier
-  </h2>
-
-
-  <div id="cartItems">
-  </div>
-
-
-  <div class="total">
-
-    Total
-
-    <strong id="total">
-      0,00 €
-    </strong>
+    <p class="cart-empty">
+      Votre panier est vide.
+    </p>
 
   </div>
 
 
-  <button class="checkout">
-    Commander — bientôt disponible
-  </button>
+  <div class="cart-footer">
+
+    <div class="cart-total">
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        0,00 €
+      </strong>
+
+    </div>
+
+
+    <button
+      class="checkout-button"
+      id="checkoutButton"
+      type="button"
+      disabled
+    >
+      Commander
+    </button>
+
+
+    <p class="secure-payment">
+      Paiement sécurisé — bientôt disponible
+    </p>
+
+  </div>
 
 </aside>
 
 
 
-<!-- FOND SOMBRE DU PANIER -->
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
 
-<div id="overlay">
-</div>
-
-
-
-<!-- JAVASCRIPT -->
-
-<script src="app.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalogue.js"></script>
 
 
 </body>
