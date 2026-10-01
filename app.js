@@ -5,8 +5,7 @@
 const products = [
 
   // PROTÈGE-LIVRES ET LISEUSES
-  ['Pochette protège-livre en velours côtelé', 17, '📚'],
-  ['Pochette livre de poche / liseuse', 14, '📖'],
+  ['Pochette protège-livre fleurie', 17, 'protege-livre-fleurs-vert.jpg'],
 
   // POCHETTES
   ['Pochette téléphone spéciale collège', 22, '📱'],
