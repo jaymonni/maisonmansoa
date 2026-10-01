@@ -1,5 +1,26 @@
-const products=[
-['Pochette protège-livre en velours côtelé',17,'📚'],['Pochette téléphone spéciale collège',22,'📱'],['Sac bandoulière esprit bord de mer',45,'👜'],['Sac bandoulière style besace',35,'👜'],['Pochette livre de poche / liseuse',14,'📖'],['Trousse de maquillage artisanale',17,'🧵'],['Trousse panière maquillage',12,'✂️'],['Sac bandoulière artisanal',30,'👜']];
+// ==========================================
+// PRODUITS MAISON MANSOA
+// ==========================================
+
+const products = [
+
+  // PROTÈGE-LIVRES ET LISEUSES
+  ['Pochette protège-livre en velours côtelé', 17, '📚'],
+  ['Pochette livre de poche / liseuse', 14, '📖'],
+
+  // POCHETTES
+  ['Pochette téléphone spéciale collège', 22, '📱'],
+
+  // SACS
+  ['Sac bandoulière esprit bord de mer', 45, '👜'],
+  ['Sac bandoulière style besace', 35, '👜'],
+  ['Sac bandoulière artisanal', 30, '👜'],
+
+  // TROUSSES
+  ['Trousse de maquillage artisanale', 17, '🧵'],
+  ['Trousse panière maquillage', 12, '✂️']
+
+];
 let cart=[];const euro=n=>n.toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
 const root=document.querySelector('#products');products.forEach((p,i)=>{root.insertAdjacentHTML('beforeend',`<article class="product"><div class="photo">${p[2]}</div><div class="info"><h3>${p[0]}</h3><p class="price">${euro(p[1])}</p><button class="add" data-i="${i}">Ajouter au panier</button></div></article>`)});
 function render(){count.textContent=cart.length;cartItems.innerHTML=cart.length?cart.map(i=>`<div class="cartrow"><span>${products[i][0]}</span><strong>${euro(products[i][1])}</strong></div>`).join(''):'<p>Votre panier est vide.</p>';total.textContent=euro(cart.reduce((s,i)=>s+products[i][1],0))}
