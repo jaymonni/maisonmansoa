@@ -21,3 +21,31 @@
   height: auto;
   border-radius: 12px;
 }
+/* =========================================
+   CORRECTION LARGEUR DU SITE
+========================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Bannière Mansoa */
+.hero-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto 40px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
