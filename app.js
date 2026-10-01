@@ -41,8 +41,9 @@ const products = [
     pieceUnique: true,
 
     images: [
-      "protege-livre-fleurs-vert.jpg"
-    ]
+  "images/PL001/01.jpg"
+]
+  
   },
 
 
