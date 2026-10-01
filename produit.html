@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Découvrez cette création textile faite main par Maison Mansoa."
+  >
+
+  <title>
+    Création — Maison Mansoa
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     BANDEAU
+================================================== -->
+
+<div class="announcement">
+
+  <p>
+    ♡ Des créations uniques,
+    faites main avec passion ♡
+  </p>
+
+  <span>
+    Livraison en France
+  </span>
+
+</div>
+
+
+<!-- ==================================================
+     EN-TÊTE
+================================================== -->
+
+<header class="site-header">
+
+  <a
+    class="brand"
+    href="index.html"
+    aria-label="Maison Mansoa - Accueil"
+  >
+
+    <span class="brand-name">
+      Maison Mansoa
+    </span>
+
+    <span class="brand-subtitle">
+      CRÉATIONS FAITES MAIN
+    </span>
+
+  </a>
+
+
+  <nav
+    class="main-nav"
+    aria-label="Navigation principale"
+  >
+
+    <a href="index.html">
+      Accueil
+    </a>
+
+    <a href="index.html#univers">
+      Nos créations
+    </a>
+
+    <a href="index.html#boutique">
+      Boutique
+    </a>
+
+    <a href="index.html#histoire">
+      Notre histoire
+    </a>
+
+    <a href="index.html#contact">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <button
+    class="cart-button"
+    id="cartButton"
+    type="button"
+  >
+
+    <span>
+      Panier
+    </span>
+
+    <strong id="cartCount">
+      0
+    </strong>
+
+  </button>
+
+</header>
+
+
+<!-- ==================================================
+     FICHE PRODUIT
+================================================== -->
+
+<main class="product-page">
+
+  <a
+    class="back-to-shop"
+    href="index.html#boutique"
+  >
+    ← Retour à la boutique
+  </a>
+
+
+  <div
+    class="product-detail"
+    id="productDetail"
+  >
+
+    <p class="product-loading">
+      Chargement de la création…
+    </p>
+
+  </div>
+
+</main>
+
+
+<!-- ==================================================
+     PIED DE PAGE
+================================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-brand">
+
+    <strong>
+      Maison Mansoa
+    </strong>
+
+    <p>
+      Créations faites main
+    </p>
+
+  </div>
+
+
+  <nav
+    aria-label="Navigation de pied de page"
+  >
+
+    <a href="index.html">
+      Accueil
+    </a>
+
+    <a href="index.html#boutique">
+      Boutique
+    </a>
+
+    <a href="index.html#histoire">
+      Notre histoire
+    </a>
+
+    <a href="index.html#contact">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <div class="footer-legal">
+
+    <p>
+      © 2026 Maison Mansoa
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- ==================================================
+     PANIER
+================================================== -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  hidden
+></div>
+
+
+<aside
+  class="cart-drawer"
+  id="cartDrawer"
+  aria-label="Votre panier"
+  aria-hidden="true"
+>
+
+  <div class="cart-header">
+
+    <h2>
+      Votre panier
+    </h2>
+
+    <button
+      class="cart-close"
+      id="cartClose"
+      type="button"
+      aria-label="Fermer le panier"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  >
+
+    <p class="cart-empty">
+      Votre panier est vide.
+    </p>
+
+  </div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        0,00 €
+      </strong>
+
+    </div>
+
+
+    <button
+      class="checkout-button"
+      id="checkoutButton"
+      type="button"
+      disabled
+    >
+      Commander
+    </button>
+
+
+    <p class="secure-payment">
+      Paiement sécurisé — bientôt disponible
+    </p>
+
+  </div>
+
+</aside>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="js/products.js"></script>
+
+<script src="js/cart.js"></script>
+
+<script src="js/product.js"></script>
+
+
+</body>
+</html>
