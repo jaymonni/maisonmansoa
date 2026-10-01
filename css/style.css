@@ -825,6 +825,253 @@ margin-top: auto;
   text-align: right;
 }
 
+/* =====================================================
+   PANIER LATÉRAL
+===================================================== */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+
+  background: rgba(35, 30, 25, 0.45);
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.cart-overlay.open {
+  opacity: 1;
+}
+
+
+.cart-drawer {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  z-index: 100;
+
+  width: min(430px, 92vw);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--paper);
+
+  box-shadow:
+    -12px 0 35px rgba(30, 25, 20, 0.15);
+
+  transform: translateX(105%);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+
+/* EN-TÊTE DU PANIER */
+
+.cart-header {
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+.cart-header h2 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.cart-close {
+  width: 38px;
+  height: 38px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 30px;
+  line-height: 1;
+}
+
+
+/* CONTENU DU PANIER */
+
+.cart-items {
+  flex: 1;
+
+  padding: 10px 24px;
+
+  overflow-y: auto;
+}
+
+.cart-empty {
+  padding: 35px 0;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+/* PRODUIT DANS LE PANIER */
+
+.cart-item {
+  padding: 18px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    85px 1fr;
+
+  gap: 15px;
+
+  border-bottom:
+    1px solid #eee7df;
+}
+
+.cart-item img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.cart-item-info strong {
+  color: var(--ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.35;
+}
+
+.cart-item-info span {
+  margin-top: 5px;
+
+  font-weight: bold;
+
+  color: var(--ink);
+}
+
+.remove-cart-item {
+  margin-top: auto;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--terra);
+
+  font-size: 12px;
+
+  text-decoration: underline;
+}
+
+
+/* BAS DU PANIER */
+
+.cart-footer {
+  padding: 22px 24px;
+
+  border-top:
+    1px solid var(--line);
+
+  background: var(--cream);
+}
+
+.cart-total {
+  margin-bottom: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--ink);
+
+  font-size: 19px;
+}
+
+.cart-total strong {
+  font-size: 21px;
+}
+
+
+/* COMMANDER */
+
+.checkout-button {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border: 0;
+  border-radius: 5px;
+
+  background: var(--terra);
+
+  color: white;
+
+  font-weight: bold;
+}
+
+.checkout-button:hover:not(:disabled) {
+  background: var(--terra-dark);
+}
+
+.checkout-button:disabled {
+  background: #c8bdb5;
+
+  cursor: not-allowed;
+}
+
+.secure-payment {
+  margin:
+    10px 0 0;
+
+  text-align: center;
+
+  color: #777;
+
+  font-size: 11px;
+}
 
 /* =====================================================
    RESPONSIVE
