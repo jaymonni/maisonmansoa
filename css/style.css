@@ -826,6 +826,217 @@ margin-top: auto;
 }
 
 /* =====================================================
+   FICHE PRODUIT
+===================================================== */
+
+.product-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 25px 80px;
+}
+
+.back-to-shop {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--terra);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back-to-shop:hover {
+  text-decoration: underline;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+  gap: 65px;
+  align-items: start;
+}
+
+
+/* PHOTO PRINCIPALE */
+
+.product-gallery {
+  width: 100%;
+}
+
+.product-main-image {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: var(--cream);
+}
+
+.product-main-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* INFORMATIONS */
+
+.product-detail-info {
+  padding-top: 10px;
+}
+
+.product-reference {
+  margin: 15px 0 5px;
+
+  color: #8a837b;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-detail-info h1 {
+  margin: 8px 0 15px;
+
+  color: var(--ink);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.product-detail-price {
+  margin: 0 0 25px;
+
+  color: var(--ink);
+
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.product-description {
+  margin-bottom: 28px;
+}
+
+
+/* MATIÈRES ET DIMENSIONS */
+
+.product-specifications {
+  margin: 25px 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.product-specification {
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.product-specification h3 {
+  margin: 0 0 5px;
+
+  color: var(--ink);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 16px;
+}
+
+.product-specification p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* BOUTON */
+
+.product-add-button {
+  margin-top: 10px;
+
+  padding: 14px 20px;
+
+  font-size: 15px;
+}
+
+
+/* INFORMATIONS SOUS LE BOUTON */
+
+.product-reassurance {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--line);
+}
+
+.product-reassurance p {
+  margin: 7px 0;
+
+  color: #6d675f;
+
+  font-size: 13px;
+}
+
+
+/* MINIATURES */
+
+.product-thumbnails {
+  margin-top: 12px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.product-thumbnail {
+  width: 72px;
+  height: 72px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 2px solid transparent;
+  border-radius: 7px;
+
+  background: transparent;
+}
+
+.product-thumbnail.active {
+  border-color: var(--terra);
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+  .product-page {
+    padding: 25px 18px 60px;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .product-main-image {
+    max-width: 100%;
+  }
+
+}
+/* =====================================================
    PANIER LATÉRAL
 ===================================================== */
 
