@@ -523,6 +523,8 @@ a {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+   display: flex;
+flex-direction: column;
 }
 
 .product-card:hover {
@@ -566,6 +568,11 @@ a {
 
 .product-info {
   padding: 17px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
 }
 
 .product-info h3 {
@@ -643,7 +650,9 @@ a {
 
 .add-to-cart {
   width: 100%;
-
+   
+margin-top: auto;
+   
   padding:
     11px 15px;
 
