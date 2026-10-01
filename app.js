@@ -1,162 +1,378 @@
-// ==========================================
-// PRODUITS MAISON MANSOA
-// ==========================================
+// =====================================================
+// CATALOGUE MAISON MANSOA
+// =====================================================
+//
+// Pour ajouter une création plus tard,
+// il suffira d'ajouter un nouveau bloc produit ici.
+//
+// Catégories prévues :
+// protege-livres
+// sacs
+// pochettes
+// trousses
+//
+// Collections possibles :
+// femme
+// homme
+// mixte
+//
+// =====================================================
+
 
 const products = [
 
-  // PROTÈGE-LIVRES ET LISEUSES
-  ['Pochette protège-livre fleurie', 17, 'protege-livre-fleurs-vert.jpg'],
+  // ---------------------------------------------------
+  // PROTÈGE-LIVRES
+  // ---------------------------------------------------
 
-  // POCHETTES
-  ['Pochette téléphone spéciale collège', 22, '📱'],
+  {
+    id: "PL001",
 
+    nom: "Pochette protège-livre fleurie",
+
+    categorie: "protege-livres",
+
+    collection: "femme",
+
+    prix: 17,
+
+    disponible: true,
+
+    pieceUnique: true,
+
+    images: [
+      "protege-livre-fleurs-vert.jpg"
+    ]
+  },
+
+
+  // ---------------------------------------------------
   // SACS
-  ['Sac bandoulière esprit bord de mer', 45, '👜'],
-  ['Sac bandoulière style besace', 35, '👜'],
-  ['Sac bandoulière artisanal', 30, '👜'],
+  // ---------------------------------------------------
 
-  // TROUSSES
-  ['Trousse de maquillage artisanale', 17, '🧵'],
-  ['Trousse panière maquillage', 12, '✂️']
+  {
+    id: "SAC001",
+
+    nom: "Sac bandoulière style besace à rabat",
+
+    categorie: "sacs",
+
+    collection: "femme",
+
+    prix: 35,
+
+    disponible: true,
+
+    pieceUnique: true,
+
+    images: [
+      "sac-besace-femme-vert-taupe-01.jpg"
+    ]
+  }
 
 ];
 
 
-// ==========================================
+// =====================================================
 // PANIER
-// ==========================================
+// =====================================================
 
 let cart = [];
 
-const euro = n =>
-  n.toLocaleString('fr-FR', {
-    style: 'currency',
-    currency: 'EUR'
+
+// =====================================================
+// FORMAT DES PRIX
+// =====================================================
+
+const euro = prix =>
+  prix.toLocaleString("fr-FR", {
+    style: "currency",
+    currency: "EUR"
   });
 
 
-// ==========================================
-// AFFICHAGE DES PRODUITS
-// ==========================================
+// =====================================================
+// ZONE D'AFFICHAGE DES PRODUITS
+// =====================================================
 
-const root = document.querySelector('#products');
+const root = document.querySelector("#products");
 
-products.forEach((p, i) => {
 
-  // Si le troisième élément est une image,
-  // on affiche la vraie photo.
-  // Sinon on garde l'emoji.
-  const media =
-    p[2].includes('.jpg') ||
-    p[2].includes('.jpeg') ||
-    p[2].includes('.png') ||
-    p[2].includes('.webp')
-      ? `<img src="${p[2]}" alt="${p[0]}">`
-      : p[2];
+// =====================================================
+// AFFICHER LES PRODUITS
+// =====================================================
 
-  root.insertAdjacentHTML(
-    'beforeend',
-    `
-    <article class="product">
+function afficherProduits(liste = products) {
 
-      <div class="photo">
-        ${media}
-      </div>
+  root.innerHTML = "";
 
-      <div class="info">
+  liste.forEach((produit, index) => {
 
-        <h3>${p[0]}</h3>
+    const badgePieceUnique = produit.pieceUnique
+      ? `<span class="badge unique">Pièce unique</span>`
+      : "";
 
-        <p class="price">
-          ${euro(p[1])}
-        </p>
+    const badgeDisponible = produit.disponible
+      ? `<span class="badge disponible">Disponible</span>`
+      : `<span class="badge vendu">Vendu</span>`;
 
-        <button class="add" data-i="${i}">
+
+    const boutonPanier = produit.disponible
+
+      ? `
+        <button
+          class="add"
+          data-id="${produit.id}"
+        >
           Ajouter au panier
         </button>
+      `
 
-      </div>
+      : `
+        <button
+          class="add sold"
+          disabled
+        >
+          Vendu
+        </button>
+      `;
 
-    </article>
-    `
+
+    root.insertAdjacentHTML(
+      "beforeend",
+
+      `
+      <article class="product">
+
+        <div class="photo">
+
+          <img
+            src="${produit.images[0]}"
+            alt="${produit.nom}"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="info">
+
+          <div class="badges">
+
+            ${badgePieceUnique}
+
+            ${badgeDisponible}
+
+          </div>
+
+
+          <h3>
+            ${produit.nom}
+          </h3>
+
+
+          <p class="price">
+            ${euro(produit.prix)}
+          </p>
+
+
+          ${boutonPanier}
+
+        </div>
+
+      </article>
+      `
+    );
+
+  });
+
+}
+
+
+// =====================================================
+// TROUVER UN PRODUIT PAR SON IDENTIFIANT
+// =====================================================
+
+function trouverProduit(id) {
+
+  return products.find(
+    produit => produit.id === id
   );
+
+}
+
+
+// =====================================================
+// AJOUTER AU PANIER
+// =====================================================
+
+document.addEventListener("click", e => {
+
+  if (!e.target.matches(".add")) {
+    return;
+  }
+
+  const id = e.target.dataset.id;
+
+  if (!id) {
+    return;
+  }
+
+  const produit = trouverProduit(id);
+
+  if (!produit || !produit.disponible) {
+    return;
+  }
+
+  cart.push(id);
+
+  renderCart();
+
+  openCart();
 
 });
 
 
-// ==========================================
-// MISE À JOUR DU PANIER
-// ==========================================
+// =====================================================
+// AFFICHER LE PANIER
+// =====================================================
 
-function render() {
+function renderCart() {
+
+  const count = document.querySelector("#count");
+  const cartItems = document.querySelector("#cartItems");
+  const total = document.querySelector("#total");
+
 
   count.textContent = cart.length;
 
-  cartItems.innerHTML = cart.length
 
-    ? cart.map(i => `
-        <div class="cartrow">
-          <span>${products[i][0]}</span>
-          <strong>${euro(products[i][1])}</strong>
-        </div>
-      `).join('')
+  if (cart.length === 0) {
 
-    : '<p>Votre panier est vide.</p>';
+    cartItems.innerHTML =
+      "<p>Votre panier est vide.</p>";
 
-  total.textContent = euro(
-    cart.reduce((s, i) => s + products[i][1], 0)
+  } else {
+
+    cartItems.innerHTML = cart
+      .map(id => {
+
+        const produit = trouverProduit(id);
+
+        return `
+          <div class="cartrow">
+
+            <span>
+              ${produit.nom}
+            </span>
+
+            <strong>
+              ${euro(produit.prix)}
+            </strong>
+
+          </div>
+        `;
+
+      })
+      .join("");
+
+  }
+
+
+  const totalPanier = cart.reduce(
+    (somme, id) => {
+
+      const produit = trouverProduit(id);
+
+      return somme + produit.prix;
+
+    },
+    0
+  );
+
+
+  total.textContent =
+    euro(totalPanier);
+
+}
+
+
+// =====================================================
+// OUVRIR / FERMER LE PANIER
+// =====================================================
+
+function openCart() {
+
+  document
+    .querySelector("#drawer")
+    .classList.add("open");
+
+  document
+    .querySelector("#overlay")
+    .classList.add("open");
+
+}
+
+
+function closeCart() {
+
+  document
+    .querySelector("#drawer")
+    .classList.remove("open");
+
+  document
+    .querySelector("#overlay")
+    .classList.remove("open");
+
+}
+
+
+// =====================================================
+// BOUTONS DU PANIER
+// =====================================================
+
+document
+  .querySelector("#cartBtn")
+  .addEventListener("click", openCart);
+
+
+document
+  .querySelector("#close")
+  .addEventListener("click", closeCart);
+
+
+document
+  .querySelector("#overlay")
+  .addEventListener("click", closeCart);
+
+
+// =====================================================
+// MENU TÉLÉPHONE
+// =====================================================
+
+const menuButton =
+  document.querySelector("#menu");
+
+if (menuButton) {
+
+  menuButton.addEventListener(
+    "click",
+    () => {
+
+      document
+        .querySelector("nav")
+        .classList.toggle("open");
+
+    }
   );
 
 }
 
 
-// ==========================================
-// AJOUTER AU PANIER
-// ==========================================
-
-document.addEventListener('click', e => {
-
-  if (e.target.matches('.add')) {
-
-    cart.push(+e.target.dataset.i);
-
-    render();
-    openCart();
-
-  }
-
-});
-
-
-// ==========================================
-// OUVRIR / FERMER LE PANIER
-// ==========================================
-
-function openCart() {
-  drawer.classList.add('open');
-  overlay.classList.add('open');
-}
-
-function closeCart() {
-  drawer.classList.remove('open');
-  overlay.classList.remove('open');
-}
-
-cartBtn.onclick = openCart;
-close.onclick = closeCart;
-overlay.onclick = closeCart;
-
-
-// ==========================================
-// MENU TÉLÉPHONE
-// ==========================================
-
-menu.onclick = () =>
-  document.querySelector('nav').classList.toggle('open');
-
-
-// ==========================================
+// =====================================================
 // PREMIER AFFICHAGE
-// ==========================================
+// =====================================================
 
-render();
+afficherProduits();
+
+renderCart();
