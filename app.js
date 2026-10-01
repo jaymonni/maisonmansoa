@@ -52,24 +52,41 @@ const products = [
   // ---------------------------------------------------
 
   {
-    id: "SAC001",
+  id: "SAC001",
 
-    nom: "Sac bandoulière style besace à rabat",
+  nom: "Sac bandoulière style besace à rabat",
 
-    categorie: "sacs",
+  categorie: "sacs",
 
-    collection: "femme",
+  collection: "femme",
 
-    prix: 35,
+  prix: 35,
 
-    disponible: true,
+  disponible: true,
 
-    pieceUnique: true,
+  pieceUnique: true,
 
-   images: [
-  "images/SAC001/01.jpg"
-]
-  }
+  description:
+    "Sac bandoulière style besace à rabat, confectionné à la main.",
+
+  matieres: [
+    "Suédine",
+    "Velours côtelé"
+  ],
+
+  tissuPrincipal:
+    "Suédine",
+
+  dimensions: {
+    longueur: 23,
+    hauteur: 20,
+    largeur: 8
+  },
+
+  images: [
+    "images/SAC001/01.jpg"
+  ]
+}
 
 ];
 
