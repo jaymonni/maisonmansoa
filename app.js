@@ -376,3 +376,97 @@ if (menuButton) {
 afficherProduits();
 
 renderCart();
+// =====================================================
+// FILTRER LES PRODUITS PAR CATÉGORIE
+// =====================================================
+
+document
+  .querySelectorAll(".category-card")
+  .forEach(carte => {
+
+    carte.addEventListener("click", () => {
+
+      const categorie = carte.dataset.category;
+
+      const produitsFiltres = products.filter(
+        produit => produit.categorie === categorie
+      );
+
+      // Affiche uniquement les produits
+      // de la catégorie sélectionnée
+      afficherProduits(produitsFiltres);
+
+
+      // Enlève la sélection sur les autres catégories
+      document
+        .querySelectorAll(".category-card")
+        .forEach(c => c.classList.remove("active"));
+
+
+      // Sélectionne visuellement la catégorie choisie
+      carte.classList.add("active");
+
+
+      // Change le titre de la boutique
+      const titreBoutique =
+        document.querySelector("#boutique .section-title h2");
+
+      if (titreBoutique) {
+        titreBoutique.textContent =
+          carte.querySelector("h3").textContent;
+      }
+
+
+      // Descend vers les produits
+      document
+        .querySelector("#boutique")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    });
+
+  });
+
+
+// =====================================================
+// BOUTON "TOUTES LES CRÉATIONS"
+// =====================================================
+
+const showAll =
+  document.querySelector("#showAll");
+
+if (showAll) {
+
+  showAll.addEventListener("click", () => {
+
+    // Réaffiche tout le catalogue
+    afficherProduits(products);
+
+
+    // Retire la catégorie sélectionnée
+    document
+      .querySelectorAll(".category-card")
+      .forEach(c => c.classList.remove("active"));
+
+
+    // Remet le titre d'origine
+    const titreBoutique =
+      document.querySelector("#boutique .section-title h2");
+
+    if (titreBoutique) {
+      titreBoutique.textContent =
+        "Toutes nos créations";
+    }
+
+
+    // Descend vers les produits
+    document
+      .querySelector("#boutique")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  });
+
+}
