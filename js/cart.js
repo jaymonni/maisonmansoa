@@ -412,7 +412,7 @@ const shippingRates = {
   south: [{id:"relay",label:"Mondial Relay — point relais",price:7.5},{id:"colissimo",label:"Colissimo — domicile",price:16}],
   pl: [{id:"relay",label:"Mondial Relay — point relais",price:8.5},{id:"colissimo",label:"Colissimo — domicile",price:16}],
   om1: [{id:"colissimo",label:"Colissimo — outre-mer",price:9.5}],
-  om2: [{id:"colissimo",label:"Colissimo — outre-mer",price:10.5}],
+  om2: [],
   eu: [{id:"colissimo",label:"Colissimo — domicile",price:16}],
   uk: [{id:"colissimo",label:"Colissimo — domicile",price:20}],
   worldb: [{id:"colissimo",label:"Colissimo — international",price:25}],
