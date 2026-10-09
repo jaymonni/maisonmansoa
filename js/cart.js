@@ -402,9 +402,6 @@ document.addEventListener(
 // PREMIER AFFICHAGE
 // -----------------------------------------------------
 
-renderCart();
-
-
 // Tarifs approuvés pour un seul colis pesant au plus 500 g, emballage inclus.
 // Aucun paiement ni réservation n'est déclenché par cette estimation.
 const shippingRates = {
@@ -461,3 +458,4 @@ function updateShipping(productSubtotal) {
 destinationSelect?.addEventListener("change",populateCarriers);
 carrierSelect?.addEventListener("change",()=>updateShipping());
 populateCarriers();
+renderCart();
