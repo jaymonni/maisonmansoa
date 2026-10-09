@@ -38,6 +38,17 @@ function formatPrice(price) {
 // CRÉER UNE CARTE PRODUIT
 // -----------------------------------------------------
 
+let activeCategory = "all";
+const allowedCategories = new Set(["all", ...products.map(item => item.categorie)]);
+const requestedCategory = new URLSearchParams(window.location.search).get("categorie");
+if (requestedCategory && allowedCategories.has(requestedCategory)) activeCategory = requestedCategory;
+
+function productDetailUrl(id) {
+  const params = new URLSearchParams({ id });
+  if (activeCategory !== "all") params.set("categorie", activeCategory);
+  return `produit.html?${params.toString()}`;
+}
+
 function createProductCard(product) {
 
   const card =
@@ -104,7 +115,7 @@ function createProductCard(product) {
 
     <a
       class="product-image"
-      href="produit.html?id=${product.id}"
+      href="${productDetailUrl(product.id)}"
       aria-label="Voir ${product.nom}"
     >
 
@@ -132,7 +143,7 @@ function createProductCard(product) {
       <h3>
 
         <a
-          href="produit.html?id=${product.id}"
+          href="${productDetailUrl(product.id)}"
         >
           ${product.nom}
         </a>
@@ -204,6 +215,11 @@ function displayProducts(list) {
 // -----------------------------------------------------
 
 function filterProducts(category) {
+  activeCategory = allowedCategories.has(category) ? category : "all";
+  const url = new URL(window.location.href);
+  if (activeCategory === "all") url.searchParams.delete("categorie");
+  else url.searchParams.set("categorie", activeCategory);
+  window.history.replaceState(null, "", url.pathname + url.search + url.hash);
 
   if (category === "all") {
 
@@ -378,6 +394,8 @@ if (
 
 // -----------------------------------------------------
 // PREMIER AFFICHAGE
-// -----------------------------------------------------
-
-displayProducts(products);
+filterProducts(activeCategory);
+filterButtons.forEach(button => button.classList.toggle("active", button.dataset.filter === activeCategory));
+if (activeCategory !== "all" && shopTitle) {
+  shopTitle.textContent = document.querySelector(`.filter-button[data-filter="${activeCategory}"]`)?.textContent.trim() || "Les créations";
+}
