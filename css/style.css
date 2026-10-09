@@ -459,3 +459,7 @@ body #cartButton.cart-button:focus-visible {outline:3px solid #b86d58;outline-of
  body #cartButton.cart-button {min-height:39px;padding:8px 11px!important;gap:7px!important;font-size:11px!important}
  body #cartButton.cart-button::before {width:16px;height:16px}
 }
+
+/* Panier légèrement rentré du bord droit, sur toutes les tailles d'écran */
+html body #cartButton.cart-button {right:max(30px,env(safe-area-inset-right))!important;}
+@media(max-width:600px){html body #cartButton.cart-button {right:max(25px,env(safe-area-inset-right))!important;}}
