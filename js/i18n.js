@@ -3,6 +3,12 @@
   const translations = {
     "CRÉATIONS FAITES MAIN":"HANDMADE CREATIONS",
     "Livraison":"Shipping","Vos créations, où que vous soyez.":"Your handmade creations, wherever you are.","Nous préparons la livraison en France, en Europe et à l'international. Les destinations, les tarifs et les délais seront précisés avant l'ouverture des commandes.":"We are preparing shipping to France, Europe and worldwide. Destinations, rates and delivery times will be confirmed before orders open.","France":"France","Europe":"Europe","International":"Worldwide","Les commandes et le paiement en ligne ne sont pas encore disponibles.":"Orders and online payments are not available yet.",
+    "France · Mondial Relay : 4,50 €":"France · Mondial Relay: €4.50",
+    "France · Colissimo domicile : 8,50 €":"France · Colissimo home delivery: €8.50",
+    "Belgique, Luxembourg, Pays-Bas : 5,50 €":"Belgium, Luxembourg, Netherlands: €5.50",
+    "Espagne, Portugal, Italie : 7,50 €":"Spain, Portugal, Italy: €7.50",
+    "Pologne : 8,50 €":"Poland: €8.50",
+    "Livraison Mondial Relay en point relais pour les pays européens indiqués. Prix avec emballage inclus, pour un colis de 500 g maximum. Autres destinations : tarifs à venir.":"Mondial Relay pickup-point delivery for the listed European countries. Packaging included, for parcels up to 500 g. Other destinations: rates coming soon.",
     "Panier":"Cart","Des créations textiles uniques,":"Unique handmade textile creations,",
     "cousues avec amour.":"sewn with love.",
     "La boutique":"The boutique","Les créations":"Our creations","Toutes nos créations":"All our creations",
