@@ -340,3 +340,11 @@ a {color:inherit}
 .shipping-zones {display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0}
 .shipping-zones span {border:1px solid var(--line);border-radius:100px;padding:9px 19px;background:var(--paper);font-size:13px}
 .shipping-info .shipping-notice {font-size:12px;margin-bottom:0}
+
+
+/* Estimation des frais de livraison dans le panier */
+.cart-shipping {display:flex;flex-direction:column;gap:7px;margin:14px 0;padding:14px 0;border-top:1px solid var(--line)}
+.cart-shipping label {font-size:12px;font-weight:600;color:var(--ink)}
+.cart-shipping select {width:100%;padding:9px 10px;background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--ink);font:inherit;font-size:13px}
+.cart-shipping-line {display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:12px}
+.cart-shipping-note {margin:4px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
