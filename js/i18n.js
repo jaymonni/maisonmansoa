@@ -2,7 +2,7 @@
 (() => {
   const translations = {
     "CRÉATIONS FAITES MAIN":"HANDMADE CREATIONS",
-    "Panier":"Cart","Des créations textiles uniques, ":"Unique handmade textile creations, ",
+    "Panier":"Cart","Des créations textiles uniques,":"Unique handmade textile creations,",
     "cousues avec amour.":"sewn with love.",
     "La boutique":"The boutique","Les créations":"Our creations","Toutes nos créations":"All our creations",
     "Tout voir":"View all","Protège-livres":"Book sleeves","Sacs":"Bags",
