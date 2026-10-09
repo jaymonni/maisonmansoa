@@ -298,3 +298,14 @@ a {color:inherit}
 @media (max-width: 760px) {
   .product-page .back-to-shop { margin-bottom: 24px; padding: 11px 16px; }
 }
+
+/* Accueil : mettre davantage en valeur le titre « La boutique » */
+.shop .section-heading .eyebrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 400;
+  letter-spacing: .3px;
+  text-transform: none;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
