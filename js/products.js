@@ -57,7 +57,12 @@ const products = [
     },
 
     images: [
-      "images/PL001/01.jpg"
+      "images/PL001/01.jpg",
+      "images/PL001/02.jpg",
+      "images/PL001/03.jpg",
+      "images/PL001/04.jpg",
+      "images/PL001/05.jpg",
+      "images/PL001/06.jpg"
     ]
   },
 
