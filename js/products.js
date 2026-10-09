@@ -101,7 +101,12 @@ const products = [
     },
 
     images: [
-      "images/SAC001/01.jpg"
+      "images/SAC001/01.jpg",
+      "images/SAC001/02.jpg",
+      "images/SAC001/03.jpg",
+      "images/SAC001/04.jpg",
+      "images/SAC001/05.jpg",
+      "images/SAC001/06.jpg"
     ]
   }
 
