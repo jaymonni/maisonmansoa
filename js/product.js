@@ -59,7 +59,7 @@ function escapeProductText(value) {
 function createCharacteristic(label, value) {
   if (value === null || value === undefined || value === "" || (Array.isArray(value) && value.length === 0)) return "";
   const content = Array.isArray(value) ? value.map(escapeProductText).join(" · ") : escapeProductText(value);
-  return `<div class="product-characteristic"><dt>${escapeProductText(label)}</dt><dd>${content}</dd></div>`;
+  return `<div class="product-characteristic${label === "Dimensions" ? " product-characteristic-dimensions" : ""}"><dt>${escapeProductText(label)}</dt><dd>${content}</dd></div>`;
 }
 
 function createCharacteristics(product) {
