@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informations et tarifs de livraison des créations Maison Mansoa en France et à l'international.">
+  <title>Livraison et tarifs — Maison Mansoa</title>
+  <link rel="stylesheet" href="css/style.css?v=20261009-13">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Mansoa, retour à l'accueil">
+      <span class="brand-name">Maison Mansoa</span>
+      <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
+    </a>
+    <div class="language-switch" role="group" aria-label="Langue / Language"><button type="button" data-lang="fr" class="active" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </header>
+  <button class="cart-button" id="cartButton" type="button" aria-label="Ouvrir le panier" aria-controls="cartDrawer">
+      <span>Panier</span><strong id="cartCount">0</strong>
+    </button>
+  <main class="shipping-page">
+    <a class="back-to-shop" href="index.html#boutique">← Retour à la boutique</a>
+    <section class="shipping-info" id="livraison" aria-labelledby="shippingTitle">
+      <span class="eyebrow">Livraison</span>
+      <h2 id="shippingTitle">Vos créations, où que vous soyez.</h2>
+      <p>Nous préparons la livraison en France, en Europe et à l'international. Les destinations, les tarifs et les délais seront précisés avant l'ouverture des commandes.</p>
+      <div class="shipping-zones">
+        <span>France · Mondial Relay : 4,50 €</span>
+        <span>France · Colissimo domicile : 8,50 €</span>
+        <span>Belgique, Luxembourg, Pays-Bas : 5,50 €</span>
+        <span>Espagne, Portugal, Italie : 7,50 €</span>
+        <span>Pologne : 8,50 €</span>
+      </div>
+      <p>Livraison Mondial Relay en point relais pour les pays européens indiqués. Colissimo disponible pour les destinations suivantes :</p>
+      <div class="shipping-zones">
+        <span>Outre-mer (Guadeloupe, Martinique, Guyane, Réunion, Mayotte…) · Colissimo économique : 9,50 €</span>
+        <span>Nouvelle-Calédonie, Polynésie française, Wallis-et-Futuna · Tarif à confirmer</span>
+        <span>Europe UE / Suisse · Colissimo : 16,00 €</span>
+        <span>Royaume-Uni · Colissimo : 20,00 €</span>
+        <span>Norvège, Maghreb, Europe hors UE (zone B) · Colissimo : 25,00 €</span>
+        <span>Autres pays (zone C) · Colissimo : 36,50 €</span>
+      </div>
+      <p>Prix avec emballage compris pour un seul colis de 500 g maximum. Destination et zone à confirmer avant expédition. Taxes et frais de douane éventuels non compris.</p>
+      <p class="shipping-notice">Les commandes et le paiement en ligne ne sont pas encore disponibles.</p>
+    </section>
+    <p class="shipping-page-back"><a href="index.html#boutique">← Retour aux créations</a></p>
+  </main>
+  <footer class="site-footer">
+    <div><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div>
+    <a href="index.html#boutique">Retour à la boutique ↑</a>
+    <small>© 2026 Maison Mansoa</small>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Votre panier" aria-hidden="true">
+    <div class="cart-header"><h2>Votre panier</h2><button class="cart-close" id="cartClose" type="button" aria-label="Fermer le panier">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Votre panier est vide.</p></div>
+    <div class="cart-footer">
+      <div class="cart-shipping" id="cartShipping">
+        <label for="shippingDestination">Pays ou zone de livraison</label>
+        <select id="shippingDestination">
+          <option value="fr">France métropolitaine</option>
+          <option value="be">Belgique / Luxembourg / Pays-Bas</option>
+          <option value="south">Espagne / Portugal / Italie</option>
+          <option value="pl">Pologne</option>
+          <option value="om1">Guadeloupe, Martinique, Guyane, Réunion, Mayotte et autres territoires OM1</option>
+          <option value="om2">Nouvelle-Calédonie, Polynésie française, Wallis-et-Futuna</option>
+          <option value="eu">Autres pays UE / Suisse</option>
+          <option value="uk">Royaume-Uni</option>
+          <option value="worldb">Norvège, Maghreb et Europe hors UE (zone B)</option>
+          <option value="worldc">Canada, États-Unis et autres destinations (zone C)</option>
+          <option value="other">Autre destination / zone inconnue</option>
+        </select>
+        <label for="shippingCarrier">Mode de livraison</label>
+        <select id="shippingCarrier">
+          <option value="relay">Mondial Relay — point relais</option>
+          <option value="colissimo">Colissimo — domicile</option>
+        </select>
+        <div class="cart-shipping-line"><span>Livraison, emballage compris</span><strong id="cartShippingPrice">À calculer</strong></div>
+        <p id="cartShippingNote" class="cart-shipping-note">Estimation pour un seul colis jusqu'à 500 g.</p>
+      </div>
+      <div class="cart-total"><span>Total estimé</span><strong id="cartTotal">0,00 €</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button" disabled>Commande bientôt disponible</button>
+      <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
+    </div>
+  </aside>
+  <script src="js/i18n.js?v=20261009-8"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js?v=20261009-9"></script>
+</body>
+</html>
