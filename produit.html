@@ -6,7 +6,7 @@
   <meta name="description" content="Découvrez une création textile unique, cousue à la main par Maison Mansoa.">
   <meta name="theme-color" content="#faf7f1">
   <title>Création — Maison Mansoa</title>
-  <link rel="stylesheet" href="css/style.css?v=20261009-6">
+  <link rel="stylesheet" href="css/style.css?v=20261009-7">
 </head>
 <body>
   <header class="site-header">
@@ -14,6 +14,7 @@
       <span class="brand-name">Maison Mansoa</span>
       <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
     </a>
+    <div class="language-switch" role="group" aria-label="Langue / Language"><button type="button" data-lang="fr" class="active" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
     <button class="cart-button" id="cartButton" type="button" aria-label="Ouvrir le panier" aria-controls="cartDrawer">
       <span>Panier</span><strong id="cartCount">0</strong>
     </button>
@@ -69,6 +70,7 @@
       if (other) { other.href = destination; other.textContent = "Voir les autres " + names[category].toLowerCase() + " →"; }
     })();
   </script>
+  <script src="js/i18n.js?v=20261009-1"></script>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/product.js?v=20261009-2"></script>
