@@ -146,7 +146,7 @@ a {color:inherit}
 }
 
 /* Panier encadré dans l'en-tête */
-.site-header .cart-button {
+#cartButton {
   margin-left: auto;
   margin-right: 0;
   display: flex;
@@ -160,14 +160,14 @@ a {color:inherit}
   font-size: 13px;
   transition: background .2s ease;
 }
-.site-header .cart-button::before {
+#cartButton::before {
   content: "🛍";
   font-size: 17px;
 }
-.site-header .cart-button:hover { background: #f6e9e1; }
+#cartButton:hover { background: #f6e9e1; }
 @media (max-width: 760px) {
-  .site-header .cart-button span { display: inline; }
-  .site-header .cart-button { padding: 9px 12px; gap: 7px; }
+  #cartButton span { display: inline; }
+  #cartButton { padding: 9px 12px; gap: 7px; }
 }
 
 /* Fiche produit — harmonisation avec l'accueil */
@@ -331,7 +331,7 @@ a {color:inherit}
 .language-switch button.active {background:var(--terra);color:white}
 .language-switch button:focus-visible {outline:2px solid var(--terra-dark);outline-offset:2px}
 .site-header .language-switch + .cart-button {margin-left:0}
-@media(max-width:430px) {.site-header {gap:8px;padding:0 10px}.brand {min-width:0}.brand-name {font-size:19px}.brand-subtitle {font-size:6px;letter-spacing:1.4px}.language-switch button {padding:6px 7px;font-size:10px}.site-header .cart-button {padding:7px 8px;gap:4px;font-size:11px}.site-header .cart-button::before {font-size:13px}}
+@media(max-width:430px) {.site-header {gap:8px;padding:0 10px}.brand {min-width:0}.brand-name {font-size:19px}.brand-subtitle {font-size:6px;letter-spacing:1.4px}.language-switch button {padding:6px 7px;font-size:10px}#cartButton {padding:7px 8px;gap:4px;font-size:11px}#cartButton::before {font-size:13px}}
 
 /* Information livraison — tarifs non encore définis */
 .shipping-info {padding:65px 22px;text-align:center;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -350,11 +350,11 @@ a {color:inherit}
 .cart-shipping-note {margin:4px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
 
 /* Panier flottant, visible à tout moment sur l'écran */
-.site-header .cart-button {
+#cartButton {
   position: fixed;
-  right: max(18px, env(safe-area-inset-right));
-  bottom: max(22px, env(safe-area-inset-bottom));
-  top: auto;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: auto;
+  top: max(12px, env(safe-area-inset-top));
   left: auto;
   z-index: 85;
   margin: 0;
@@ -364,12 +364,12 @@ a {color:inherit}
   background: #fff8f3;
   box-shadow: 0 8px 28px rgba(45,32,20,.2);
 }
-.site-header .cart-button:focus-visible {outline:3px solid var(--terra);outline-offset:3px}
+#cartButton:focus-visible {outline:3px solid var(--terra);outline-offset:3px}
 .cart-drawer.open ~ .cart-button {visibility:hidden}
 .cart-footer {overflow-y:auto;max-height: min(70dvh,650px);flex-shrink:0}
 .cart-items {min-height:45px}
 @media (max-width:760px) {
-  .site-header .cart-button {right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:11px 14px}
+  #cartButton {right:12px;top:max(12px,env(safe-area-inset-top));bottom:auto;padding:11px 14px}
   .cart-footer {max-height:75dvh;padding:12px 18px 15px}
   .cart-header {padding:14px 18px}
   .cart-items {padding:8px 18px}
@@ -419,3 +419,6 @@ html body > button#cartButton.cart-button {
   .mansoa-nav a {font-size:11px}
   html body > button#cartButton.cart-button {top:max(12px,env(safe-area-inset-top)) !important;right:9px !important;padding:8px 10px;font-size:11px}
 }
+
+/* Priorité absolue à la position du panier sur mobile et ordinateur */
+body #cartButton { position:fixed!important;top:12px!important;right:12px!important;bottom:auto!important;left:auto!important;z-index:9999!important; }
