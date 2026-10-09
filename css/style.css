@@ -395,3 +395,27 @@ html body > button#cartButton.cart-button {
   left: auto !important;
   z-index: 110;
 }
+
+/* Menu de navigation commun aux pages Maison Mansoa */
+.site-header {max-width:1500px;padding-left:clamp(16px,3vw,45px);padding-right:clamp(135px,13vw,195px);gap:clamp(12px,2vw,28px)}
+.site-header .brand {min-width:190px}
+.mansoa-nav {display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(11px,1.6vw,24px);margin-left:auto}
+.mansoa-nav a {white-space:nowrap;text-decoration:none;font-size:12px;color:var(--ink);padding:8px 0;border-bottom:2px solid transparent}
+.mansoa-nav a:hover,.mansoa-nav a[aria-current="page"] {color:var(--terra-dark);border-bottom-color:var(--terra)}
+.site-header .language-switch {flex-shrink:0}
+@media(max-width:1050px) {
+  .site-header {height:auto;min-height:90px;flex-wrap:wrap;row-gap:0;padding:12px 145px 8px 20px}
+  .site-header .brand {min-width:0}
+  .mansoa-nav {order:3;width:100%;margin-left:0;justify-content:flex-start;gap:18px}
+  .mansoa-nav a {font-size:12px;padding:7px 0}
+  .site-header .language-switch {margin-left:auto}
+}
+@media(max-width:600px) {
+  .site-header {padding:12px 12px 5px;min-height:112px;gap:5px}
+  .site-header .brand {max-width:calc(100% - 140px)}
+  .site-header .brand-name {font-size:21px}
+  .site-header .language-switch {margin-left:auto;margin-right:78px}
+  .mansoa-nav {flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:18px;padding-bottom:3px;scrollbar-width:thin}
+  .mansoa-nav a {font-size:11px}
+  html body > button#cartButton.cart-button {top:max(12px,env(safe-area-inset-top)) !important;right:9px !important;padding:8px 10px;font-size:11px}
+}
