@@ -3,59 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Maison Mansoa : créations textiles faites main, pièces uniques et petites séries.">
-  <title>Maison Mansoa — Créations faites main</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Maison Mansoa, créations textiles uniques et faites main.">
+  <meta name="theme-color" content="#faf7f1">
+  <title>Maison Mansoa — Créations textiles faites main</title>
+  <link rel="stylesheet" href="css/style.css?v=20261009-2">
 </head>
 <body>
-  <div class="announcement"><p>♡ Des créations uniques, faites main avec passion ♡</p><span>Livraison en France</span></div>
-  <header class="site-header">
-    <a class="brand" href="#accueil" aria-label="Maison Mansoa - Accueil"><span class="brand-name">Maison Mansoa</span><span class="brand-subtitle">CRÉATIONS FAITES MAIN</span></a>
+  <header class="site-header" id="accueil">
+    <a class="brand" href="#accueil" aria-label="Maison Mansoa, accueil">
+      <span class="brand-name">Maison Mansoa</span>
+      <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
+    </a>
     <button class="menu-button" id="menuButton" type="button" aria-label="Ouvrir le menu" aria-controls="mainNav" aria-expanded="false">☰</button>
-    <nav class="main-nav" id="mainNav" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#histoire">Notre histoire</a><a href="#contact">Contact</a></nav>
-    <button class="cart-button" id="cartButton" type="button" aria-controls="cartDrawer"><span>Panier</span><strong id="cartCount">0</strong></button>
+    <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+      <a href="#boutique">Les créations</a>
+      <a href="#histoire">Notre histoire</a>
+    </nav>
+    <button class="cart-button" id="cartButton" type="button" aria-label="Ouvrir le panier" aria-controls="cartDrawer">
+      <span>Panier</span><strong id="cartCount">0</strong>
+    </button>
   </header>
-  <main id="accueil">
-    <section class="hero" aria-label="Bienvenue chez Maison Mansoa"><img src="banniere-mansoa.png" alt="Maison Mansoa, créations textiles faites main" fetchpriority="high"></section>
-    <section class="intro">
-      <p class="eyebrow">Bienvenue chez Maison Mansoa</p>
-      <h1>Des créations uniques, cousues avec passion</h1>
-      <p class="intro-text">Des accessoires textiles faits main, imaginés pour embellir votre quotidien. Chaque création raconte une histoire de tissus, de couleurs et de savoir-faire.</p>
+  <main>
+    <section class="hero" aria-label="Maison Mansoa">
+      <img src="banniere-mansoa.png" alt="Maison Mansoa, accessoires textiles faits main" fetchpriority="high">
     </section>
+
+    <section class="intro" aria-label="Notre signature">
+      <p>Des créations textiles uniques, <em>cousues avec amour.</em></p>
+    </section>
+
     <section class="shop" id="boutique">
-      <div class="section-heading"><p class="eyebrow">La boutique</p><h2 id="shopTitle">Nos créations</h2><p>Des pièces confectionnées avec soin, en modèles uniques ou en petites séries.</p></div>
-      <div class="shop-controls" role="group" aria-label="Filtrer les créations par catégorie">
-        <button class="filter-button active" type="button" data-filter="all">Toutes</button>
+      <div class="section-heading">
+        <span class="eyebrow">La boutique</span>
+        <h1 id="shopTitle">Les créations</h1>
+      </div>
+      <div class="shop-controls" role="group" aria-label="Filtrer les créations">
+        <button class="filter-button active" type="button" data-filter="all">Tout voir</button>
         <button class="filter-button" type="button" data-filter="protege-livres">Protège-livres</button>
-        <button class="filter-button" type="button" data-filter="pochettes">Pochettes</button>
         <button class="filter-button" type="button" data-filter="sacs">Sacs</button>
+        <button class="filter-button" type="button" data-filter="pochettes">Pochettes</button>
         <button class="filter-button" type="button" data-filter="trousses">Trousses</button>
       </div>
       <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      <p class="empty-message" id="emptyMessage" hidden>Aucune création disponible dans cette catégorie pour le moment.</p>
+      <p class="empty-message" id="emptyMessage" hidden>De nouvelles créations arrivent bientôt dans cette catégorie.</p>
     </section>
-    <section class="values" aria-label="Les engagements de Maison Mansoa">
-      <article><span aria-hidden="true">♡</span><h3>Fait main</h3><p>Chaque création est confectionnée avec soin et passion.</p></article>
-      <article><span aria-hidden="true">✿</span><h3>Pièces uniques</h3><p>Des créations originales et des petites séries.</p></article>
-      <article><span aria-hidden="true">❧</span><h3>Matières choisies</h3><p>Des tissus sélectionnés pour leurs couleurs et textures.</p></article>
-      <article><span aria-hidden="true">⌂</span><h3>Créé en France</h3><p>Une aventure artisanale et indépendante.</p></article>
+
+    <section class="signature-strip" aria-label="Nos engagements">
+      <span>✦ Fait main</span>
+      <span>♡ Pièces uniques</span>
+      <span>✿ Imaginé avec passion</span>
     </section>
-    <section class="story" id="histoire"><div class="story-content">
-      <p class="eyebrow">Derrière les créations</p><h2>L'univers Maison Mansoa</h2>
-      <p>Maison Mansoa est née de l'envie de créer des accessoires textiles à la fois beaux, pratiques et singuliers.</p>
-      <p>Au fil des tissus et des inspirations, chaque pièce prend forme avec une attention particulière portée aux détails, aux couleurs et au plaisir de créer.</p>
-      <p class="signature">Coudre, rêver, créer ♡</p>
-    </div></section>
+
+    <section class="story" id="histoire">
+      <div class="story-content">
+        <span class="eyebrow">Un peu de nous</span>
+        <h2>La beauté des choses faites main.</h2>
+        <p>Chez Maison Mansoa, chaque accessoire est imaginé, coupé et cousu avec soin. Des tissus choisis avec le cœur, pour des pièces qui vous ressemblent.</p>
+        <span class="story-signature">Coudre, rêver, créer ♡</span>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer" id="contact"><div class="footer-brand"><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div><nav aria-label="Navigation de pied de page"><a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#histoire">Notre histoire</a></nav><div class="footer-legal"><p>© 2026 Maison Mansoa</p><p>Fait avec passion ♡</p></div></footer>
+  <footer class="site-footer" id="contact">
+    <div><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div>
+    <a href="#accueil">Retour en haut ↑</a>
+    <small>© 2026 Maison Mansoa</small>
+  </footer>
+
   <div class="cart-overlay" id="cartOverlay" hidden></div>
   <aside class="cart-drawer" id="cartDrawer" aria-label="Votre panier" aria-hidden="true">
     <div class="cart-header"><h2>Votre panier</h2><button class="cart-close" id="cartClose" type="button" aria-label="Fermer le panier">×</button></div>
     <div class="cart-items" id="cartItems"><p class="cart-empty">Votre panier est vide.</p></div>
-    <div class="cart-footer"><div class="cart-total"><span>Total des créations</span><strong id="cartTotal">0,00 €</strong></div><button class="checkout-button" id="checkoutButton" type="button" disabled>Commander</button><p class="secure-payment">Paiement en ligne bientôt disponible</p></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button" disabled>Commande bientôt disponible</button>
+      <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
+    </div>
   </aside>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/catalogue.js"></script>
+  <script>
+    // Le paiement n'est pas disponible : ne jamais laisser croire qu'une commande est possible.
+    const checkout = document.getElementById("checkoutButton");
+    if (checkout) {
+      checkout.disabled = true;
+      const lockCheckout = () => { checkout.disabled = true; };
+      new MutationObserver(lockCheckout).observe(checkout, {attributes:true,attributeFilter:["disabled"]});
+    }
+  </script>
 </body>
 </html>
