@@ -309,3 +309,7 @@ a {color:inherit}
   line-height: 1.25;
   margin-bottom: 10px;
 }
+
+/* Dimensions : garder les trois mesures sur une même ligne quand la largeur le permet */
+.product-page .product-characteristic dd { min-width: 0; }
+.product-page .product-characteristic dd { overflow-wrap: normal; }
