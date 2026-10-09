@@ -348,3 +348,29 @@ a {color:inherit}
 .cart-shipping select {width:100%;padding:9px 10px;background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--ink);font:inherit;font-size:13px}
 .cart-shipping-line {display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:12px}
 .cart-shipping-note {margin:4px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+
+/* Panier flottant, visible à tout moment sur l'écran */
+.site-header .cart-button {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  top: auto;
+  left: auto;
+  z-index: 85;
+  margin: 0;
+  padding: 13px 18px;
+  border: 1px solid #cba18f;
+  border-radius: 999px;
+  background: #fff8f3;
+  box-shadow: 0 8px 28px rgba(45,32,20,.2);
+}
+.site-header .cart-button:focus-visible {outline:3px solid var(--terra);outline-offset:3px}
+.cart-drawer.open ~ .cart-button {visibility:hidden}
+.cart-footer {overflow-y:auto;max-height: min(70dvh,650px);flex-shrink:0}
+.cart-items {min-height:45px}
+@media (max-width:760px) {
+  .site-header .cart-button {right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:11px 14px}
+  .cart-footer {max-height:75dvh;padding:12px 18px 15px}
+  .cart-header {padding:14px 18px}
+  .cart-items {padding:8px 18px}
+}
