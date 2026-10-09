@@ -422,3 +422,40 @@ html body > button#cartButton.cart-button {
 
 /* Priorité absolue à la position du panier sur mobile et ordinateur */
 body #cartButton { position:fixed!important;top:12px!important;right:12px!important;bottom:auto!important;left:auto!important;z-index:9999!important; }
+
+/* Panier Maison Mansoa — style raffiné, discret et lisible */
+body #cartButton.cart-button {
+  display:inline-flex!important;align-items:center;justify-content:center;
+  gap:9px!important;
+  min-height:43px;
+  padding:10px 14px!important;
+  border:1px solid #ddc7b9!important;
+  border-radius:999px!important;
+  background:#fffaf6!important;
+  color:#73493d!important;
+  box-shadow:0 4px 16px rgba(67,40,29,.12)!important;
+  font-size:12px!important;font-weight:600!important;
+  letter-spacing:.2px;
+  line-height:1.1;
+  transition:background .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+body #cartButton.cart-button::before {
+  content:"";display:block;width:18px;height:18px;flex:none;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8h14l1 12H4L5 8Z'/%3E%3Cpath d='M9 9V6a3 3 0 0 1 6 0v3'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8h14l1 12H4L5 8Z'/%3E%3Cpath d='M9 9V6a3 3 0 0 1 6 0v3'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+body #cartButton.cart-button strong {
+  display:grid;place-items:center;min-width:21px;height:21px;
+  padding:0 5px;border-radius:50%;background:#b86d58;color:#fff;
+  font-size:11px;font-weight:700;line-height:1;
+}
+body #cartButton.cart-button:hover {
+  background:#f8eee7!important;box-shadow:0 6px 20px rgba(67,40,29,.17)!important;
+  transform:translateY(-1px);
+}
+body #cartButton.cart-button:focus-visible {outline:3px solid #b86d58;outline-offset:3px}
+@media(max-width:600px) {
+ body #cartButton.cart-button {min-height:39px;padding:8px 11px!important;gap:7px!important;font-size:11px!important}
+ body #cartButton.cart-button::before {width:16px;height:16px}
+}
