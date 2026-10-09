@@ -204,3 +204,25 @@ a {color:inherit}
  .product-page .product-add-button {max-width:none}
  .product-bottom-note {padding:40px 20px 50px}
 }
+
+/* Accueil : cartes produits plus discrètes et équilibrées */
+.shop .product-grid {
+  max-width: 780px;
+  gap: 26px;
+}
+.shop .product-image { aspect-ratio: 5 / 4; }
+@media (max-width: 760px) {
+  .shop .product-grid { max-width: 650px; gap: 15px; }
+}
+@media (max-width: 430px) {
+  .shop .product-grid { max-width: 350px; gap: 22px; }
+}
+
+/* Agrandissement des photos sur les fiches produits */
+.product-page .product-main-image { cursor: zoom-in; }
+.product-page .product-main-image:focus-visible { outline: 3px solid var(--terra); outline-offset: 4px; }
+.product-lightbox { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 55px 24px 24px; background: rgba(19,19,16,.91); }
+.product-lightbox[hidden] { display: none !important; }
+.product-lightbox img { display: block; max-width: min(95vw, 1200px); max-height: calc(100dvh - 85px); width: auto; height: auto; object-fit: contain; border-radius: 5px; }
+.product-lightbox-close { position: absolute; top: 12px; right: 20px; width: 44px; height: 44px; border: 1px solid #ffffff66; border-radius: 50%; background: #ffffff1c; color: white; font-size: 30px; line-height: 1; }
+.product-lightbox-close:hover { background: #ffffff38; }
