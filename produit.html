@@ -6,7 +6,7 @@
   <meta name="description" content="Découvrez une création textile unique, cousue à la main par Maison Mansoa.">
   <meta name="theme-color" content="#faf7f1">
   <title>Création — Maison Mansoa</title>
-  <link rel="stylesheet" href="css/style.css?v=20261009-7">
+  <link rel="stylesheet" href="css/style.css?v=20261009-9">
 </head>
 <body>
   <header class="site-header">
@@ -47,7 +47,27 @@
     </div>
     <div class="cart-items" id="cartItems"><p class="cart-empty">Votre panier est vide.</p></div>
     <div class="cart-footer">
-      <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+      <div class="cart-shipping" id="cartShipping">
+        <label for="shippingDestination">Pays ou zone de livraison</label>
+        <select id="shippingDestination">
+          <option value="fr">France métropolitaine</option>
+          <option value="be">Belgique / Luxembourg / Pays-Bas</option>
+          <option value="south">Espagne / Portugal / Italie</option>
+          <option value="pl">Pologne</option>
+          <option value="om1">Outre-mer — zone OM1</option>
+          <option value="om2">Outre-mer — zone OM2</option>
+          <option value="eu">Autres pays UE / Suisse</option>
+          <option value="uk">Royaume-Uni</option>
+          <option value="worldb">Monde — zone B</option>
+          <option value="worldc">Monde — zone C</option>
+          <option value="other">Autre destination / zone inconnue</option>
+        </select>
+        <label for="shippingCarrier">Mode de livraison</label>
+        <select id="shippingCarrier"></select>
+        <div class="cart-shipping-line"><span>Livraison, emballage compris</span><strong id="cartShippingPrice">À calculer</strong></div>
+        <p id="cartShippingNote" class="cart-shipping-note">Estimation pour un seul colis jusqu'à 500 g.</p>
+      </div>
+      <div class="cart-total"><span>Total estimé</span><strong id="cartTotal">0,00 €</strong></div>
       <button class="checkout-button" id="checkoutButton" type="button" disabled>Commande bientôt disponible</button>
       <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
     </div>
@@ -70,9 +90,9 @@
       if (other) { other.href = destination; other.textContent = "Voir les autres " + names[category].toLowerCase() + " →"; }
     })();
   </script>
-  <script src="js/i18n.js?v=20261009-1"></script>
+  <script src="js/i18n.js?v=20261009-6"></script>
   <script src="js/products.js"></script>
-  <script src="js/cart.js"></script>
+  <script src="js/cart.js?v=20261009-3"></script>
   <script src="js/product.js?v=20261009-2"></script>
   <script>
     const checkout = document.getElementById("checkoutButton");
