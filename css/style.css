@@ -463,3 +463,26 @@ body #cartButton.cart-button:focus-visible {outline:3px solid #b86d58;outline-of
 /* Panier légèrement rentré du bord droit, sur toutes les tailles d'écran */
 html body #cartButton.cart-button {right:max(30px,env(safe-area-inset-right))!important;}
 @media(max-width:600px){html body #cartButton.cart-button {right:max(25px,env(safe-area-inset-right))!important;}}
+
+/* Palette végétale Maison Mansoa — vert sapin, crème et terracotta */
+:root {--forest:#24483b;--forest-deep:#19372d;--forest-soft:#eaf0e9;}
+.brand-name,.section-heading h1,.shipping-info h2,.shipping-preview h2,.product-detail h1 {color:var(--forest-deep);}
+.brand-subtitle {color:#587163;}
+.mansoa-nav a:hover,.mansoa-nav a[aria-current="page"] {color:var(--forest);border-bottom-color:var(--forest);}
+.eyebrow {color:var(--forest);}
+.intro em {color:var(--terra);}
+.filter-button.active,.filter-button:hover {background:var(--forest);border-color:var(--forest);color:#fff;}
+.add-to-cart:not(:disabled):not(.sold) {background:var(--forest);border-color:var(--forest);}
+.add-to-cart:hover:not(:disabled) {background:var(--forest-deep);}
+.shipping-page-link {background:var(--forest);}
+.shipping-page-link:hover {background:var(--forest-deep);}
+.product-info h3 a:hover,.main-nav a:hover,.site-footer a:hover {color:var(--forest);}
+.product-badge.available {background:var(--forest-soft);color:var(--forest);}
+.signature-strip {background:#f0f1e9;}
+.signature-strip span {color:var(--forest);}
+.shipping-page .shipping-info {border-top:3px solid var(--forest);}
+.shipping-page-back a {color:var(--forest);}
+body #cartButton.cart-button {border-color:#b9c9ba!important;color:var(--forest-deep)!important;background:#fffdf8!important;}
+body #cartButton.cart-button strong {background:var(--forest);color:#fff;}
+body #cartButton.cart-button:hover {background:var(--forest-soft)!important;}
+a:focus-visible,button:focus-visible {outline-color:var(--forest);}
