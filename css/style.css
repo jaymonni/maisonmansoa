@@ -486,3 +486,19 @@ body #cartButton.cart-button {border-color:#b9c9ba!important;color:var(--forest-
 body #cartButton.cart-button strong {background:var(--forest);color:#fff;}
 body #cartButton.cart-button:hover {background:var(--forest-soft)!important;}
 a:focus-visible,button:focus-visible {outline-color:var(--forest);}
+
+/* Variante plus épurée : vert sapin en accents seulement */
+.brand-name,.section-heading h1,.shipping-info h2,.shipping-preview h2,.product-detail h1 {color:var(--ink);}
+.brand-subtitle {color:var(--muted);}
+.eyebrow {color:var(--terra);}
+.filter-button.active,.filter-button:hover {background:var(--terra);border-color:var(--terra);color:#fff;}
+.add-to-cart:not(:disabled):not(.sold) {background:var(--terra);border-color:var(--terra);}
+.add-to-cart:hover:not(:disabled) {background:var(--terra-dark);}
+.signature-strip {background:var(--cream);}
+.signature-strip span {color:#62624c;}
+.shipping-page .shipping-info {border-top:1px solid var(--line);}
+.shipping-page-link {background:var(--forest);}
+.shipping-page-link:hover {background:var(--forest-deep);}
+body #cartButton.cart-button {border-color:#ddc7b9!important;color:#73493d!important;background:#fffaf6!important;}
+body #cartButton.cart-button strong {background:var(--terra);color:#fff;}
+body #cartButton.cart-button:hover {background:#f8eee7!important;}
