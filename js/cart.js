@@ -2,9 +2,11 @@
 // MAISON MANSOA — PANIER
 // =====================================================
 
-let cart = JSON.parse(
-  localStorage.getItem("mansoaCart")
-) || [];
+let cart = [];
+try {
+  const savedCart = JSON.parse(localStorage.getItem("mansoaCart"));
+  cart = Array.isArray(savedCart) ? savedCart : [];
+} catch (_) { cart = []; }
 
 
 // -----------------------------------------------------
@@ -424,14 +426,13 @@ const shippingNoteElement = document.getElementById("cartShippingNote");
 function populateCarriers() {
   if (!destinationSelect || !carrierSelect) return;
   const rates = shippingRates[destinationSelect.value] || [];
-  carrierSelect.replaceChildren();
-  if (!rates.length) {
-    carrierSelect.add(new Option("Tarif à confirmer",""));
-    carrierSelect.disabled = true;
-  } else {
-    carrierSelect.disabled = false;
-    for (const rate of rates) carrierSelect.add(new Option(rate.label,rate.id));
-  }
+  // Conserver un menu fonctionnel même si le navigateur ne sait pas créer Option().
+  const previous = carrierSelect.value;
+  carrierSelect.innerHTML = rates.length
+    ? rates.map(rate => '<option value="' + rate.id + '">' + rate.label + '</option>').join("")
+    : '<option value="">Tarif à confirmer</option>';
+  carrierSelect.disabled = !rates.length;
+  if (rates.some(rate => rate.id === previous)) carrierSelect.value = previous;
   updateShipping();
 }
 function updateShipping(productSubtotal) {
