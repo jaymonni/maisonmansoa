@@ -151,7 +151,38 @@ a {color:inherit}
   transition: background 0.2s ease;
 }
 
+/* PANIER ENCADRÉ EN HAUT À DROITE */
+.cart-button {
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border: 1px solid #d9b5a7;
+  border-radius: 9px;
+  background: #fff8f3;
+  color: #96503f;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.cart-button::before {
+  content: "♧";
+  font-size: 17px;
+}
+
 .cart-button:hover {
   background: #f6e9e1;
 }
+
+@media (max-width: 760px) {
+  .cart-button span {
+    display: inline;
+  }
+
+  .cart-button {
+    padding: 9px 12px;
+    gap: 7px;
+  }
 }
