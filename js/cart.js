@@ -156,8 +156,7 @@ function renderCart() {
       </p>
     `;
 
-    cartTotal.textContent =
-      formatCartPrice(0);
+    updateShipping(0);
 
 
     if (checkoutButton) {
@@ -227,12 +226,11 @@ function renderCart() {
     );
 
 
-  cartTotal.textContent =
-    formatCartPrice(total);
+  updateShipping(total);
 
 
   if (checkoutButton) {
-    checkoutButton.disabled = false;
+    checkoutButton.disabled = true;
   }
 
 }
@@ -405,3 +403,61 @@ document.addEventListener(
 // -----------------------------------------------------
 
 renderCart();
+
+
+// Tarifs approuvés pour un seul colis pesant au plus 500 g, emballage inclus.
+// Aucun paiement ni réservation n'est déclenché par cette estimation.
+const shippingRates = {
+  fr: [{id:"relay",label:"Mondial Relay — point relais",price:4.5},{id:"colissimo",label:"Colissimo — domicile",price:8.5}],
+  be: [{id:"relay",label:"Mondial Relay — point relais",price:5.5},{id:"colissimo",label:"Colissimo — domicile",price:16}],
+  south: [{id:"relay",label:"Mondial Relay — point relais",price:7.5},{id:"colissimo",label:"Colissimo — domicile",price:16}],
+  pl: [{id:"relay",label:"Mondial Relay — point relais",price:8.5},{id:"colissimo",label:"Colissimo — domicile",price:16}],
+  om1: [{id:"colissimo",label:"Colissimo — outre-mer",price:9.5}],
+  om2: [{id:"colissimo",label:"Colissimo — outre-mer",price:10.5}],
+  eu: [{id:"colissimo",label:"Colissimo — domicile",price:16}],
+  uk: [{id:"colissimo",label:"Colissimo — domicile",price:20}],
+  worldb: [{id:"colissimo",label:"Colissimo — international",price:25}],
+  worldc: [{id:"colissimo",label:"Colissimo — international",price:36.5}],
+  other: []
+};
+const destinationSelect = document.getElementById("shippingDestination");
+const carrierSelect = document.getElementById("shippingCarrier");
+const shippingPriceElement = document.getElementById("cartShippingPrice");
+const shippingNoteElement = document.getElementById("cartShippingNote");
+function populateCarriers() {
+  if (!destinationSelect || !carrierSelect) return;
+  const rates = shippingRates[destinationSelect.value] || [];
+  carrierSelect.replaceChildren();
+  if (!rates.length) {
+    carrierSelect.add(new Option("Tarif à confirmer",""));
+    carrierSelect.disabled = true;
+  } else {
+    carrierSelect.disabled = false;
+    for (const rate of rates) carrierSelect.add(new Option(rate.label,rate.id));
+  }
+  updateShipping();
+}
+function updateShipping(productSubtotal) {
+  if (!cartTotal) return;
+  const subtotal = productSubtotal === undefined
+    ? cart.reduce((sum,id)=>sum+(getProduct(id)?.prix || 0),0)
+    : productSubtotal;
+  const rates = shippingRates[destinationSelect?.value] || [];
+  const rate = rates.find(item=>item.id===carrierSelect?.value);
+  // Le poids emballé n'est pas connu pour tous les produits.
+  // Plusieurs articles peuvent dépasser 500 g : ne pas afficher de total trompeur.
+  const eligible = cart.length === 1 && cart[0] === "SAC001";
+  const showEstimate = cart.length > 0 && eligible && Boolean(rate);
+  if (shippingPriceElement) shippingPriceElement.textContent = showEstimate ? formatCartPrice(rate.price) : "À confirmer";
+  if (shippingNoteElement) shippingNoteElement.textContent = !cart.length
+    ? "Ajoutez une création pour estimer la livraison."
+    : !eligible
+      ? "Poids emballé à confirmer : tarif et total de livraison non calculables pour ce panier."
+      : !rate
+        ? "Destination à confirmer avant de calculer la livraison."
+        : "Estimation pour un sac emballé de 500 g maximum. Aucun paiement possible actuellement.";
+  cartTotal.textContent = showEstimate ? formatCartPrice(subtotal+rate.price) : formatCartPrice(subtotal)+" + livraison à confirmer";
+}
+destinationSelect?.addEventListener("change",populateCarriers);
+carrierSelect?.addEventListener("change",()=>updateShipping());
+populateCarriers();
