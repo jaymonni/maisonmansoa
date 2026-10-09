@@ -169,3 +169,38 @@ a {color:inherit}
   .site-header .cart-button span { display: inline; }
   .site-header .cart-button { padding: 9px 12px; gap: 7px; }
 }
+
+/* Fiche produit — harmonisation avec l'accueil */
+.product-page {max-width:1120px;margin:0 auto;padding:38px 24px 100px}
+.back-to-shop {display:inline-flex;align-items:center;margin-bottom:34px;color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s}
+.back-to-shop:hover {color:var(--terra)}
+.product-page .product-detail {max-width:none;gap:clamp(35px,6vw,80px);align-items:center}
+.product-page .product-gallery {min-width:0}
+.product-page .product-main-image {border:1px solid var(--line);border-radius:14px;background:var(--cream);overflow:hidden}
+.product-page .product-main-image img {aspect-ratio:5/5.5;max-height:620px;object-fit:contain}
+.product-page .product-detail-info {padding:18px 0}
+.product-page .product-detail-info h1 {font-size:clamp(32px,3.7vw,47px);line-height:1.16;margin:18px 0 12px}
+.product-page .product-reference {font-size:11px;letter-spacing:.7px;color:var(--muted);margin:24px 0 0}
+.product-page .product-detail-price {font-family:Georgia,serif;font-size:29px;margin:12px 0 23px}
+.product-page .product-description {max-width:420px;font-size:15px;line-height:1.85}
+.product-page .product-specifications {padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:24px}
+.product-page .product-specification {margin:16px 0}
+.product-page .product-specification h3 {font-size:16px}
+.product-page .product-specification p {font-size:13px;color:var(--muted)}
+.product-page .product-add-button {width:100%;max-width:410px;padding:16px 25px;margin-top:27px;border-radius:8px;font-size:14px;font-weight:600}
+.product-page .product-reassurance {margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 17px;color:var(--muted)}
+.product-page .product-reassurance p {margin:0;font-size:12px}
+.product-bottom-note {text-align:center;padding:55px 20px 65px;background:var(--cream);border-top:1px solid var(--line)}
+.product-bottom-note span {font-size:28px;color:var(--terra)}
+.product-bottom-note p {font-family:Georgia,serif;font-size:clamp(21px,2.5vw,28px);margin:8px 0 18px}
+.product-bottom-note a {font-size:13px;color:var(--terra);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+@media(max-width:760px) {
+ .product-page {padding:25px 17px 60px}
+ .back-to-shop {margin-bottom:22px}
+ .product-page .product-detail {grid-template-columns:1fr;gap:18px}
+ .product-page .product-main-image img {aspect-ratio:1/1;max-height:490px}
+ .product-page .product-detail-info {padding:10px 3px}
+ .product-page .product-detail-info h1 {font-size:33px}
+ .product-page .product-add-button {max-width:none}
+ .product-bottom-note {padding:40px 20px 50px}
+}
