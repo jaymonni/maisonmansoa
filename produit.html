@@ -51,6 +51,24 @@
       <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
     </div>
   </aside>
+  <script>
+    // Revenir à la catégorie choisie avant d'ouvrir la fiche.
+    (() => {
+      const category = new URLSearchParams(window.location.search).get("categorie");
+      const names = {
+        "sacs": "Sacs",
+        "protege-livres": "Protège-livres",
+        "pochettes": "Pochettes",
+        "trousses": "Trousses"
+      };
+      if (!category || !Object.prototype.hasOwnProperty.call(names, category)) return;
+      const destination = "index.html?categorie=" + encodeURIComponent(category) + "#boutique";
+      const back = document.querySelector(".back-to-shop");
+      if (back) { back.href = destination; back.textContent = "← Retour aux " + names[category].toLowerCase(); }
+      const other = document.querySelector(".product-bottom-note a");
+      if (other) { other.href = destination; other.textContent = "Voir les autres " + names[category].toLowerCase() + " →"; }
+    })();
+  </script>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/product.js"></script>
