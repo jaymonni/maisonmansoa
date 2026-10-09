@@ -2,6 +2,7 @@
 (() => {
   const translations = {
     "CRÉATIONS FAITES MAIN":"HANDMADE CREATIONS",
+    "Livraison":"Shipping","Vos créations, où que vous soyez.":"Your handmade creations, wherever you are.","Nous préparons la livraison en France, en Europe et à l'international. Les destinations, les tarifs et les délais seront précisés avant l'ouverture des commandes.":"We are preparing shipping to France, Europe and worldwide. Destinations, rates and delivery times will be confirmed before orders open.","France":"France","Europe":"Europe","International":"Worldwide","Les commandes et le paiement en ligne ne sont pas encore disponibles.":"Orders and online payments are not available yet.",
     "Panier":"Cart","Des créations textiles uniques,":"Unique handmade textile creations,",
     "cousues avec amour.":"sewn with love.",
     "La boutique":"The boutique","Les créations":"Our creations","Toutes nos créations":"All our creations",
