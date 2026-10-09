@@ -6,7 +6,7 @@
   <meta name="description" content="Maison Mansoa, créations textiles uniques et faites main.">
   <meta name="theme-color" content="#faf7f1">
   <title>Maison Mansoa — Créations textiles faites main</title>
-  <link rel="stylesheet" href="css/style.css?v=20261009-9">
+  <link rel="stylesheet" href="css/style.css?v=20261009-11">
 </head>
 <body>
   <header class="site-header" id="accueil">
@@ -110,7 +110,10 @@
           <option value="other">Autre destination / zone inconnue</option>
         </select>
         <label for="shippingCarrier">Mode de livraison</label>
-        <select id="shippingCarrier"></select>
+        <select id="shippingCarrier">
+          <option value="relay">Mondial Relay — point relais</option>
+          <option value="colissimo">Colissimo — domicile</option>
+        </select>
         <div class="cart-shipping-line"><span>Livraison, emballage compris</span><strong id="cartShippingPrice">À calculer</strong></div>
         <p id="cartShippingNote" class="cart-shipping-note">Estimation pour un seul colis jusqu'à 500 g.</p>
       </div>
@@ -121,7 +124,7 @@
   </aside>
   <script src="js/i18n.js?v=20261009-6"></script>
   <script src="js/products.js"></script>
-  <script src="js/cart.js?v=20261009-4"></script>
+  <script src="js/cart.js?v=20261009-7"></script>
   <script src="js/catalogue.js?v=20261009-2"></script>
   <script>
     // Le paiement n'est pas disponible : ne jamais laisser croire qu'une commande est possible.
