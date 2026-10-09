@@ -6,7 +6,7 @@
   <meta name="description" content="Découvrez une création textile unique, cousue à la main par Maison Mansoa.">
   <meta name="theme-color" content="#faf7f1">
   <title>Création — Maison Mansoa</title>
-  <link rel="stylesheet" href="css/style.css?v=20261009-4">
+  <link rel="stylesheet" href="css/style.css?v=20261009-5">
 </head>
 <body>
   <header class="site-header">
@@ -34,6 +34,10 @@
     <a href="index.html#boutique">Retour à la boutique ↑</a>
     <small>© 2026 Maison Mansoa</small>
   </footer>
+  <div class="product-lightbox" id="productLightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+    <button class="product-lightbox-close" id="productLightboxClose" type="button" aria-label="Fermer la photo agrandie">×</button>
+    <img id="productLightboxImage" src="" alt="">
+  </div>
   <div class="cart-overlay" id="cartOverlay" hidden></div>
   <aside class="cart-drawer" id="cartDrawer" aria-label="Votre panier" aria-hidden="true">
     <div class="cart-header">
@@ -57,6 +61,57 @@
       new MutationObserver(() => { checkout.disabled = true; })
         .observe(checkout, { attributes: true, attributeFilter: ["disabled"] });
     }
+  </script>
+  <script>
+    // Agrandir la photo principale, y compris après changement de miniature.
+    (() => {
+      const lightbox = document.getElementById("productLightbox");
+      const zoomImage = document.getElementById("productLightboxImage");
+      const closeButton = document.getElementById("productLightboxClose");
+      let previousFocus = null;
+      function closeZoom() {
+        if (lightbox.hidden) return;
+        lightbox.hidden = true;
+        document.body.style.overflow = "";
+        zoomImage.removeAttribute("src");
+        previousFocus?.focus();
+      }
+      document.addEventListener("click", event => {
+        const main = event.target.closest("#mainProductImage");
+        if (!main) return;
+        previousFocus = document.activeElement;
+        zoomImage.src = main.currentSrc || main.src;
+        zoomImage.alt = main.alt;
+        lightbox.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeButton.focus();
+      });
+      closeButton.addEventListener("click", closeZoom);
+      lightbox.addEventListener("click", event => {
+        if (event.target === lightbox) closeZoom();
+      });
+      document.addEventListener("keydown", event => {
+        if (lightbox.hidden) return;
+        if (event.key === "Escape") { event.preventDefault(); closeZoom(); }
+        if (event.key === "Tab") { event.preventDefault(); closeButton.focus(); }
+      });
+      document.addEventListener("keydown", event => {
+        if ((event.key === "Enter" || event.key === " ") && event.target.id === "mainProductImage") {
+          event.preventDefault();
+          event.target.click();
+        }
+      });
+      const observer = new MutationObserver(() => {
+        const image = document.getElementById("mainProductImage");
+        if (image && !image.hasAttribute("tabindex")) {
+          image.tabIndex = 0;
+          image.setAttribute("role", "button");
+          image.setAttribute("aria-label", "Agrandir la photo du produit");
+          image.title = "Cliquer pour agrandir";
+        }
+      });
+      observer.observe(document.getElementById("productDetail"), {childList:true,subtree:true});
+    })();
   </script>
 </body>
 </html>
