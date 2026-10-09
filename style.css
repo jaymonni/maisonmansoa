@@ -206,4 +206,24 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+/* =====================================================
+   AJUSTEMENT ESPACEMENT ACCUEIL / BOUTIQUE
+===================================================== */
+
+.intro {
+  min-height: 0;
+  height: auto;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+.shop {
+  margin-top: 0;
+  padding-top: 15px;
+}
+
+.intro + .shop {
+  margin-top: 0;
+}
+   
 }
