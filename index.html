@@ -1,540 +1,420 @@
-<!doctype html>
 
+<!doctype html>
 <html lang="fr">
 
 <head>
-
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta
     name="description"
-    content="Maison Mansoa — Créations textiles faites main, pièces uniques et petites séries."
+    content="Maison Mansoa : accessoires textiles faits main, créations uniques et petites séries confectionnées avec passion en France."
   >
 
-  <title>
-    Maison Mansoa — Créations faites main
-  </title>
+  <meta name="theme-color" content="#fbf6ee">
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+  <title>Maison Mansoa — Créations textiles faites main</title>
 
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
+  <!-- =========================================
+       BANDEAU SUPÉRIEUR
+  ========================================== -->
 
-<!-- ==================================================
-     BANDEAU SUPÉRIEUR
-================================================== -->
-
-<div class="announcement">
-
-  <p>
-    ♡ Des créations uniques, faites main avec passion ♡
-  </p>
-
-  <span>
-    Livraison en France
-  </span>
-
-</div>
-
-
-
-<!-- ==================================================
-     EN-TÊTE
-================================================== -->
-
-<header class="site-header">
-
-  <a
-    class="brand"
-    href="index.html"
-    aria-label="Maison Mansoa - Accueil"
-  >
-
-    <span class="brand-name">
-      Maison Mansoa
-    </span>
-
-    <span class="brand-subtitle">
-      CRÉATIONS FAITES MAIN
-    </span>
-
-  </a>
-
-
-  <button
-    class="menu-button"
-    id="menuButton"
-    type="button"
-    aria-label="Ouvrir le menu"
-    aria-expanded="false"
-  >
-    ☰
-  </button>
-
-
-  <nav
-    class="main-nav"
-    id="mainNav"
-    aria-label="Navigation principale"
-  >
-
-    <a href="#accueil">
-      Accueil
-    </a>
-
-    
-      <a href="#boutique">
-      Boutique
-    </a>
-
-    <a href="#histoire">
-      Notre histoire
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
-
-  </nav>
-
-
-  <button
-    class="cart-button"
-    id="cartButton"
-    type="button"
-  >
-
-    <span>
-      Panier
-    </span>
-
-    <strong id="cartCount">
-      0
-    </strong>
-
-  </button>
-
-</header>
-
-
-
-<main>
-
-
-<!-- ==================================================
-     BANNIÈRE
-================================================== -->
-
-<section
-  class="hero"
-  id="accueil"
->
-
-  <img
-    src="banniere-mansoa.png"
-    alt="Maison Mansoa, créations textiles faites main"
-  >
-
-</section>
-
-
-
-<!-- ==================================================
-     INTRODUCTION
-================================================== -->
-
-<section class="intro">
-
-  <p class="eyebrow">
-    L'univers Maison Mansoa
-  </p>
-
-  <h1>
-    Des créations faites main,
-    pensées pour accompagner votre quotidien
-  </h1>
-
-  <p class="intro-text">
-    Découvrez des accessoires textiles confectionnés
-    avec soin, en pièces uniques ou en petites séries.
-  </p>
-
-  <a
-    class="primary-button"
-    href="#boutique"
-  >
-    Découvrir la boutique
-  </a>
-
-</section>
-
-<!-- ==================================================
-     BOUTIQUE
-================================================== -->
-
-<section class="shop" id="boutique">
-
-  <div class="section-heading">
-
-    <p class="eyebrow">
-      La boutique
-    </p>
-
-    <h2 id="shopTitle">
-      Toutes nos créations
-    </h2>
-
-    <p>
-      Découvrez nos créations faites main,
-      confectionnées avec soin et passion.
-    </p>
-
+  <div class="announcement">
+    <p>♡ Des créations uniques, faites main avec passion ♡</p>
+    <span>Livraison en France</span>
   </div>
 
 
-  <!-- FILTRES DES CATÉGORIES -->
+  <!-- =========================================
+       EN-TÊTE ET NAVIGATION
+  ========================================== -->
 
-  <div class="shop-controls">
+  <header class="site-header">
+
+    <a
+      class="brand"
+      href="#accueil"
+      aria-label="Maison Mansoa - Retour à l'accueil"
+    >
+      <span class="brand-name">Maison Mansoa</span>
+      <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
+    </a>
 
     <button
-      class="filter-button active"
+      class="menu-button"
+      id="menuButton"
       type="button"
-      data-filter="all"
+      aria-label="Ouvrir le menu"
+      aria-controls="mainNav"
+      aria-expanded="false"
     >
-      Toutes
+      ☰
     </button>
+
+    <nav
+      class="main-nav"
+      id="mainNav"
+      aria-label="Navigation principale"
+    >
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#histoire">Notre histoire</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
     <button
-      class="filter-button"
+      class="cart-button"
+      id="cartButton"
       type="button"
-      data-filter="protege-livres"
+      aria-label="Ouvrir le panier"
+      aria-controls="cartDrawer"
     >
-      Protège-livres
+      <span>Panier</span>
+      <strong id="cartCount">0</strong>
     </button>
 
-    <button
-      class="filter-button"
-      type="button"
-      data-filter="pochettes"
+  </header>
+
+
+  <main id="accueil">
+
+    <!-- =========================================
+         BANNIÈRE
+    ========================================== -->
+
+    <section class="hero" aria-label="Bienvenue chez Maison Mansoa">
+
+      <img
+        src="banniere-mansoa.png"
+        alt="Mansoa, créations faites main : sacs textiles artisanaux et accessoires cousus avec passion"
+        fetchpriority="high"
+      >
+
+    </section>
+
+
+    <!-- =========================================
+         INTRODUCTION
+    ========================================== -->
+
+    <section class="intro">
+
+      <p class="eyebrow">
+        Bienvenue chez Maison Mansoa
+      </p>
+
+      <h1>
+        Des créations uniques,
+        cousues avec passion
+      </h1>
+
+      <p class="intro-text">
+        Des accessoires textiles faits main, imaginés pour
+        embellir votre quotidien. Chaque création raconte
+        une histoire de tissus, de couleurs et de savoir-faire.
+      </p>
+
+      <a class="primary-button" href="#boutique">
+        Découvrir nos créations
+      </a>
+
+    </section>
+
+
+    <!-- =========================================
+         BOUTIQUE
+    ========================================== -->
+
+    <section class="shop" id="boutique">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          La boutique
+        </p>
+
+        <h2 id="shopTitle">
+          Nos créations
+        </h2>
+
+        <p>
+          Des pièces confectionnées avec soin,
+          en modèles uniques ou en petites séries.
+        </p>
+
+      </div>
+
+
+      <!-- FILTRES DU CATALOGUE -->
+
+      <div
+        class="shop-controls"
+        role="group"
+        aria-label="Filtrer les créations par catégorie"
+      >
+
+        <button
+          class="filter-button active"
+          type="button"
+          data-filter="all"
+        >
+          Toutes
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="protege-livres"
+        >
+          Protège-livres
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="pochettes"
+        >
+          Pochettes
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="sacs"
+        >
+          Sacs
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="trousses"
+        >
+          Trousses
+        </button>
+
+      </div>
+
+
+      <!-- LES PRODUITS SONT AJOUTÉS PAR catalogue.js -->
+
+      <div
+        class="product-grid"
+        id="productGrid"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- MESSAGE SI AUCUN PRODUIT -->
+
+      <p
+        class="empty-message"
+        id="emptyMessage"
+        hidden
+      >
+        Aucune création dans cette catégorie pour le moment.
+        Revenez bientôt découvrir les nouveautés !
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         ENGAGEMENTS DE LA MARQUE
+    ========================================== -->
+
+    <section
+      class="values"
+      aria-label="Les engagements de Maison Mansoa"
     >
-      Pochettes
-    </button>
 
-    <button
-      class="filter-button"
-      type="button"
-      data-filter="sacs"
-    >
-      Sacs
-    </button>
+      <article>
+        <span aria-hidden="true">♡</span>
+        <h3>Fait main</h3>
+        <p>
+          Chaque création est confectionnée
+          avec soin et passion.
+        </p>
+      </article>
 
-    <button
-      class="filter-button"
-      type="button"
-      data-filter="trousses"
-    >
-      Trousses
-    </button>
+      <article>
+        <span aria-hidden="true">✿</span>
+        <h3>Pièces uniques</h3>
+        <p>
+          Des créations originales et
+          des petites séries.
+        </p>
+      </article>
 
-  </div>
+      <article>
+        <span aria-hidden="true">❧</span>
+        <h3>Matières choisies</h3>
+        <p>
+          Des tissus sélectionnés
+          pour leurs couleurs et textures.
+        </p>
+      </article>
+
+      <article>
+        <span aria-hidden="true">⌂</span>
+        <h3>Créé en France</h3>
+        <p>
+          Une aventure artisanale
+          et indépendante.
+        </p>
+      </article>
+
+    </section>
 
 
-  <!-- PRODUITS -->
+    <!-- =========================================
+         NOTRE HISTOIRE
+    ========================================== -->
+
+    <section class="story" id="histoire">
+
+      <div class="story-content">
+
+        <p class="eyebrow">
+          Derrière les créations
+        </p>
+
+        <h2>
+          L'univers Maison Mansoa
+        </h2>
+
+        <p>
+          Maison Mansoa est née de l'envie de créer
+          des accessoires textiles à la fois beaux,
+          pratiques et singuliers.
+        </p>
+
+        <p>
+          Au fil des tissus et des inspirations,
+          chaque pièce prend forme avec une attention
+          particulière portée aux détails, aux couleurs
+          et au plaisir de créer.
+        </p>
+
+        <p class="signature">
+          Coudre, rêver, créer ♡
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       PIED DE PAGE
+  ========================================== -->
+
+  <footer class="site-footer" id="contact">
+
+    <div class="footer-brand">
+      <strong>Maison Mansoa</strong>
+      <p>Créations textiles faites main</p>
+    </div>
+
+    <nav aria-label="Navigation de pied de page">
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#histoire">Notre histoire</a>
+    </nav>
+
+    <div class="footer-legal">
+      <p>© 2026 Maison Mansoa</p>
+      <p>Fait avec passion ♡</p>
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       FOND DU PANIER
+  ========================================== -->
 
   <div
-    class="product-grid"
-    id="productGrid"
+    class="cart-overlay"
+    id="cartOverlay"
+    hidden
   ></div>
 
 
-  <!-- MESSAGE SI CATÉGORIE VIDE -->
-
-  <p
-    class="empty-message"
-    id="emptyMessage"
-    hidden
-  >
-    Aucune création disponible dans cette catégorie
-    pour le moment.
-  </p>
-
-</section>
-
-<!-- ==================================================
-     VALEURS
-================================================== -->
-
-<section class="values">
-
-  <article>
-
-    <span>
-      ♡
-    </span>
-
-    <h3>
-      Fait main
-    </h3>
-
-    <p>
-      Chaque création est confectionnée avec soin.
-    </p>
-
-  </article>
-
-
-  <article>
-
-    <span>
-      ❧
-    </span>
-
-    <h3>
-      Pièces uniques
-    </h3>
-
-    <p>
-      Des modèles uniques et des petites séries.
-    </p>
-
-  </article>
-
-
-  <article>
-
-    <span>
-      ✿
-    </span>
-
-    <h3>
-      Matières choisies
-    </h3>
-
-    <p>
-      Des tissus sélectionnés avec attention.
-    </p>
-
-  </article>
-
-
-  <article>
-
-    <span>
-      ⌂
-    </span>
-
-    <h3>
-      Créé en France
-    </h3>
-
-    <p>
-      Une marque artisanale indépendante.
-    </p>
-
-  </article>
-
-</section>
-
-
-
-<!-- ==================================================
-     HISTOIRE
-================================================== -->
-
-<section
-  class="story"
-  id="histoire"
->
-
-  <div class="story-content">
-
-    <p class="eyebrow">
-      Notre histoire
-    </p>
-
-    <h2>
-      L'univers Mansoa
-    </h2>
-
-    <p>
-      Maison Mansoa imagine et confectionne
-      des accessoires textiles avec une attention
-      particulière portée aux associations de tissus,
-      aux détails et à la fonctionnalité.
-    </p>
-
-    <p class="signature">
-      Merci de faire partie de l'aventure Mansoa ♡
-    </p>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- ==================================================
-     PIED DE PAGE
-================================================== -->
-
-<footer
-  class="site-footer"
-  id="contact"
->
-
-  <div class="footer-brand">
-
-    <strong>
-      Maison Mansoa
-    </strong>
-
-    <p>
-      Créations faites main
-    </p>
-
-  </div>
-
-
-  <nav aria-label="Navigation de pied de page">
-
-    <a href="#accueil">
-      Accueil
-    </a>
-
-    <a href="#boutique">
-      Boutique
-    </a>
-
-    <a href="#histoire">
-      Notre histoire
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
-
-  </nav>
-
-
-  <div class="footer-legal">
-
-    <p>
-      © 2026 Maison Mansoa
-    </p>
-
-  </div>
-
-</footer>
-
-
-
-<!-- ==================================================
-     PANIER
-================================================== -->
-
-<div
-  class="cart-overlay"
-  id="cartOverlay"
-  hidden
->
-</div>
-
-
-<aside
-  class="cart-drawer"
-  id="cartDrawer"
-  aria-label="Votre panier"
-  aria-hidden="true"
->
-
-  <div class="cart-header">
-
-    <h2>
-      Votre panier
-    </h2>
-
-    <button
-      class="cart-close"
-      id="cartClose"
-      type="button"
-      aria-label="Fermer le panier"
-    >
-      ×
-    </button>
-
-  </div>
-
-
-  <div
-    class="cart-items"
-    id="cartItems"
+  <!-- =========================================
+       PANIER LATÉRAL
+  ========================================== -->
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Votre panier"
+    aria-hidden="true"
   >
 
-    <p class="cart-empty">
-      Votre panier est vide.
-    </p>
+    <div class="cart-header">
 
-  </div>
+      <h2>Votre panier</h2>
 
-
-  <div class="cart-footer">
-
-    <div class="cart-total">
-
-      <span>
-        Total
-      </span>
-
-      <strong id="cartTotal">
-        0,00 €
-      </strong>
+      <button
+        class="cart-close"
+        id="cartClose"
+        type="button"
+        aria-label="Fermer le panier"
+      >
+        ×
+      </button>
 
     </div>
 
 
-    <button
-      class="checkout-button"
-      id="checkoutButton"
-      type="button"
-      disabled
-    >
-      Commander
-    </button>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">
+        Votre panier est vide.
+      </p>
+    </div>
 
 
-    <p class="secure-payment">
-      Paiement sécurisé — bientôt disponible
-    </p>
+    <div class="cart-footer">
 
-  </div>
+      <div class="cart-total">
+        <span>Total des créations</span>
+        <strong id="cartTotal">0,00 €</strong>
+      </div>
 
-</aside>
+      <button
+        class="checkout-button"
+        id="checkoutButton"
+        type="button"
+        disabled
+      >
+        Commander
+      </button>
+
+      <p class="secure-payment">
+        Paiement en ligne bientôt disponible
+      </p>
+
+    </div>
+
+  </aside>
 
 
+  <!-- =========================================
+       SCRIPTS
+       NE PAS CHANGER LEUR ORDRE
+  ========================================== -->
 
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
-
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/catalogue.js"></script>
-
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalogue.js"></script>
 
 </body>
-
 </html>
