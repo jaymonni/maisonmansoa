@@ -50,6 +50,42 @@ function formatProductPrice(price) {
 // DIMENSIONS
 // -----------------------------------------------------
 
+function escapeProductText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, character => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[character]);
+}
+
+function createCharacteristic(label, value) {
+  if (value === null || value === undefined || value === "" || (Array.isArray(value) && value.length === 0)) return "";
+  const content = Array.isArray(value) ? value.map(escapeProductText).join(" · ") : escapeProductText(value);
+  return `<div class="product-characteristic"><dt>${escapeProductText(label)}</dt><dd>${content}</dd></div>`;
+}
+
+function createCharacteristics(product) {
+  const categories = {
+    "protege-livres": "Protège-livre",
+    "sacs": "Sac",
+    "pochettes": "Pochette",
+    "trousses": "Trousse"
+  };
+  const dimensions = product.dimensions || {};
+  const measures = [["Longueur", dimensions.longueur], ["Hauteur", dimensions.hauteur], ["Largeur", dimensions.largeur]]
+    .filter(([, value]) => value !== null && value !== undefined && value !== "")
+    .map(([label, value]) => `${label} : ${value} cm`);
+  const rows = [
+    createCharacteristic("Type de création", categories[product.categorie] || product.categorie),
+    createCharacteristic("Matières", product.matieres),
+    createCharacteristic("Tissu principal", product.tissuPrincipal),
+    createCharacteristic("Dimensions", measures),
+    createCharacteristic("Fabrication", "Confection artisanale"),
+    createCharacteristic("Référence", product.id)
+  ].filter(Boolean).join("");
+  return `<section class="product-characteristics" aria-label="Caractéristiques du produit">
+    <h2>Caractéristiques</h2><dl>${rows}</dl>
+  </section>`;
+}
+
 function createDimensions(product) {
 
   const dimensions =
@@ -333,9 +369,7 @@ function displayProduct() {
 
       <div class="product-specifications">
 
-        ${createMaterials(product)}
-
-        ${createDimensions(product)}
+        ${createCharacteristics(product)}
 
       </div>
 
