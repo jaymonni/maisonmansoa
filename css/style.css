@@ -313,3 +313,7 @@ a {color:inherit}
 /* Dimensions : garder les trois mesures sur une même ligne quand la largeur le permet */
 .product-page .product-characteristic dd { min-width: 0; }
 .product-page .product-characteristic dd { overflow-wrap: normal; }
+
+/* Les dimensions du sac restent alignées sur une seule ligne */
+.product-page .product-characteristic-dimensions dd { white-space: nowrap; font-size: 12px; letter-spacing: -.2px; }
+@media (max-width: 430px) { .product-page .product-characteristic-dimensions { grid-template-columns: 1fr; gap: 5px; } }
