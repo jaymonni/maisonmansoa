@@ -385,3 +385,13 @@ a {color:inherit}
 .shipping-page .shipping-info {border:1px solid var(--line);border-radius:14px;overflow:hidden;padding:55px 25px}
 .shipping-page-back {text-align:center;margin:28px 0}
 .shipping-page-back a {color:var(--terra);font-size:14px}
+
+/* Position définitive du panier flottant : en haut à droite, sur toutes les pages */
+html body > button#cartButton.cart-button {
+  position: fixed !important;
+  top: max(12px, env(safe-area-inset-top)) !important;
+  right: max(12px, env(safe-area-inset-right)) !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 110;
+}
