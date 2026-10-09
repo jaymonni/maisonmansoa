@@ -141,6 +141,17 @@ a {color:inherit}
  html {scroll-behavior:auto}
  *,*::before,*::after {transition-duration:.01ms!important;animation-duration:.01ms!important}
   .cart-button {
-  margin-left: auto;
+  margin-left: 18px;
+  margin-right: auto;
+  padding: 10px 16px;
+  border: 1px solid #d9b5a7;
+  border-radius: 9px;
+  background: #fff8f3;
+  color: #96503f;
+  transition: background 0.2s ease;
+}
+
+.cart-button:hover {
+  background: #f6e9e1;
 }
 }
