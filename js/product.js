@@ -75,9 +75,11 @@ function createCharacteristics(product) {
     .map(([label, value]) => `${label} : ${value} cm`);
   const rows = [
     createCharacteristic("Type de création", categories[product.categorie] || product.categorie),
+    createCharacteristic("Couleur", product.couleurs?.length ? product.couleurs : product.couleur),
     createCharacteristic("Matières", product.matieres),
     createCharacteristic("Tissu principal", product.tissuPrincipal),
     createCharacteristic("Dimensions", measures),
+    createCharacteristic("Conseils d’entretien", product.entretien),
     createCharacteristic("Fabrication", "Confection artisanale"),
     createCharacteristic("Référence", product.id)
   ].filter(Boolean).join("");
@@ -269,7 +271,7 @@ function displayProduct() {
 
         <a
           class="primary-button"
-          href="index.html#boutique"
+          href="boutique.html"
         >
           Retour à la boutique
         </a>
@@ -373,6 +375,8 @@ function displayProduct() {
 
       </div>
 
+
+      <button type="button" class="product-favorite-button ${MansoaFavorites.has(product.id) ? "is-favorite" : ""}" data-favorite-id="${product.id}" aria-pressed="${MansoaFavorites.has(product.id)}" aria-label="${MansoaFavorites.has(product.id) ? "Retirer des favoris" : "Ajouter aux favoris"}">${MansoaFavorites.has(product.id) ? "♥" : "♡"} Favoris</button>
 
       ${addButton}
 
