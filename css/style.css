@@ -549,3 +549,11 @@ a:focus-visible,button:focus-visible {outline-color:var(--forest);}
 @media(max-width:480px) {
   .product-page a.back-to-shop,.contact-page a.back-to-shop,.shipping-page a.back-to-shop,.shipping-page-back a {font-size:13px;padding:11px 16px}
 }
+
+/* Tri et filtres des créations */
+.shop-sort-bar {display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:6px auto 28px;padding:0 14px}
+.shop-sort-bar label {font-size:13px;font-weight:700;color:var(--forest-deep)}
+.shop-sort-bar select {appearance:auto;border:1px solid #b9c9ba;border-radius:9px;background:#fffdf8;color:var(--forest-deep);padding:10px 13px;font:inherit;font-size:13px;max-width:100%;min-width:165px;cursor:pointer}
+.shop-sort-bar select:focus-visible {outline:2px solid var(--forest);outline-offset:2px}
+.shop-sort-bar select:disabled {opacity:.58;cursor:not-allowed}
+@media(max-width:600px){.shop-sort-bar{justify-content:flex-start;gap:8px}.shop-sort-bar label{width:65px}.shop-sort-bar select{flex:1;min-width:0}}
