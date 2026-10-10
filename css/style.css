@@ -754,3 +754,23 @@ html body #cartButton.cart-button{
  html body .site-header .floating-favorites{margin-left:8px!important;min-height:37px!important}
  html body #cartButton.cart-button{right:12px!important}
 }
+
+/* Correction ciblée : seul le panier flotte en haut à droite */
+html body .site-header #cartButton.cart-button,
+html body #cartButton.cart-button{
+  position:fixed!important;
+  top:16px!important;
+  right:24px!important;
+  bottom:auto!important;
+  left:auto!important;
+  margin:0!important;
+  transform:none!important;
+  z-index:99999!important;
+}
+@media(max-width:750px){
+  html body .site-header #cartButton.cart-button,
+  html body #cartButton.cart-button{
+    top:12px!important;
+    right:12px!important;
+  }
+}
