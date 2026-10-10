@@ -493,3 +493,18 @@ a:focus-visible,button:focus-visible {outline-color:var(--forest);}
 .product-delivery-info strong {display:block;font-size:13px;color:var(--forest-deep);font-weight:600}
 .product-delivery-info p {margin:4px 0 6px;color:var(--muted);font-size:12px}
 .product-delivery-info a {color:var(--forest);font-size:12px;text-underline-offset:3px}
+
+/* Page Contact — présentation sobre et naturelle */
+.contact-page {max-width:1080px;margin:auto;padding:30px 22px 90px}
+.contact-intro {text-align:center;padding:55px 10px 42px;max-width:670px;margin:auto}
+.contact-intro h1 {font:normal clamp(34px,4.5vw,52px)/1.2 Georgia,serif;color:var(--forest-deep);margin:10px 0 18px}
+.contact-intro p {color:var(--muted);font-size:15px;line-height:1.8}
+.contact-content {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.contact-panel {padding:42px 35px;background:#f0f4ed;border:1px solid #dce6d9;border-radius:14px}
+.contact-panel-light {background:#fffaf5;border-color:var(--line)}
+.contact-symbol {color:var(--forest);font-size:28px}
+.contact-panel h2 {font:normal 25px Georgia,serif;color:var(--forest-deep);margin:15px 0}
+.contact-panel p {font-size:14px;line-height:1.8;color:#5b6259}
+.contact-panel .contact-muted {font-size:12px;color:var(--muted)}
+.contact-panel a {display:block;color:var(--forest);font-size:13px;margin-top:16px;text-underline-offset:4px}
+@media(max-width:700px){.contact-content{grid-template-columns:1fr}.contact-panel{padding:28px 24px}.contact-intro{padding:35px 4px}}
