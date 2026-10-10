@@ -29,7 +29,7 @@ const products = [
   {
     id: "PL001",
 
-    nom: "Pochette protège-livre fleurie",
+    nom: "Pochette à livre Blanche",
 
     categorie: "protege-livres",
 
@@ -43,22 +43,22 @@ const products = [
 
     collection: "femme",
 
-    prix: 17,
+    prix: 18,
 
     disponible: true,
 
     pieceUnique: true,
 
     description:
-      "Pochette protège-livre confectionnée à la main.",
+      "Jolie pochette à livre réalisée artisanalement dans un tissu fleuri aux tons doux, avec une fermeture en tissu vert de qualité pour une finition élégante. Entièrement cousue main, elle protège votre livre dans un sac ou lors de vos déplacements. Convient aux livres de poche jusqu’à 2,5 cm d’épaisseur. Idéale à offrir aux amoureux de lecture.",
 
     matieres: [],
 
     tissuPrincipal: "",
 
     dimensions: {
-      longueur: null,
-      hauteur: null,
+      longueur: 13,
+      hauteur: 21,
       largeur: null
     },
 
