@@ -216,9 +216,8 @@ function displayProducts(list) {
 // -----------------------------------------------------
 
 const productSort = document.querySelector("#productSort");
-const favoritesOnly = document.querySelector("#favoritesOnly");
-favoritesOnly?.addEventListener("click",()=>{const on=favoritesOnly.getAttribute("aria-pressed")!=="true";favoritesOnly.setAttribute("aria-pressed",String(on));favoritesOnly.classList.toggle("active",on);favoritesOnly.textContent=on?"♥ Mes favoris":"♡ Mes favoris";displayProducts(getVisibleProducts());});
-document.addEventListener("mansoa:favorites-changed",()=>{if(favoritesOnly?.getAttribute("aria-pressed")==="true")displayProducts(getVisibleProducts());});
+const favoritesOnly = {getAttribute: () => new URLSearchParams(window.location.search).get("favoris")==="1" ? "true" : "false"};
+document.addEventListener("mansoa:favorites-changed",()=>{if(favoritesOnly.getAttribute("aria-pressed")==="true")displayProducts(getVisibleProducts());});
 // La couleur est lue depuis les caractéristiques du produit.
 function productColorName(p) {
   const colors = Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : []);
@@ -226,7 +225,7 @@ function productColorName(p) {
 }
 function getVisibleProducts() {
   let list = products.filter(p => activeCategory === "all" || p.categorie === activeCategory);
-  if (favoritesOnly?.getAttribute("aria-pressed")==="true") list=list.filter(p=>MansoaFavorites.has(p.id));
+  if (favoritesOnly.getAttribute("aria-pressed")==="true") list=list.filter(p=>MansoaFavorites.has(p.id));
   const sort = productSort?.value || "default";
   list = [...list];
   if (sort === "color-asc" || sort === "color-desc") {
@@ -424,6 +423,10 @@ if (document.querySelector(".home-shop-intro")) {
   displayProducts([...products].slice(-10).reverse());
 } else {
   filterProducts(activeCategory);
+  if (favoritesOnly.getAttribute("aria-pressed")==="true") {
+    if(shopTitle) shopTitle.textContent="Mes favoris ♡";
+    if(emptyMessage) emptyMessage.textContent="Aucun favori pour le moment. Touchez le cœur d’une création pour l’ajouter.";
+  }
 }
 filterButtons.forEach(button => button.classList.toggle("active", button.dataset.filter === activeCategory));
 if (activeCategory !== "all" && shopTitle) {
