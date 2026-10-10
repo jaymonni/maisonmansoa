@@ -214,6 +214,37 @@ function displayProducts(list) {
 // FILTRER LE CATALOGUE
 // -----------------------------------------------------
 
+const productSort = document.querySelector("#productSort");
+const productColor = document.querySelector("#productColor");
+
+// Les couleurs sont renseignées sur chaque fiche via « couleurs: ["Vert", ...] ».
+// Sans couleur connue, aucun filtre trompeur n'est proposé.
+const knownColors = [...new Set(products.flatMap(p => Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : [])))].sort((a,b) => a.localeCompare(b, "fr"));
+knownColors.forEach(color => {
+  const option = document.createElement("option");
+  option.value = color;
+  option.textContent = color;
+  productColor?.appendChild(option);
+});
+if (productColor && knownColors.length === 0) {
+  productColor.disabled = true;
+  productColor.title = "Les couleurs seront disponibles dès qu'elles seront renseignées sur les produits.";
+}
+
+function getVisibleProducts() {
+  let list = products.filter(p => activeCategory === "all" || p.categorie === activeCategory);
+  const color = productColor?.value || "all";
+  if (color !== "all") list = list.filter(p => (Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : [])).includes(color));
+  const sort = productSort?.value || "default";
+  list = [...list];
+  if (sort === "price-asc") list.sort((a,b) => a.prix - b.prix);
+  else if (sort === "price-desc") list.sort((a,b) => b.prix - a.prix);
+  else if (sort === "name") list.sort((a,b) => a.nom.localeCompare(b.nom, "fr"));
+  return list;
+}
+productSort?.addEventListener("change", () => displayProducts(getVisibleProducts()));
+productColor?.addEventListener("change", () => displayProducts(getVisibleProducts()));
+
 function filterProducts(category) {
   activeCategory = allowedCategories.has(category) ? category : "all";
   const url = new URL(window.location.href);
@@ -223,7 +254,7 @@ function filterProducts(category) {
 
   if (category === "all") {
 
-    displayProducts(products);
+    displayProducts(getVisibleProducts());
 
     if (shopTitle) {
       shopTitle.textContent =
@@ -234,14 +265,7 @@ function filterProducts(category) {
   }
 
 
-  const filteredProducts =
-    products.filter(
-      product =>
-        product.categorie === category
-    );
-
-
-  displayProducts(filteredProducts);
+  displayProducts(getVisibleProducts());
 
 }
 
