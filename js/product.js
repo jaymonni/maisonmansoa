@@ -376,6 +376,14 @@ function displayProduct() {
 
       ${addButton}
 
+      <div class="product-delivery-info">
+        <span aria-hidden="true">↗</span>
+        <div>
+          <strong>Livraison en France et à l’international</strong>
+          <p>Modes de livraison et tarifs selon la destination.</p>
+          <a href="livraison.html">Consulter les informations de livraison →</a>
+        </div>
+      </div>
 
       <div class="product-reassurance">
 
