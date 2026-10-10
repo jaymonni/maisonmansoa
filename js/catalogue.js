@@ -215,37 +215,34 @@ function displayProducts(list) {
 // -----------------------------------------------------
 
 const productSort = document.querySelector("#productSort");
-const productColor = document.querySelector("#productColor");
-
-// Les couleurs sont renseignées sur chaque fiche via « couleurs: ["Vert", ...] ».
-// Sans couleur connue, aucun filtre trompeur n'est proposé.
-const knownColors = [...new Set(products.flatMap(p => Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : [])))].sort((a,b) => a.localeCompare(b, "fr"));
-knownColors.forEach(color => {
-  const option = document.createElement("option");
-  option.value = color;
-  option.textContent = color;
-  productColor?.appendChild(option);
-});
-if (productColor && knownColors.length === 0) {
-  productColor.disabled = true;
-  productColor.title = "Les couleurs seront disponibles dès qu'elles seront renseignées sur les produits.";
+// La couleur est lue depuis les caractéristiques du produit.
+function productColorName(p) {
+  const colors = Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : []);
+  return String(colors[0] || "").trim();
 }
-
 function getVisibleProducts() {
   let list = products.filter(p => activeCategory === "all" || p.categorie === activeCategory);
-  const color = productColor?.value || "all";
-  if (color !== "all") list = list.filter(p => (Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : [])).includes(color));
   const sort = productSort?.value || "default";
   list = [...list];
-  if (sort === "price-asc") list.sort((a,b) => a.prix - b.prix);
+  if (sort === "color-asc" || sort === "color-desc") {
+    list.sort((a,b) => {
+      const ca=productColorName(a), cb=productColorName(b);
+      if (!ca && !cb) return 0;
+      if (!ca) return 1;
+      if (!cb) return -1;
+      return (sort === "color-asc" ? 1 : -1) * ca.localeCompare(cb,"fr",{sensitivity:"base"});
+    });
+  }
+  else if (sort === "price-asc") list.sort((a,b) => a.prix - b.prix);
   else if (sort === "price-desc") list.sort((a,b) => b.prix - a.prix);
   else if (sort === "name") list.sort((a,b) => a.nom.localeCompare(b.nom, "fr"));
   return list;
 }
 productSort?.addEventListener("change", () => displayProducts(getVisibleProducts()));
-productColor?.addEventListener("change", () => displayProducts(getVisibleProducts()));
+
 
 function filterProducts(category) {
+  if (document.body.classList.contains("homepage-latest")) { displayProducts([...products].slice(-10).reverse()); return; }
   activeCategory = allowedCategories.has(category) ? category : "all";
   const url = new URL(window.location.href);
   if (activeCategory === "all") url.searchParams.delete("categorie");
@@ -418,7 +415,11 @@ if (
 
 // -----------------------------------------------------
 // PREMIER AFFICHAGE
-filterProducts(activeCategory);
+if (document.querySelector(".home-shop-intro")) {
+  displayProducts([...products].slice(-10).reverse());
+} else {
+  filterProducts(activeCategory);
+}
 filterButtons.forEach(button => button.classList.toggle("active", button.dataset.filter === activeCategory));
 if (activeCategory !== "all" && shopTitle) {
   shopTitle.textContent = document.querySelector(`.filter-button[data-filter="${activeCategory}"]`)?.textContent.trim() || "Les créations";
