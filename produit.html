@@ -16,7 +16,7 @@
     </a>
         <nav class="mansoa-nav" aria-label="Navigation principale">
       <a href="index.html" >Accueil</a>
-      <a href="index.html#boutique">Boutique</a>
+      <a href="boutique.html">Boutique</a>
       <a href="index.html#histoire">Notre histoire</a>
       <a href="livraison.html" >Livraison</a>
       <a href="contact.html">Contact</a>
@@ -28,7 +28,7 @@
     </button>
 
   <main class="product-page">
-    <a class="back-to-shop" href="index.html#boutique">← Toutes les créations</a>
+    <a class="back-to-shop" href="boutique.html">← Toutes les créations</a>
     <div class="product-detail" id="productDetail">
       <p class="product-loading">Chargement de la création…</p>
     </div>
@@ -36,13 +36,13 @@
   <section class="product-bottom-note" aria-label="Maison Mansoa">
     <span>♡</span>
     <p>Une création singulière, réalisée avec soin et passion.</p>
-    <a href="index.html#boutique">Découvrir les autres créations →</a>
+    <a href="boutique.html">Découvrir les autres créations →</a>
   </section>
   <footer class="site-footer">
     <div><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div>
     <a href="livraison.html">Livraison et tarifs</a>
     <a href="contact.html">Contact</a>
-    <a href="index.html#boutique">Retour à la boutique ↑</a>
+    <a href="boutique.html">Retour à la boutique ↑</a>
     <small>© 2026 Maison Mansoa</small>
   </footer>
   <div class="product-lightbox" id="productLightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
@@ -96,7 +96,7 @@
         "trousses": "Trousses"
       };
       if (!category || !Object.prototype.hasOwnProperty.call(names, category)) return;
-      const destination = "index.html?categorie=" + encodeURIComponent(category) + "#boutique";
+      const destination = "boutique.html?categorie=" + encodeURIComponent(category) + "#boutique";
       const back = document.querySelector(".back-to-shop");
       if (back) { back.href = destination; back.textContent = "← Retour aux " + names[category].toLowerCase(); }
       const other = document.querySelector(".product-bottom-note a");
