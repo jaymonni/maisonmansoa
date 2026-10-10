@@ -113,6 +113,7 @@ function createProductCard(product) {
 
   card.innerHTML = `
 
+    <button type="button" class="favorite-button ${MansoaFavorites.has(product.id) ? "is-favorite" : ""}" data-favorite-id="${product.id}" aria-pressed="${MansoaFavorites.has(product.id)}" aria-label="${MansoaFavorites.has(product.id) ? "Retirer des favoris" : "Ajouter aux favoris"}" title="Favoris">${MansoaFavorites.has(product.id) ? "♥" : "♡"}</button>
     <a
       class="product-image"
       href="${productDetailUrl(product.id)}"
@@ -215,6 +216,9 @@ function displayProducts(list) {
 // -----------------------------------------------------
 
 const productSort = document.querySelector("#productSort");
+const favoritesOnly = document.querySelector("#favoritesOnly");
+favoritesOnly?.addEventListener("click",()=>{const on=favoritesOnly.getAttribute("aria-pressed")!=="true";favoritesOnly.setAttribute("aria-pressed",String(on));favoritesOnly.classList.toggle("active",on);favoritesOnly.textContent=on?"♥ Mes favoris":"♡ Mes favoris";displayProducts(getVisibleProducts());});
+document.addEventListener("mansoa:favorites-changed",()=>{if(favoritesOnly?.getAttribute("aria-pressed")==="true")displayProducts(getVisibleProducts());});
 // La couleur est lue depuis les caractéristiques du produit.
 function productColorName(p) {
   const colors = Array.isArray(p.couleurs) ? p.couleurs : (p.couleur ? [p.couleur] : []);
@@ -222,6 +226,7 @@ function productColorName(p) {
 }
 function getVisibleProducts() {
   let list = products.filter(p => activeCategory === "all" || p.categorie === activeCategory);
+  if (favoritesOnly?.getAttribute("aria-pressed")==="true") list=list.filter(p=>MansoaFavorites.has(p.id));
   const sort = productSort?.value || "default";
   list = [...list];
   if (sort === "color-asc" || sort === "color-desc") {
