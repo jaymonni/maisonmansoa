@@ -596,3 +596,21 @@ html body .floating-favorites{position:fixed;top:12px;right:153px;z-index:9998;d
 .favorites-count{display:grid;place-items:center;min-width:21px;height:21px;padding:0 5px;border-radius:50%;background:var(--forest);color:#fff;font-size:11px}
 @media(max-width:600px){html body .floating-favorites{top:12px;right:132px;min-height:39px;padding:7px 10px;gap:5px}.floating-favorites .favorites-text{display:none}}
 @media(max-width:700px){.site-header{padding-top:62px}}
+
+/* Favoris : emplacement discret sous l'en-tête, sans masquer le choix FR/EN */
+html body .floating-favorites{
+  position:fixed!important;
+  top:76px!important;
+  right:30px!important;
+  z-index:900!important;
+  min-height:36px!important;
+  padding:6px 11px!important;
+  background:#fffdf8!important;
+  box-shadow:0 2px 9px rgba(25,55,45,.10)!important;
+}
+html body .floating-favorites>span:first-child{font-size:18px}
+html body .floating-favorites .favorites-text{font-size:11px}
+@media(max-width:700px){
+  html body .floating-favorites{top:66px!important;right:25px!important;padding:6px 9px!important;min-height:34px!important}
+  html body .floating-favorites .favorites-text{display:none!important}
+}
