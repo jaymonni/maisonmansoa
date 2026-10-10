@@ -795,3 +795,17 @@ html body #cartButton.cart-button{
   margin-right:0!important;
  }
 }
+
+/* Favoris à gauche du titre, immédiatement après FR/EN, sans toucher au centrage */
+@media(min-width:751px){
+ html body.homepage-latest .site-header .floating-favorites{
+  position:absolute!important;
+  top:50%!important;
+  left:145px!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+  margin:0!important;
+  z-index:5!important;
+ }
+}
