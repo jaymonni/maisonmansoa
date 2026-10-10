@@ -557,3 +557,9 @@ a:focus-visible,button:focus-visible {outline-color:var(--forest);}
 .shop-sort-bar select:focus-visible {outline:2px solid var(--forest);outline-offset:2px}
 .shop-sort-bar select:disabled {opacity:.58;cursor:not-allowed}
 @media(max-width:600px){.shop-sort-bar{justify-content:flex-start;gap:8px}.shop-sort-bar label{width:65px}.shop-sort-bar select{flex:1;min-width:0}}
+
+/* Accueil : vitrine des 10 dernières créations */
+.home-shop-intro{text-align:center;color:var(--muted);margin:0 auto 24px;font-size:14px}
+.all-products-link{display:table;margin:30px auto 0;padding:13px 25px;background:var(--forest);color:white;text-decoration:none;font-size:14px;font-weight:700;border-radius:999px}
+.all-products-link:hover{background:var(--forest-deep);color:white}
+.boutique-page .shop{padding-top:45px;padding-bottom:85px}
