@@ -717,3 +717,19 @@ html body.homepage-latest .site-header .floating-favorites{order:2}
    margin-left:180px;
  }
 }
+
+/* Position définitive : Favoris à gauche du Panier, Panier flottant */
+html body #cartButton.cart-button{
+ position:fixed!important;top:12px!important;right:20px!important;left:auto!important;bottom:auto!important;
+ z-index:9999!important;transform:none!important;order:initial!important;
+}
+html body .site-header .floating-favorites{
+ position:fixed!important;top:12px!important;right:145px!important;left:auto!important;bottom:auto!important;
+ z-index:9998!important;transform:none!important;order:initial!important;
+ min-height:43px!important;padding:8px 12px!important;
+}
+@media(max-width:750px){
+ html body #cartButton.cart-button{top:12px!important;right:12px!important}
+ html body .site-header .floating-favorites{top:12px!important;right:126px!important;min-height:39px!important;padding:7px 9px!important}
+ html body .site-header .language-switch{position:relative!important;z-index:1}
+}
