@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contacter Maison Mansoa et retrouver les informations pratiques de la boutique artisanale.">
+  <title>Contact — Maison Mansoa</title>
+  <link rel="stylesheet" href="css/style.css?v=20261010-25">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Mansoa, retour à l'accueil">
+      <span class="brand-name">Maison Mansoa</span>
+      <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
+    </a>
+        <nav class="mansoa-nav" aria-label="Navigation principale">
+      <a href="index.html" >Accueil</a>
+      <a href="index.html#boutique">Boutique</a>
+      <a href="index.html#histoire">Notre histoire</a>
+      <a href="livraison.html">Livraison</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+<div class="language-switch" role="group" aria-label="Langue / Language"><button type="button" data-lang="fr" class="active" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </header>
+  <button class="cart-button" id="cartButton" style="position:fixed!important;top:12px!important;right:30px!important;bottom:auto!important;left:auto!important;z-index:9999!important" type="button" aria-label="Ouvrir le panier" aria-controls="cartDrawer">
+      <span>Panier</span><strong id="cartCount">0</strong>
+    </button>
+  <main class="contact-page">
+    <a class="back-to-shop" href="index.html#boutique">← Retour à la boutique</a>
+    <section class="contact-intro" aria-labelledby="contactTitle">
+      <span class="eyebrow">Échangeons</span>
+      <h1 id="contactTitle">Une question ?</h1>
+      <p>Une question sur une création, ses dimensions ou sa livraison ? Maison Mansoa sera ravie de vous renseigner.</p>
+    </section>
+    <section class="contact-content" aria-label="Informations de contact">
+      <div class="contact-panel">
+        <span class="contact-symbol" aria-hidden="true">✉</span>
+        <h2>Nous contacter</h2>
+        <p>Notre adresse de contact sera bientôt disponible ici.</p>
+        <p class="contact-muted">Le formulaire de contact sera ajouté une fois la messagerie de la boutique prête.</p>
+      </div>
+      <div class="contact-panel contact-panel-light">
+        <span class="contact-symbol" aria-hidden="true">♡</span>
+        <h2>À propos des créations</h2>
+        <p>Chaque pièce est confectionnée à la main avec soin. Retrouvez les photos et les caractéristiques sur les fiches produits.</p>
+        <a href="index.html#boutique">Découvrir les créations →</a>
+        <a href="livraison.html">Informations de livraison →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div>
+    <a href="livraison.html">Livraison et tarifs</a>
+    <a href="index.html#boutique">Retour à la boutique ↑</a>
+    <small>© 2026 Maison Mansoa</small>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Votre panier" aria-hidden="true">
+    <div class="cart-header"><h2>Votre panier</h2><button class="cart-close" id="cartClose" type="button" aria-label="Fermer le panier">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Votre panier est vide.</p></div>
+    <div class="cart-footer">
+      <div class="cart-shipping" id="cartShipping">
+        <label for="shippingDestination">Pays ou zone de livraison</label>
+        <select id="shippingDestination">
+          <option value="fr">France métropolitaine</option>
+          <option value="be">Belgique / Luxembourg / Pays-Bas</option>
+          <option value="south">Espagne / Portugal / Italie</option>
+          <option value="pl">Pologne</option>
+          <option value="om1">Guadeloupe, Martinique, Guyane, Réunion, Mayotte et autres territoires OM1</option>
+          <option value="om2">Nouvelle-Calédonie, Polynésie française, Wallis-et-Futuna</option>
+          <option value="eu">Autres pays UE / Suisse</option>
+          <option value="uk">Royaume-Uni</option>
+          <option value="worldb">Norvège, Maghreb et Europe hors UE (zone B)</option>
+          <option value="worldc">Canada, États-Unis et autres destinations (zone C)</option>
+          <option value="other">Autre destination / zone inconnue</option>
+        </select>
+        <label for="shippingCarrier">Mode de livraison</label>
+        <select id="shippingCarrier">
+          <option value="relay">Mondial Relay — point relais</option>
+          <option value="colissimo">Colissimo — domicile</option>
+        </select>
+        <div class="cart-shipping-line"><span>Livraison, emballage compris</span><strong id="cartShippingPrice">À calculer</strong></div>
+        <p id="cartShippingNote" class="cart-shipping-note">Estimation pour un seul colis jusqu'à 500 g.</p>
+      </div>
+      <div class="cart-total"><span>Total estimé</span><strong id="cartTotal">0,00 €</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button" disabled>Commande bientôt disponible</button>
+      <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
+    </div>
+  </aside>
+  <script src="js/i18n.js?v=20261010-10"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js?v=20261009-9"></script>
+</body>
+</html>
