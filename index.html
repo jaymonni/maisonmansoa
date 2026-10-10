@@ -6,9 +6,9 @@
   <meta name="description" content="Maison Mansoa, créations textiles uniques et faites main.">
   <meta name="theme-color" content="#faf7f1">
   <title>Maison Mansoa — Créations textiles faites main</title>
-  <link rel="stylesheet" href="css/style.css?v=20261010-28">
+  <link rel="stylesheet" href="css/style.css?v=20261010-29">
 </head>
-<body>
+<body class="homepage-latest">
   <header class="site-header" id="accueil">
     <a class="brand" href="#accueil" aria-label="Maison Mansoa, accueil">
       <span class="brand-name">Maison Mansoa</span>
@@ -16,7 +16,7 @@
     </a>
            <nav class="mansoa-nav" aria-label="Navigation principale">
       <a href="index.html" aria-current="page">Accueil</a>
-      <a href="index.html#boutique">Boutique</a>
+      <a href="boutique.html">Boutique</a>
       <a href="index.html#histoire">Notre histoire</a>
       <a href="livraison.html" >Livraison</a>
       <a href="./contact.html">Contact</a>
@@ -29,7 +29,7 @@
 
   <main>
     <section class="hero" aria-label="Maison Mansoa">
-      <a href="#boutique" class="hero-shop-link" aria-label="Découvrir les créations — aller à la boutique" title="Découvrir les créations"><img src="banniere-mansoa.png" alt="Maison Mansoa, accessoires textiles faits main — Découvrir les créations" fetchpriority="high"></a>
+      <a href="boutique.html" class="hero-shop-link" aria-label="Découvrir les créations — aller à la boutique" title="Découvrir les créations"><img src="banniere-mansoa.png" alt="Maison Mansoa, accessoires textiles faits main — Découvrir les créations" fetchpriority="high"></a>
     </section>
 
     <section class="intro" aria-label="Notre signature">
@@ -39,30 +39,12 @@
     <section class="shop" id="boutique">
       <div class="section-heading">
         <span class="eyebrow">La boutique</span>
-        <h1 id="shopTitle">Les créations</h1>
+        <h1 id="shopTitle">Les dernières créations</h1>
       </div>
-      <div class="shop-controls" role="group" aria-label="Filtrer les créations">
-        <button class="filter-button active" type="button" data-filter="all">Tout voir</button>
-        <button class="filter-button" type="button" data-filter="protege-livres">Protège-livres</button>
-        <button class="filter-button" type="button" data-filter="sacs">Sacs</button>
-        <button class="filter-button" type="button" data-filter="pochettes">Pochettes</button>
-        <button class="filter-button" type="button" data-filter="trousses">Trousses</button>
-      </div>
-      <div class="shop-sort-bar">
-        <label for="productSort">Trier par</label>
-        <select id="productSort" aria-label="Trier les créations">
-          <option value="default">Ordre de présentation</option>
-          <option value="price-asc">Prix croissant</option>
-          <option value="price-desc">Prix décroissant</option>
-          <option value="name">Nom (A à Z)</option>
-        </select>
-        <label for="productColor">Couleur</label>
-        <select id="productColor" aria-label="Filtrer par couleur">
-          <option value="all">Toutes les couleurs</option>
-        </select>
-      </div>
+      <p class="home-shop-intro">Découvrez nos dix créations les plus récentes.</p>
       <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      <p class="empty-message" id="emptyMessage" hidden>De nouvelles créations arrivent bientôt dans cette catégorie.</p>
+      <p class="empty-message" id="emptyMessage" hidden>De nouvelles créations arrivent bientôt.</p>
+      <a class="all-products-link" href="boutique.html">Voir toute la boutique →</a>
     </section>
 
     <section class="signature-strip" aria-label="Nos engagements">
@@ -131,7 +113,7 @@
   <script src="js/i18n.js?v=20261010-10"></script>
   <script src="js/products.js"></script>
   <script src="js/cart.js?v=20261009-9"></script>
-  <script src="js/catalogue.js?v=20261010-4"></script>
+  <script src="js/catalogue.js?v=20261010-5"></script>
   <script>
     // Le paiement n'est pas disponible : ne jamais laisser croire qu'une commande est possible.
     const checkout = document.getElementById("checkoutButton");
