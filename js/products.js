@@ -29,12 +29,12 @@ const products = [
   {
     id: "PL001",
 
-    nom: "Pochette à livre Blanche",
+    nom: "Pochette à livre à fleurs",
 
     categorie: "protege-livres",
 
     // Couleur principale : à renseigner lorsque connue.
-    couleur: "Blanc",
+    couleur: "À fleurs",
 
     // Conseils d’entretien : à confirmer avec la créatrice.
     entretien: "",
@@ -50,7 +50,7 @@ const products = [
     pieceUnique: true,
 
     description:
-      "Jolie pochette à livre réalisée artisanalement dans un tissu fleuri aux tons doux, avec une fermeture en tissu vert de qualité pour une finition élégante. Entièrement cousue main, elle protège votre livre dans un sac ou lors de vos déplacements. Convient aux livres de poche jusqu’à 2,5 cm d’épaisseur. Idéale à offrir aux amoureux de lecture.",
+      "Jolie pochette à livre blanche réalisée artisanalement dans un tissu fleuri aux tons doux, avec une fermeture en tissu vert de qualité pour une finition élégante. Entièrement cousue main, elle protège votre livre dans un sac ou lors de vos déplacements. Convient aux livres de poche jusqu’à 2,5 cm d’épaisseur. Idéale à offrir aux amoureux de lecture.",
 
     matieres: [],
 
