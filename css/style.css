@@ -486,3 +486,10 @@ body #cartButton.cart-button {border-color:#b9c9ba!important;color:var(--forest-
 body #cartButton.cart-button strong {background:var(--forest);color:#fff;}
 body #cartButton.cart-button:hover {background:var(--forest-soft)!important;}
 a:focus-visible,button:focus-visible {outline-color:var(--forest);}
+
+/* Informations utiles sur les fiches produits */
+.product-delivery-info {display:flex;align-items:flex-start;gap:13px;margin:22px 0;padding:17px 19px;border:1px solid #d8e2d8;border-radius:10px;background:#f4f7f1;text-align:left}
+.product-delivery-info>span {font-size:19px;color:var(--forest);line-height:1.1}
+.product-delivery-info strong {display:block;font-size:13px;color:var(--forest-deep);font-weight:600}
+.product-delivery-info p {margin:4px 0 6px;color:var(--muted);font-size:12px}
+.product-delivery-info a {color:var(--forest);font-size:12px;text-underline-offset:3px}
