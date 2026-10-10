@@ -683,3 +683,37 @@ html body.homepage-latest .site-header .floating-favorites{order:2}
  .hero-links a{padding:9px 10px;font-size:12px}
  .hero-with-menu .hero{order:1}
 }
+
+/* Ajustement demandé : menu à l'aplomb du sélecteur de langue, bannière centrée */
+@media(min-width:751px){
+ html body.homepage-latest .site-header{padding-left:25px!important}
+ html body.homepage-latest .hero-with-menu{
+   position:relative;
+   display:block;
+   max-width:1400px;
+   padding:0 25px;
+   margin:12px auto 0;
+ }
+ html body.homepage-latest .hero-with-menu .hero{
+   width:min(100%, 1060px);
+   max-width:1060px;
+   margin:0 auto;
+ }
+ html body.homepage-latest .hero-side-nav{
+   position:absolute;
+   top:0;
+   bottom:0;
+   left:25px;
+   width:145px;
+   align-items:flex-start;
+   justify-content:flex-start;
+   padding-top:4px;
+ }
+ html body.homepage-latest .hero-links{gap:8px}
+}
+@media(min-width:751px) and (max-width:1190px){
+ html body.homepage-latest .hero-with-menu .hero{
+   width:calc(100% - 180px);
+   margin-left:180px;
+ }
+}
