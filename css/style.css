@@ -774,3 +774,24 @@ html body #cartButton.cart-button{
     right:12px!important;
   }
 }
+
+/* Centrage visuel de la marque et de la bannière sur l'axe de la page */
+@media(min-width:751px){
+ html body.homepage-latest .site-header{position:relative!important}
+ html body.homepage-latest .site-header .brand{
+  position:absolute!important;left:50%!important;top:50%!important;
+  transform:translate(-50%,-50%)!important;margin:0!important;
+  width:max-content!important;max-width:calc(100% - 480px);
+  align-items:center!important;text-align:center!important;
+ }
+ html body.homepage-latest .hero-with-menu .hero{
+  margin-left:auto!important;margin-right:auto!important;
+ }
+}
+@media(min-width:751px) and (max-width:1190px){
+ html body.homepage-latest .hero-with-menu .hero{
+  width:calc(100% - 180px)!important;
+  margin-left:180px!important;
+  margin-right:0!important;
+ }
+}
