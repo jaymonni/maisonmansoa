@@ -80,7 +80,7 @@ const products = [
   {
     id: "SAC001",
 
-    nom: "Sac bandoulière style besace à rabat",
+    nom: "Sac besace bandoulière taupe et vert d’eau",
 
     categorie: "sacs",
 
@@ -101,15 +101,16 @@ const products = [
     pieceUnique: true,
 
     description:
-      "Sac bandoulière style besace à rabat, confectionné à la main.",
+      "Craquez pour ce sac bandoulière unique, entièrement confectionné à la main en France. L’association de suédine taupe et de velours côtelé vert d’eau lui donne un style doux, élégant et intemporel. Son fermoir métallique en forme de cœur sécurise vos effets personnels avec charme. À l’intérieur, une doublure en coton fleuri apporte une note raffinée et une poche plaquée permet de garder téléphone, clés et petits objets à portée de main. Sa bandoulière réglable et sa légèreté le rendent agréable à porter au quotidien. Réalisé avec soin dans l’atelier de la créatrice, ce sac est une pièce unique, idéale pour les journées, balades et sorties.",
 
     matieres: [
-      "Suédine",
-      "Velours côtelé"
+      "Suédine taupe",
+      "Velours côtelé vert d’eau",
+      "Coton fleuri (doublure)"
     ],
 
     tissuPrincipal:
-      "Suédine",
+      "Suédine taupe",
 
     dimensions: {
       longueur: 23,
