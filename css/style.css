@@ -588,3 +588,11 @@ a:focus-visible,button:focus-visible {outline-color:var(--forest);}
   .filter-button,.add-to-cart{min-height:44px}
 }
 @media(max-width:390px){.mansoa-nav{gap:4px 9px}.mansoa-nav a{font-size:11px}}
+
+/* Accès permanent aux favoris, à côté du panier */
+html body .floating-favorites{position:fixed;top:12px;right:153px;z-index:9998;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:43px;padding:9px 13px;border:1px solid #b9c9ba;border-radius:999px;background:#fffdf8;color:var(--forest-deep);box-shadow:0 4px 16px rgba(25,55,45,.12);font-size:12px;font-weight:700;text-decoration:none}
+.floating-favorites:hover{background:var(--forest-soft);color:var(--forest-deep)}
+.floating-favorites>span:first-child{font-size:22px;line-height:1}
+.favorites-count{display:grid;place-items:center;min-width:21px;height:21px;padding:0 5px;border-radius:50%;background:var(--forest);color:#fff;font-size:11px}
+@media(max-width:600px){html body .floating-favorites{top:12px;right:132px;min-height:39px;padding:7px 10px;gap:5px}.floating-favorites .favorites-text{display:none}}
+@media(max-width:700px){.site-header{padding-top:62px}}
