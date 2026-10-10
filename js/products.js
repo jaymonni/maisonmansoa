@@ -34,7 +34,7 @@ const products = [
     categorie: "protege-livres",
 
     // Couleur principale : à renseigner lorsque connue.
-    couleur: "",
+    couleur: "Blanc",
 
     // Conseils d’entretien : à confirmer avec la créatrice.
     entretien: "",
