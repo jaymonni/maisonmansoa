@@ -642,3 +642,44 @@ html body .site-header .mansoa-nav{align-self:end;padding-top:43px}
  html body .site-header .mansoa-nav{gap:3px 9px}
  html body .site-header .mansoa-nav a{font-size:11px}
 }
+
+/* Octobre : panier flottant, indépendant de l'en-tête */
+html body #cartButton.cart-button{
+ position:fixed!important;top:12px!important;right:24px!important;bottom:auto!important;left:auto!important;
+ z-index:9999!important;display:flex!important;align-items:center!important;
+ padding:9px 13px!important;min-height:43px!important;border-radius:999px!important;
+ background:var(--forest)!important;color:#fff!important;border:1px solid var(--forest)!important;
+ box-shadow:0 4px 16px rgba(25,55,45,.2)!important;
+}
+html body #cartButton.cart-button::before{background:#fff!important}
+html body #cartButton.cart-button strong{background:#fff!important;color:var(--forest-deep)!important}
+/* En-tête : langue à gauche, favoris discrets à droite, panier flottant */
+html body .site-header{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 22px;min-height:90px;height:auto;padding:16px 165px 16px 25px!important}
+html body .site-header .brand{order:1;margin:0 auto;min-width:0}
+html body .site-header .mansoa-nav{order:3;display:flex;width:100%;justify-content:center;align-self:auto;padding:0;gap:12px 22px}
+html body .site-header .header-actions{display:contents}
+html body .site-header .language-switch{order:0;position:static!important;margin:0!important;transform:none!important}
+html body .site-header .floating-favorites{order:2;position:static!important;transform:none!important;min-height:39px!important;justify-self:auto;align-self:auto;box-shadow:none!important;background:var(--forest-soft)!important;color:var(--forest-deep)!important;border:1px solid #c3d6c5!important}
+html body.homepage-latest .site-header{padding-right:155px!important}
+html body.homepage-latest .site-header .brand{order:1}
+html body.homepage-latest .site-header .floating-favorites{order:2}
+/* Menu latéral de l'accueil, à gauche de la bannière */
+.hero-with-menu{display:grid;grid-template-columns:160px minmax(0,1fr);gap:20px;align-items:stretch;max-width:1330px;margin:12px auto 0;padding:0 20px}
+.hero-with-menu .hero{width:100%;max-width:none;margin:0;align-self:center}
+.hero-side-nav{display:flex;align-items:center;justify-content:center}
+.hero-links{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:100%}
+.hero-links a{display:block;padding:12px 13px;border-radius:9px;color:var(--forest-deep);font-size:13px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.hero-links a:hover,.hero-links a[aria-current="page"]{background:var(--forest-soft);color:var(--forest-deep)}
+@media(max-width:750px){
+ html body .site-header,html body.homepage-latest .site-header{padding:62px 15px 12px!important;gap:10px;justify-content:space-between}
+ html body .site-header .brand{order:-1;width:100%;align-items:center;text-align:center}
+ html body .site-header .language-switch{order:0}
+ html body .site-header .floating-favorites{order:1}
+ html body .site-header .mansoa-nav{order:2;gap:5px 12px}
+ html body #cartButton.cart-button{top:12px!important;right:14px!important;min-height:39px!important}
+ .hero-with-menu{grid-template-columns:1fr;gap:12px;padding:0 14px}
+ .hero-side-nav{order:2}
+ .hero-links{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:5px 8px}
+ .hero-links a{padding:9px 10px;font-size:12px}
+ .hero-with-menu .hero{order:1}
+}
