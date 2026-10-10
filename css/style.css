@@ -872,3 +872,44 @@ html body:not(.homepage-latest) .site-header .mansoa-nav a[aria-current="page"]{
   min-height:30px!important;
  }
 }
+
+/* Pages intérieures : alignement exact des cinq liens sur l'axe central */
+@media(min-width:751px){
+ html body:not(.homepage-latest) .site-header{
+  position:relative!important;
+  display:block!important;
+  min-height:185px!important;
+  padding:18px 24px 20px!important;
+ }
+ html body:not(.homepage-latest) .site-header .brand{
+  position:absolute!important;
+  top:17px!important;
+  left:50%!important;
+  right:auto!important;
+  transform:translateX(-50%)!important;
+  margin:0!important;
+ }
+ html body:not(.homepage-latest) .site-header .language-switch{
+  position:absolute!important;top:26px!important;left:28px!important;
+ }
+ html body:not(.homepage-latest) .site-header .floating-favorites{
+  position:absolute!important;top:26px!important;left:145px!important;
+  right:auto!important;transform:none!important;margin:0!important;
+ }
+ html body:not(.homepage-latest) .site-header .mansoa-nav{
+  position:absolute!important;
+  top:117px!important;
+  left:50%!important;
+  right:auto!important;
+  transform:translateX(-50%)!important;
+  width:max-content!important;
+  max-width:calc(100% - 40px)!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(14px,2.6vw,36px)!important;
+ }
+}
