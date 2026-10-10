@@ -508,3 +508,44 @@ a:focus-visible,button:focus-visible {outline-color:var(--forest);}
 .contact-panel .contact-muted {font-size:12px;color:var(--muted)}
 .contact-panel a {display:block;color:var(--forest);font-size:13px;margin-top:16px;text-underline-offset:4px}
 @media(max-width:700px){.contact-content{grid-template-columns:1fr}.contact-panel{padding:28px 24px}.contact-intro{padding:35px 4px}}
+
+/* Boutons Retour — visibilité et cohérence sur toutes les pages */
+.product-page a.back-to-shop,
+.contact-page a.back-to-shop,
+.shipping-page a.back-to-shop,
+.shipping-page-back a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:fit-content;
+  max-width:100%;
+  padding:12px 21px;
+  border:2px solid var(--forest);
+  border-radius:999px;
+  background:var(--forest);
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.4;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(25,55,45,.13);
+  transition:background .2s,border-color .2s,transform .2s,box-shadow .2s;
+}
+.product-page a.back-to-shop:hover,
+.contact-page a.back-to-shop:hover,
+.shipping-page a.back-to-shop:hover,
+.shipping-page-back a:hover {
+  background:var(--forest-deep);
+  border-color:var(--forest-deep);
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 7px 17px rgba(25,55,45,.2);
+}
+.product-page a.back-to-shop:focus-visible,
+.contact-page a.back-to-shop:focus-visible,
+.shipping-page a.back-to-shop:focus-visible,
+.shipping-page-back a:focus-visible {outline:3px solid var(--terra);outline-offset:3px}
+@media(max-width:480px) {
+  .product-page a.back-to-shop,.contact-page a.back-to-shop,.shipping-page a.back-to-shop,.shipping-page-back a {font-size:13px;padding:11px 16px}
+}
