@@ -6,7 +6,7 @@
   <meta name="description" content="Maison Mansoa, créations textiles uniques et faites main.">
   <meta name="theme-color" content="#faf7f1">
   <title>Boutique — Maison Mansoa</title>
-  <link rel="stylesheet" href="css/style.css?v=20261010-29">
+  <link rel="stylesheet" href="css/style.css?v=20261010-30">
 </head>
 <body>
   <header class="site-header" id="accueil">
@@ -40,6 +40,7 @@
         <button class="filter-button" type="button" data-filter="pochettes">Pochettes</button>
         <button class="filter-button" type="button" data-filter="trousses">Trousses</button>
       </div>
+      <div class="favorites-filter-wrap"><button type="button" id="favoritesOnly" class="favorites-only" aria-pressed="false">♡ Mes favoris</button></div>
       <div class="shop-sort-bar">
         <label for="productSort">Trier par</label>
         <select id="productSort" aria-label="Trier les créations">
@@ -100,8 +101,9 @@
   </aside>
   <script src="js/i18n.js?v=20261010-10"></script>
   <script src="js/products.js"></script>
+  <script src="js/favorites.js?v=1"></script>
   <script src="js/cart.js?v=20261009-9"></script>
-  <script src="js/catalogue.js?v=20261010-5"></script>
+  <script src="js/catalogue.js?v=20261010-6"></script>
   <script>
     // Le paiement n'est pas disponible : ne jamais laisser croire qu'une commande est possible.
     const checkout = document.getElementById("checkoutButton");
