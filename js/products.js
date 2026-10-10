@@ -36,6 +36,9 @@ const products = [
     // Couleur principale : à renseigner lorsque connue.
     couleur: "",
 
+    // Conseils d’entretien : à confirmer avec la créatrice.
+    entretien: "",
+
     modele: "protege-livre",
 
     collection: "femme",
@@ -83,6 +86,9 @@ const products = [
 
     // Couleur principale : à renseigner lorsque connue.
     couleur: "",
+
+    // Conseils d’entretien : à confirmer avec la créatrice.
+    entretien: "",
 
     modele: "besace",
 
