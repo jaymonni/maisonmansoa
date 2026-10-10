@@ -33,6 +33,9 @@ const products = [
 
     categorie: "protege-livres",
 
+    // Couleur principale : à renseigner lorsque connue.
+    couleur: "",
+
     modele: "protege-livre",
 
     collection: "femme",
@@ -77,6 +80,9 @@ const products = [
     nom: "Sac bandoulière style besace à rabat",
 
     categorie: "sacs",
+
+    // Couleur principale : à renseigner lorsque connue.
+    couleur: "",
 
     modele: "besace",
 
