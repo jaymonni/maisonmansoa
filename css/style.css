@@ -913,3 +913,14 @@ html body:not(.homepage-latest) .site-header .mansoa-nav a[aria-current="page"]{
   gap:clamp(14px,2.6vw,36px)!important;
  }
 }
+
+/* Accueil : même typographie raffinée que les menus des pages intérieures */
+html body.homepage-latest .hero-links a{
+ font-family:Georgia,"Times New Roman",serif!important;
+ font-size:clamp(14px,1.2vw,17px)!important;
+ font-weight:400!important;
+ letter-spacing:.2px!important;
+}
+@media(max-width:750px){
+ html body.homepage-latest .hero-links a{font-size:13px!important}
+}
