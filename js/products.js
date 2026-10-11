@@ -204,7 +204,7 @@ const products = [
     matieres: ["Velours côtelé rose (extérieur)", "Coton fleuri (doublure)"],
     tissuPrincipal: "Velours côtelé rose",
     dimensions: { longueur: 14, hauteur: 22.5, largeur: null },
-    images: ["images/PL004/01.jpg", "images/PL004/03.jpg", "images/PL004/04.jpg", "images/PL004/05.jpg", "images/PL004/06.jpg"]
+    images: ["images/PL004/01.jpg", "images/PL004/02.jpg", "images/PL004/03.jpg", "images/PL004/04.jpg", "images/PL004/05.jpg", "images/PL004/06.jpg"]
   }
 
 ];
