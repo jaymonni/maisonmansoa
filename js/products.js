@@ -29,7 +29,7 @@ const products = [
   {
     id: "PL001",
 
-    nom: "Protège-livre à fleurs",
+    nom: "Pochette à livre à fleurs",
 
     categorie: "protege-livres",
 
@@ -134,7 +134,7 @@ const products = [
   // ===================================================
   {
     id: "PL002",
-    nom: "Protège-livre en velours côtelé",
+    nom: "Pochette à livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Vert",
     entretien: "",
@@ -162,14 +162,14 @@ const products = [
   // ===================================================
   {
     id: "PL003",
-    nom: "Protège-livre en velours côtelé",
+    nom: "Pochette à livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Vert d’eau et fleuri multicolore",
     entretien: "",
     modele: "protege-livre",
     collection: "femme",
     prix: 18,
-    disponible: true,
+    disponible: false,
     pieceUnique: true,
     description: "Emportez vos histoires préférées partout avec vous, bien protégées. Cette pochette Maison Mansoa confectionnée à la main protège votre livre ou votre liseuse des petits chocs, frottements et salissures dans votre sac. Elle associe un velours côtelé vert d’eau à un tissu fleuri multicolore, avec un joli rabat et un lien à nouer sur le devant. Elle convient aux livres de poche jusqu’à environ 2 cm d’épaisseur et aux liseuses dont les dimensions sont adaptées. Une jolie idée cadeau pour les amoureux de lecture. Parce qu’un livre que l’on aime mérite lui aussi sa jolie pochette.",
     matieres: ["Velours côtelé", "Tissu fleuri"],
@@ -191,7 +191,7 @@ const products = [
   // ===================================================
   {
     id: "PL004",
-    nom: "Protège-livre en velours côtelé",
+    nom: "Pochette à livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Rose",
     entretien: "",
