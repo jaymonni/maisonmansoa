@@ -187,21 +187,31 @@
     observer.observe(document.body,{childList:true,subtree:true,characterData:true});
     busy = false;
   }
+  // Ne traiter que les éléments modifiés : rescanner toute la page à chaque
+  // changement du panier pouvait bloquer le navigateur.
   const observer = new MutationObserver(records => {
     if (busy) return;
-    // New content (catalogue, cart, product detail) may be rendered asynchronously.
-    for (const record of records) {
-      if (record.type === "characterData" && record.target.nodeType === Node.TEXT_NODE) {
-        const node = record.target;
-        const fr = original.get(node);
-        const current = node.nodeValue;
-        if (fr !== undefined && current !== fr && current !== translate(fr.trim())) original.set(node,current);
+    busy = true;
+    observer.disconnect();
+    try {
+      for (const record of records) {
+        if (record.type === "childList") {
+          for (const node of record.addedNodes) {
+            if (node.nodeType === Node.TEXT_NODE) original.delete(node);
+            visit(node);
+          }
+        } else if (record.type === "characterData") {
+          const node = record.target;
+          if (node.nodeType !== Node.TEXT_NODE) continue;
+          // Le texte vient d'être actualisé par le panier ou une fiche produit.
+          original.set(node, node.nodeValue);
+          visit(node);
+        }
       }
-      if (record.type === "childList") for (const node of record.addedNodes) {
-        if (node.nodeType === Node.TEXT_NODE) original.delete(node);
-      }
+    } finally {
+      observer.observe(document.body,{childList:true,subtree:true,characterData:true});
+      busy = false;
     }
-    update();
   });
   document.addEventListener("click",event => {
     const button = event.target.closest(".language-switch button");
