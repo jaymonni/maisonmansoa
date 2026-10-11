@@ -82,16 +82,9 @@ function addToCart(id) {
   }
 
 
-  /*
-    Pour une pièce unique,
-    on évite d'ajouter plusieurs exemplaires
-    du même produit.
-  */
-
-  if (
-    product.pieceUnique &&
-    cart.includes(id)
-  ) {
+  // Un seul exemplaire de chaque référence par panier.
+  // Évite les doublons, y compris pour les créations en petite série.
+  if (cart.includes(id)) {
 
     openCart();
 
@@ -141,8 +134,8 @@ function renderCart() {
   }
 
 
-  cart =
-    cart.filter(id => getProduct(id));
+  // Nettoyer les anciens doublons et retirer les articles indisponibles.
+  cart = [...new Set(cart.filter(id => getProduct(id)?.disponible))];
 
 
   saveCart();
