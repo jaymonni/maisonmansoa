@@ -206,5 +206,43 @@ const products = [
     dimensions: { longueur: 14, hauteur: 22.5, largeur: null },
     images: ["images/PL004/01.jpg", "images/PL004/02.jpg", "images/PL004/03.jpg", "images/PL004/04.jpg", "images/PL004/05.jpg", "images/PL004/06.jpg"]
   }
+,
 
+  // SAC002 — SAC BANDOUliÈRE À RAYURES
+  {
+    id: "SAC002",
+    nom: "Sac bandoulière à rayures blanc et rouge, esprit basque",
+    categorie: "sacs",
+    couleur: "Blanc et rouge",
+    entretien: "",
+    modele: "bandouliere",
+    collection: "femme",
+    prix: 35,
+    disponible: true,
+    pieceUnique: false,
+    description: "Un sac qui invite au voyage. Sac bandoulière Mansoa confectionné à la main en France dans un tissu de qualité à rayures blanches et rouges, esprit basque. Élégant, pratique et confortable, son format généreux permet d'emporter les essentiels au quotidien comme en escapade. Fermeture par pochon coulissant, doublure en coton, poche intérieure non zippée, bandoulière réglable et finitions soignées avec étiquette Mansoa. La bandoulière de ce modèle n'est pas faite main. Hauteur jusqu'à 32 cm avec le pochon ouvert. Confectionné avec soin en petite série. N'hésitez pas à nous contacter avant votre achat pour toute question sur les dimensions, les couleurs ou les détails.",
+    matieres: ["Tissu à rayures", "Doublure en coton"],
+    tissuPrincipal: "Tissu à rayures",
+    dimensions: { longueur: 33, hauteur: 23, largeur: 13 },
+    images: ["images/SAC002/01.jpg", "images/SAC002/02.jpg", "images/SAC002/03.jpg", "images/SAC002/04.jpg", "images/SAC002/05.jpg", "images/SAC002/06.jpg"]
+  },
+
+  // SAC003 — SAC BANDOUliÈRE À RAYURES
+  {
+    id: "SAC003",
+    nom: "Sac bandoulière à rayures bleu et blanc, esprit marin",
+    categorie: "sacs",
+    couleur: "Bleu et blanc, touche moutarde",
+    entretien: "",
+    modele: "bandouliere",
+    collection: "femme",
+    prix: 35,
+    disponible: true,
+    pieceUnique: false,
+    description: "Un sac qui invite au voyage. Apportez une touche d'évasion à votre quotidien avec ce sac bandoulière Mansoa confectionné à la main en France dans un magnifique tissu rayé bleu et blanc rehaussé d'une touche de couleur moutarde. Élégant, pratique et confortable, son format généreux accueille tous vos essentiels pour le quotidien et les escapades. Fermeture par pochon coulissant, doublure en coton, poche intérieure non zippée, bandoulière réglable et finitions soignées avec étiquette Mansoa. Hauteur jusqu'à 32 cm avec le pochon ouvert. Confectionné avec soin en petite série. N'hésitez pas à nous contacter avant votre achat pour toute question sur les dimensions, les couleurs ou les détails.",
+    matieres: ["Tissu à rayures", "Doublure en coton"],
+    tissuPrincipal: "Tissu à rayures",
+    dimensions: { longueur: 33, hauteur: 23, largeur: 13 },
+    images: ["images/SAC003/01.jpg", "images/SAC003/02.jpg", "images/SAC003/03.jpg", "images/SAC003/04.jpg", "images/SAC003/05.jpg", "images/SAC003/06.jpg"]
+  }
 ];
