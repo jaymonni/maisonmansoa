@@ -124,8 +124,6 @@
     const checkout = document.getElementById("checkoutButton");
     if (checkout) {
       checkout.disabled = true;
-      const lockCheckout = () => { checkout.disabled = true; };
-      new MutationObserver(lockCheckout).observe(checkout, {attributes:true,attributeFilter:["disabled"]});
     }
   </script>
 </body>
