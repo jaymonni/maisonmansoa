@@ -282,5 +282,24 @@ const products = [
     tissuPrincipal: "",
     dimensions: { longueur: 22, hauteur: 16, largeur: 11 },
     images: ["images/MINI001/01.jpg", "images/MINI001/02.jpg", "images/MINI001/03.jpg", "images/MINI001/04.jpg", "images/MINI001/05.jpg", "images/MINI001/06.jpg", "images/MINI001/07.jpg"]
+  },
+
+  // MINI002 — VERT MINI
+  {
+    id: "MINI002",
+    nom: "Sac bandoulière Vert Mini",
+    categorie: "minis",
+    couleur: "Vert",
+    entretien: "",
+    modele: "bandouliere",
+    collection: "femme",
+    prix: 40,
+    disponible: true,
+    pieceUnique: false,
+    description: "Craquez pour le VERT Mini, un sac bandoulière confectionné à la main dans mon atelier. Son format compact est idéal pour emporter vos essentiels : téléphone, portefeuille et clés. Léger et confortable, il vous accompagne au quotidien comme en sortie. Fermeture par pochon coulissant, poche intérieure, doublure en coton fleuri et bandoulière réglable. Dimensions : 22 × 16 × 11 cm, avec une hauteur de 23 cm avec le pochon. Chaque sac est réalisé avec soin en petite série. Les motifs peuvent légèrement varier selon la découpe du tissu, ce qui fait tout le charme de l'artisanat. N'hésitez pas à me contacter avant votre achat pour toute question concernant les dimensions, les couleurs ou les détails du modèle.",
+    matieres: ["Doublure en coton fleuri"],
+    tissuPrincipal: "",
+    dimensions: { longueur: 22, hauteur: 16, largeur: 11 },
+    images: ["images/MINI002/01.jpg", "images/MINI002/02.jpg", "images/MINI002/03.jpg", "images/MINI002/04.jpg", "images/MINI002/05.jpg", "images/MINI002/06.jpg"]
   }
 ];
