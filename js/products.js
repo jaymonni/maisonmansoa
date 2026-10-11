@@ -134,7 +134,7 @@ const products = [
   // ===================================================
   {
     id: "PL002",
-    nom: "Pochette à livre en velours côtelé vert",
+    nom: "Pochette à livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Vert",
     entretien: "",
