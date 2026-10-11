@@ -249,19 +249,19 @@ const products = [
   // SAC004 — TROPICAL MINI KAKI
   {
     id: "SAC004",
-    nom: "Sac bandoulière Tropical Mini kaki",
+    nom: "Sac bandoulière kaki à motifs hibiscus",
     categorie: "sacs",
     couleur: "Kaki",
     entretien: "",
     modele: "bandouliere",
     collection: "femme",
-    prix: 40,
+    prix: 45,
     disponible: true,
     pieceUnique: false,
-    description: "Craquez pour le Tropical Mini, un sac bandoulière confectionné à la main dans mon atelier. Son format compact est idéal pour emporter vos essentiels : téléphone, portefeuille et clés. Léger et confortable, il vous accompagne au quotidien comme en sortie. Fermeture par pochon coulissant, poche intérieure, doublure en coton fleuri et bandoulière réglable. Dimensions : 22 × 16 × 11 cm, avec une hauteur de 23 cm lorsque le pochon est ouvert. Chaque sac est réalisé avec soin en petite série. Les motifs peuvent légèrement varier selon la découpe du tissu, ce qui fait tout le charme de l'artisanat. N'hésitez pas à me contacter avant votre achat pour toute question concernant les dimensions, les couleurs ou les détails du modèle.",
-    matieres: ["Doublure en coton fleuri"],
-    tissuPrincipal: "",
-    dimensions: { longueur: 22, hauteur: 16, largeur: 11 },
+    description: "Un sac qui invite au voyage. Apportez une touche d'évasion à votre quotidien avec ce sac bandoulière Mansoa, entièrement confectionné à la main en France dans un magnifique tissu kaki aux motifs hibiscus. À la fois élégant, pratique et confortable, il vous accompagne aussi bien au quotidien que pour vos escapades. Son format généreux permet de transporter facilement tous vos essentiels tout en restant léger à porter. Tissu de qualité aux motifs hibiscus, fermeture par pochon coulissant, doublure en coton, poche intérieure non zippée, bandoulière réglable et finitions soignées avec étiquette Mansoa. Dimensions : 33 × 23 × 13 cm ; hauteur jusqu'à 32 cm avec le pochon ouvert. Ce modèle existe aussi en format mini. Chaque sac est confectionné avec soin en petite série afin de proposer une création artisanale de qualité, pensée pour durer. N'hésitez pas à me contacter avant votre achat pour toute question concernant les dimensions, les couleurs ou les détails du modèle.",
+    matieres: ["Tissu kaki à motifs hibiscus", "Doublure en coton"],
+    tissuPrincipal: "Tissu kaki à motifs hibiscus",
+    dimensions: { longueur: 33, hauteur: 23, largeur: 13 },
     images: ["images/SAC004/01.jpg", "images/SAC004/02.jpg", "images/SAC004/03.jpg", "images/SAC004/04.jpg", "images/SAC004/05.jpg", "images/SAC004/06.jpg"]
   }
 ];
