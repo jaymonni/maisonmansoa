@@ -44,10 +44,11 @@ const checkoutButton =
 
 function saveCart() {
 
-  localStorage.setItem(
-    "mansoaCart",
-    JSON.stringify(cart)
-  );
+  try {
+    localStorage.setItem("mansoaCart", JSON.stringify(cart));
+  } catch (_) {
+    // Le panier reste utilisable même si le stockage est indisponible.
+  }
 
 }
 
@@ -115,6 +116,7 @@ function addToCart(id) {
 
 function removeFromCart(index) {
 
+  if (!Number.isInteger(index) || index < 0 || index >= cart.length) return;
   cart.splice(index, 1);
 
   saveCart();
@@ -265,6 +267,7 @@ function openCart() {
     return;
   }
 
+  clearTimeout(cartCloseTimeout);
   cartDrawer.classList.add("open");
 
   cartDrawer.setAttribute(
@@ -290,6 +293,8 @@ function openCart() {
 // FERMER LE PANIER
 // -----------------------------------------------------
 
+let cartCloseTimeout;
+
 function closeCart() {
 
   if (!cartDrawer) {
@@ -309,8 +314,9 @@ function closeCart() {
 
     cartOverlay.classList.remove("open");
 
-    setTimeout(() => {
-      cartOverlay.hidden = true;
+    clearTimeout(cartCloseTimeout);
+    cartCloseTimeout = setTimeout(() => {
+      if (!cartDrawer.classList.contains("open")) cartOverlay.hidden = true;
     }, 250);
 
   }
@@ -460,3 +466,13 @@ destinationSelect?.addEventListener("change",populateCarriers);
 carrierSelect?.addEventListener("change",()=>updateShipping());
 populateCarriers();
 renderCart();
+
+// Synchroniser le panier si une autre fenêtre du site le modifie.
+window.addEventListener("storage", event => {
+  if (event.key !== "mansoaCart") return;
+  try {
+    const updated = JSON.parse(event.newValue || "[]");
+    cart = Array.isArray(updated) ? updated : [];
+  } catch (_) { cart = []; }
+  renderCart();
+});
