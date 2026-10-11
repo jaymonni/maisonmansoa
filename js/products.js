@@ -184,5 +184,27 @@ const products = [
       "images/PL003/06.jpg"
     ]
   }
+,
+
+  // ===================================================
+  // PL004 — PROTÈGE-LIVRE EN VELOURS CÔTELÉ ROSE
+  // ===================================================
+  {
+    id: "PL004",
+    nom: "Protège-livre en velours côtelé",
+    categorie: "protege-livres",
+    couleur: "Rose",
+    entretien: "",
+    modele: "protege-livre",
+    collection: "femme",
+    prix: 18,
+    disponible: true,
+    pieceUnique: true,
+    description: "Pochette protège-livre entièrement confectionnée à la main en France par Maison Mansoa. Son extérieur en velours côtelé rose est associé à une jolie doublure en coton turquoise à petites fleurs roses. Le lien permet de maintenir le livre bien en place. Pièce unique, idéale pour protéger votre livre dans votre sac et une jolie idée cadeau pour les amoureux de lecture. Les dimensions indiquées correspondent à la pochette : pensez à vérifier les dimensions de votre livre afin de vous assurer qu’il sera adapté. Une création textile pensée et cousue avec soin.",
+    matieres: ["Velours côtelé rose (extérieur)", "Coton fleuri (doublure)"],
+    tissuPrincipal: "Velours côtelé rose",
+    dimensions: { longueur: 14, hauteur: 22.5, largeur: null },
+    images: ["images/PL004/01.jpg"]
+  }
 
 ];
