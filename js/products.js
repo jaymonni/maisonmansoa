@@ -29,7 +29,7 @@ const products = [
   {
     id: "PL001",
 
-    nom: "Pochette à livre à fleurs",
+    nom: "Protège-livre à fleurs",
 
     categorie: "protege-livres",
 
@@ -134,7 +134,7 @@ const products = [
   // ===================================================
   {
     id: "PL002",
-    nom: "Pochette à livre en velours côtelé",
+    nom: "Protège-livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Vert",
     entretien: "",
@@ -162,7 +162,7 @@ const products = [
   // ===================================================
   {
     id: "PL003",
-    nom: "Pochette à livre en velours côtelé",
+    nom: "Protège-livre en velours côtelé",
     categorie: "protege-livres",
     couleur: "Vert d’eau et fleuri multicolore",
     entretien: "",
