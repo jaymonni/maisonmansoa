@@ -114,8 +114,6 @@
     const checkout = document.getElementById("checkoutButton");
     if (checkout) {
       checkout.disabled = true;
-      new MutationObserver(() => { checkout.disabled = true; })
-        .observe(checkout, { attributes: true, attributeFilter: ["disabled"] });
     }
   </script>
   <script>
