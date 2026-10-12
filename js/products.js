@@ -491,5 +491,24 @@ const products = [
     tissuPrincipal: "",
     dimensions: { longueur: 11, hauteur: 22, largeur: null },
     images: ["images/PT003/01.jpg", "images/PT003/02.jpg", "images/PT003/03.jpg", "images/PT003/04.jpg", "images/PT003/05.jpg"]
+  },
+
+  // TP001 — TROUSSE PANIÈRE
+  {
+    id: "TP001",
+    nom: "Trousse panière en coton faite main",
+    categorie: "trousses-panieres",
+    couleur: "",
+    entretien: "",
+    modele: "trousse-paniere",
+    collection: "femme",
+    prix: 15,
+    disponible: true,
+    pieceUnique: false,
+    description: "La petite trousse pratique et élégante qui reste ouverte toute seule ! Cette jolie trousse panière est entièrement confectionnée à la main avec un tissu extérieur et une doublure en coton de qualité. Son format original permet de la garder ouverte pour avoir facilement accès à vos essentiels du quotidien : maquillage, pinceaux, crèmes, bijoux ou petits accessoires. Ses atouts : création artisanale faite main, tient ouverte pour un accès facile, format compact et pratique, tissu extérieur et doublure en coton de qualité, idéale pour organiser vos indispensables. Dimensions : 12 × 12 × 12 cm. Parfaite comme trousse de beauté, rangement maquillage, pochette à bijoux ou petit rangement du quotidien. Une création Mansoa pensée pour allier praticité, douceur et élégance.",
+    matieres: ["Coton extérieur", "Doublure en coton"],
+    tissuPrincipal: "Coton",
+    dimensions: { longueur: 12, hauteur: 12, largeur: 12 },
+    images: ["images/TP001/01.jpg", "images/TP001/02.jpg", "images/TP001/03.jpg", "images/TP001/04.jpg", "images/TP001/05.jpg", "images/TP001/06.jpg", "images/TP001/07.jpg"]
   }
 ];
