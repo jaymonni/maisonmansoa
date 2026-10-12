@@ -339,5 +339,24 @@ const products = [
     tissuPrincipal: "Tissu kaki",
     dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
     images: ["images/PLH002/01.jpg", "images/PLH002/02.jpg", "images/PLH002/03.jpg", "images/PLH002/04.jpg", "images/PLH002/05.jpg"]
+  },
+
+  // PL005 — POCHETTE À LIVRE BEIGE ET SOULEIADO
+  {
+    id: "PL005",
+    nom: "Pochette à livre ou liseuse en velours côtelé beige et tissu provençal Souleiado",
+    categorie: "protege-livres",
+    couleur: "Beige et fleuri",
+    entretien: "",
+    modele: "protege-livre",
+    collection: "femme",
+    prix: 20,
+    disponible: true,
+    pieceUnique: false,
+    description: "Emportez vos lectures préférées partout avec vous grâce à cette jolie pochette Mansoa, confectionnée à la main avec soin. Son velours côtelé doux associé à un délicat tissu provençal fleuri Souleiado lui apporte charme et élégance. Son joli nœud assorti maintient votre livre bien à l'abri. Convient aux livres de poche jusqu'à 2 cm d'épaisseur et aux liseuses de dimensions compatibles. Dimensions : 20 × 13,5 cm. Création artisanale faite avec soin, une belle idée cadeau pour les amoureux de lecture. Parce que chaque belle histoire mérite sa jolie pochette. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Velours côtelé beige", "Tissu provençal fleuri Souleiado"],
+    tissuPrincipal: "Velours côtelé beige",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PL005/01.jpg", "images/PL005/02.jpg", "images/PL005/03.jpg", "images/PL005/04.jpg", "images/PL005/05.jpg", "images/PL005/06.jpg"]
   }
 ];
