@@ -358,5 +358,24 @@ const products = [
     tissuPrincipal: "Velours côtelé beige",
     dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
     images: ["images/PL005/01.jpg", "images/PL005/02.jpg", "images/PL005/03.jpg", "images/PL005/04.jpg", "images/PL005/05.jpg", "images/PL005/06.jpg"]
+  },
+
+  // PL006 — POCHETTE À LIVRE VERT AMANDE ET FLEURI
+  {
+    id: "PL006",
+    nom: "Pochette à livre ou liseuse en velours côtelé vert amande et tissu fleuri",
+    categorie: "protege-livres",
+    couleur: "Vert amande et fleuri",
+    entretien: "",
+    modele: "protege-livre",
+    collection: "femme",
+    prix: 20,
+    disponible: true,
+    pieceUnique: false,
+    description: "Emportez vos lectures préférées partout avec vous grâce à cette jolie pochette Mansoa, confectionnée à la main avec soin. Son velours côtelé doux vert amande associé à un délicat tissu fleuri lui apporte charme et élégance. Son joli nœud assorti maintient votre livre bien à l'abri. Convient aux livres de poche jusqu'à 2 cm d'épaisseur et aux liseuses de dimensions compatibles. Dimensions : 20 × 13,5 cm. Création artisanale faite avec soin, une belle idée cadeau pour les amoureux de lecture. Parce que chaque belle histoire mérite sa jolie pochette. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Velours côtelé vert amande", "Tissu fleuri"],
+    tissuPrincipal: "Velours côtelé vert amande",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PL006/01.jpg", "images/PL006/02.jpg", "images/PL006/03.jpg", "images/PL006/04.jpg", "images/PL006/05.jpg"]
   }
 ];
