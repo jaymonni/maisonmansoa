@@ -320,5 +320,24 @@ const products = [
     tissuPrincipal: "Velours côtelé vert sauge",
     dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
     images: ["images/PLH001/01.jpg", "images/PLH001/02.jpg", "images/PLH001/03.jpg", "images/PLH001/04.jpg", "images/PLH001/05.jpg", "images/PLH001/06.jpg"]
+  },
+
+  // PLH002 — POCHETTE À LIVRE HOMME KAKI
+  {
+    id: "PLH002",
+    nom: "Pochette à livre homme kaki",
+    categorie: "pochettes-homme",
+    couleur: "Kaki",
+    entretien: "",
+    modele: "pochette-livre",
+    collection: "homme",
+    prix: 22,
+    disponible: true,
+    pieceUnique: false,
+    description: "La pochette de lecture au masculin ! Parce que les hommes aussi aiment prendre soin de leurs livres. Découvrez cette pochette Mansoa au style sobre, élégant et intemporel. Confectionnée à la main dans un tissu kaki de bonne qualité, elle se distingue par sa fermeture avec bouton en plastique strié vert nacré et élastique, pour une touche raffinée et originale. Elle protège vos livres et liseuses compatibles des petits chocs, frottements et salissures, à la maison comme en déplacement. Pour livres de poche jusqu'à 2 cm d'épaisseur et liseuses de dimensions adaptées. Dimensions : 20 × 13,5 cm. Création artisanale faite avec soin. Une belle idée cadeau pour les hommes qui aiment lire. Le plaisir de lire mérite aussi une touche d'élégance. Parce que chaque belle histoire mérite sa jolie pochette. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Tissu kaki", "Bouton en plastique strié vert nacré", "Élastique"],
+    tissuPrincipal: "Tissu kaki",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PLH002/01.jpg", "images/PLH002/02.jpg", "images/PLH002/03.jpg", "images/PLH002/04.jpg", "images/PLH002/05.jpg"]
   }
 ];
