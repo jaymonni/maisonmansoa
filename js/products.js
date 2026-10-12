@@ -377,5 +377,24 @@ const products = [
     tissuPrincipal: "Velours côtelé vert amande",
     dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
     images: ["images/PL006/01.jpg", "images/PL006/02.jpg", "images/PL006/03.jpg", "images/PL006/04.jpg", "images/PL006/05.jpg"]
+  },
+
+  // PL007 — POCHETTE À LIVRE BEIGE SAUGE ET FLEURI BORDEAUX
+  {
+    id: "PL007",
+    nom: "Pochette à livre ou liseuse en velours côtelé beige sauge et tissu fleuri bordeaux",
+    categorie: "protege-livres",
+    couleur: "Beige sauge et bordeaux fleuri",
+    entretien: "",
+    modele: "protege-livre",
+    collection: "femme",
+    prix: 20,
+    disponible: true,
+    pieceUnique: false,
+    description: "Emportez vos lectures préférées partout avec vous grâce à cette jolie pochette Mansoa, confectionnée à la main avec soin. Son velours côtelé doux beige sauge associé à un délicat tissu fleuri bordeaux lui apporte charme et élégance. Son joli nœud assorti maintient votre livre bien à l'abri. Convient aux livres de poche jusqu'à 2 cm d'épaisseur et aux liseuses de dimensions compatibles. Dimensions : 20 × 13,5 cm. Création artisanale faite avec soin, une belle idée cadeau pour les amoureux de lecture. Parce que chaque belle histoire mérite sa jolie pochette. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Velours côtelé beige sauge", "Tissu fleuri bordeaux"],
+    tissuPrincipal: "Velours côtelé beige sauge",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PL007/01.jpg", "images/PL007/02.jpg", "images/PL007/03.jpg", "images/PL007/04.jpg"]
   }
 ];
