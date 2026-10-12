@@ -301,5 +301,24 @@ const products = [
     tissuPrincipal: "",
     dimensions: { longueur: 22, hauteur: 16, largeur: 11 },
     images: ["images/MINI002/01.jpg", "images/MINI002/02.jpg", "images/MINI002/03.jpg", "images/MINI002/04.jpg", "images/MINI002/05.jpg", "images/MINI002/06.jpg"]
+  },
+
+  // PLH001 — POCHETTE À LIVRE HOMME VERT SAUGE
+  {
+    id: "PLH001",
+    nom: "Pochette à livre homme en velours côtelé vert sauge",
+    categorie: "pochettes-homme",
+    couleur: "Vert sauge",
+    entretien: "",
+    modele: "pochette-livre",
+    collection: "homme",
+    prix: 22,
+    disponible: true,
+    pieceUnique: false,
+    description: "La pochette de lecture au masculin ! Parce que les hommes aussi aiment prendre soin de leurs livres. Découvrez cette pochette Mansoa au style sobre, élégant et intemporel. Confectionnée à la main dans un velours côtelé vert sauge, elle se distingue par sa fermeture avec bouton en bois et élastique noir, pour une touche naturelle. Pratique et raffinée, elle protège vos livres et liseuses compatibles des petits chocs, frottements et salissures, à la maison comme en déplacement. Convient aux livres de poche jusqu'à 2 cm d'épaisseur et aux liseuses dont les dimensions sont adaptées. Dimensions : 20 × 13,5 cm. Création artisanale faite avec soin, une belle idée cadeau pour les hommes qui aiment lire. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Velours côtelé vert sauge", "Bouton en bois", "Élastique noir"],
+    tissuPrincipal: "Velours côtelé vert sauge",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PLH001/01.jpg", "images/PLH001/02.jpg", "images/PLH001/03.jpg", "images/PLH001/04.jpg", "images/PLH001/05.jpg", "images/PLH001/06.jpg"]
   }
 ];
