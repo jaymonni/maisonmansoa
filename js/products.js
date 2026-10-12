@@ -415,5 +415,24 @@ const products = [
     tissuPrincipal: "Velours côtelé bleu",
     dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
     images: ["images/PL008/01.jpg", "images/PL008/02.jpg", "images/PL008/03.jpg", "images/PL008/04.jpg", "images/PL008/05.jpg"]
+  },
+
+  // PL009 — POCHETTE À LIVRE ROUGE SOULEIADO
+  {
+    id: "PL009",
+    nom: "Pochette à livre ou liseuse en velours côtelé rouge et tissu provençal Souleiado",
+    categorie: "protege-livres",
+    couleur: "Rouge et motifs colorés",
+    entretien: "",
+    modele: "protege-livre",
+    collection: "femme",
+    prix: 20,
+    disponible: true,
+    pieceUnique: false,
+    description: "Une jolie pochette pour protéger vos lectures avec style ! Emportez vos histoires préférées partout avec vous grâce à cette pochette Mansoa, confectionnée à la main avec soin. Son velours côtelé rouge, doux et élégant, s'associe aux motifs colorés du tissu provençal Souleiado, pour une création pleine de charme et d'authenticité. Son joli rabat à nouer apporte une touche originale et raffinée, tout en maintenant votre livre bien à l'abri. Idéale pour les livres de poche jusqu'à environ 2 cm d'épaisseur et les liseuses de dimensions compatibles. Dimensions : 20 × 13,5 cm. Fabrication artisanale réalisée avec soin. Fermeture par un joli nœud en tissu. Une idée cadeau originale pour les amoureux des livres. Parce que chaque belle histoire mérite un écrin à sa hauteur. Mansoa – Coudre, rêver, créer.",
+    matieres: ["Velours côtelé rouge", "Tissu provençal Souleiado"],
+    tissuPrincipal: "Velours côtelé rouge",
+    dimensions: { longueur: 13.5, hauteur: 20, largeur: null },
+    images: ["images/PL009/01.jpg", "images/PL009/02.jpg", "images/PL009/03.jpg", "images/PL009/04.jpg", "images/PL009/05.jpg"]
   }
 ];
