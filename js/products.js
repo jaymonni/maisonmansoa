@@ -453,5 +453,24 @@ const products = [
     tissuPrincipal: "",
     dimensions: { longueur: 11, hauteur: 22, largeur: null },
     images: ["images/PT001/01.jpg", "images/PT001/02.jpg", "images/PT001/03.jpg", "images/PT001/04.jpg", "images/PT001/05.jpg"]
+  },
+
+  // PT002 — POCHETTE TÉLÉPHONE ROSE
+  {
+    id: "PT002",
+    nom: "Pochette téléphone rose pour sac à dos avec porte-clé",
+    categorie: "pochettes-telephone",
+    couleur: "Rose",
+    entretien: "",
+    modele: "pochette-telephone",
+    collection: "mixte",
+    prix: 22,
+    disponible: true,
+    pieceUnique: false,
+    description: "Une pochette pensée spécialement pour les collégiens et lycéens ! Parce que le téléphone et la clé du casier ont souvent tendance à se retrouver au fond du sac, j'ai imaginé cette pochette pratique pour les garder toujours accessibles et bien rangés. Elle se fixe à l'intérieur du sac à dos grâce à sa sangle équipée de deux pinces. Particulièrement adaptée aux sacs de type Eastpak, elle peut aussi être installée dans la plupart des sacs à dos disposant d'un emplacement où accrocher les pinces. La pochette mesure 22 × 11 cm et est livrée avec son attache spéciale sac à dos. Un porte-clé intégré permet de garder la clé du cadenas du casier à portée de main. Entièrement confectionnée à la main avec soin dans mon atelier Mansoa, elle associe des tissus choisis pour créer un accessoire utile, original et joli. Plusieurs modèles de tissus sont proposés, chacun réalisé en petite série. Vérifiez les dimensions de votre téléphone avant commande. La pochette est destinée à être fixée à l'intérieur du sac à dos. Téléphone et clé non fournis. Une création imaginée pour simplifier le quotidien des collégiens et lycéens. Mansoa – Coudre, rêver, créer.",
+    matieres: [],
+    tissuPrincipal: "",
+    dimensions: { longueur: 11, hauteur: 22, largeur: null },
+    images: ["images/PT002/01.jpg", "images/PT002/02.jpg", "images/PT002/03.jpg", "images/PT002/04.jpg", "images/PT002/05.jpg"]
   }
 ];
