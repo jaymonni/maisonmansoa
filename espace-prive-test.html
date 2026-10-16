@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Espace privé de test — Maison Mansoa</title>
+<style>
+:root{font-family:Georgia,serif;color:#34483c;background:#f8f6f0}*{box-sizing:border-box}
+body{margin:0;padding:36px 16px}.wrap{max-width:650px;margin:auto}
+header{text-align:center;margin-bottom:30px}h1{font-size:2rem;margin:12px 0}p{line-height:1.6}
+.panel{background:#fff;border:1px solid #e4dfd2;border-radius:16px;padding:28px;box-shadow:0 5px 20px #263a2a0a}
+label{display:block;margin:18px 0 7px;font-weight:bold}input{width:100%;padding:13px;border:1px solid #aab9ad;border-radius:8px;font:inherit}
+button{font:inherit;cursor:pointer;border:0;border-radius:8px;padding:12px 18px;background:#355e49;color:white;margin-top:18px}
+button:disabled{opacity:.6;cursor:wait}.link{border:0;background:none;color:#245f4c;text-decoration:underline;padding:4px;margin:12px 0}
+.notice{background:#f4f0e4;border-radius:8px;padding:12px 15px;font-size:.95rem}
+#error{color:#a22c2c}#message{color:#245f4c}#error,#message{min-height:1.4em}
+[hidden]{display:none!important}dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}dt{font-weight:bold}dd{margin:0}
+footer{text-align:center;margin-top:24px;font-size:.9rem}
+</style>
+</head>
+<body><div class="wrap">
+<header><p>🌿 MAISON MANSOA</p><h1>Espace privé — essai Firebase</h1><p>Connexion de test, sans commandes réelles</p></header>
+<main class="panel">
+<p class="notice">Cette page est un essai technique. Seul le compte de test autorisé peut lire la commande fictive. Le panier et la boutique ne sont pas connectés.</p>
+<section id="login">
+<form id="loginForm">
+<label for="email">Adresse e-mail</label><input id="email" type="email" autocomplete="username" required>
+<label for="password">Mot de passe</label><input id="password" type="password" autocomplete="current-password" required>
+<button id="loginBtn" type="submit">Se connecter</button>
+</form>
+<button class="link" type="button" id="resetBtn">Mot de passe oublié ?</button>
+</section>
+<section id="private" hidden>
+<p>Connexion réussie. <strong>Compte de test autorisé.</strong></p>
+<h2>Commande fictive</h2>
+<div id="order">Chargement…</div>
+<button id="logoutBtn" type="button">Se déconnecter</button>
+</section>
+<p id="error" role="alert"></p><p id="message" role="status"></p>
+</main><footer>Accès de test • Maison Mansoa</footer>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+const config = {
+ apiKey:"AIzaSyDUjPbM1zCQm-cET6Rq27PuJx0YZ2F0FMA",
+ authDomain:"maison-mansoa.firebaseapp.com",
+ projectId:"maison-mansoa",
+ storageBucket:"maison-mansoa.firebasestorage.app",
+ messagingSenderId:"495105433398",
+ appId:"1:495105433398:web:ae9b07839c78bf65689d97"
+};
+const ADMIN_UID="rrcwlgQQIrRtZbKM2JUxTrqQrE22";
+const app=initializeApp(config),auth=getAuth(app),db=getFirestore(app);
+const el=id=>document.getElementById(id);
+const show=(id,value)=>{el(id).textContent=value||""};
+function errorText(e){
+ if(e.code==="auth/invalid-email")return "Vérifie le format de l'adresse e-mail.";
+ if(e.code==="auth/too-many-requests")return "Trop de tentatives. Réessaie plus tard.";
+ if(e.code==="permission-denied")return "Lecture refusée par les règles Firestore.";
+ return "Opération impossible. Vérifie tes identifiants ou ta connexion et réessaie.";
+}
+el("loginForm").addEventListener("submit",async event=>{
+ event.preventDefault();show("error","");show("message","");
+ el("loginBtn").disabled=true;
+ try{await signInWithEmailAndPassword(auth,el("email").value.trim(),el("password").value);}
+ catch(e){show("error",errorText(e));}
+ finally{el("loginBtn").disabled=false;el("password").value="";}
+});
+el("resetBtn").addEventListener("click",async()=>{
+ show("error","");show("message","");
+ const email=el("email").value.trim();
+ if(!email){show("error","Indique ton adresse e-mail dans la case ci-dessus.");return;}
+ el("resetBtn").disabled=true;
+ try{await sendPasswordResetEmail(auth,email);show("message","Si cette adresse est enregistrée, un e-mail de réinitialisation sera envoyé. Vérifie aussi les indésirables.");}
+ catch(e){show("error",errorText(e));}
+ finally{el("resetBtn").disabled=false;}
+});
+el("logoutBtn").addEventListener("click",()=>signOut(auth));
+onAuthStateChanged(auth,async user=>{
+ show("error","");show("message","");
+ const allowed=!!user&&user.uid===ADMIN_UID;
+ el("login").hidden=allowed;el("private").hidden=!allowed;
+ if(!user)return;
+ if(!allowed){show("error","Ce compte n'est pas autorisé à consulter les commandes.");await signOut(auth);return;}
+ const order=el("order");order.textContent="Chargement de TEST-001…";
+ try{
+ const snap=await getDoc(doc(db,"commandes","TEST-001"));
+ if(!snap.exists()){order.textContent="Commande fictive TEST-001 introuvable.";return;}
+ const data=snap.data(),dl=document.createElement("dl");
+ const fields=[["Numéro",data.numero_commande],["Statut",data.statut],["Montant",typeof data.montant_total==="number"?data.montant_total.toLocaleString("fr-FR",{style:"currency",currency:"EUR"}):"—"],["Date",data.date_commande?.toDate?.()?.toLocaleString("fr-FR")||"—"]];
+ for(const [key,value] of fields){const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=key;dd.textContent=value??"—";dl.append(dt,dd);}
+ order.replaceChildren(dl);
+ }catch(e){order.textContent=errorText(e);}
+});
+</script>
+</body></html>
