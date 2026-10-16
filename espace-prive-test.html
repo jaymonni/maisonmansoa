@@ -59,7 +59,7 @@ function errorText(e){
  if(e.code==="auth/invalid-email")return "Vérifie le format de l'adresse e-mail.";
  if(e.code==="auth/too-many-requests")return "Trop de tentatives. Réessaie plus tard.";
  if(e.code==="permission-denied")return "Lecture refusée par les règles Firestore.";
- return "Opération impossible. Vérifie tes identifiants ou ta connexion et réessaie.";
+ return "Connexion impossible (code : "+String(e.code||"inconnu")+"). Communique-moi uniquement ce code, jamais ton mot de passe.";
 }
 el("loginForm").addEventListener("submit",async event=>{
  event.preventDefault();show("error","");show("message","");
