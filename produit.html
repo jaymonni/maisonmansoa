@@ -8,10 +8,12 @@
   <title>Création — Maison Mansoa</title>
   <link rel="stylesheet" href="css/style.css?v=20261010-44">
 <style>
-.product-neighbor-nav{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;width:100%;margin:24px 0 8px}
-.product-neighbor-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border:1px solid #d9cdb8;border-radius:14px;background:#faf7f1;color:#24453d;text-decoration:none;font-weight:600;min-height:52px;flex:1;text-align:center}
+.product-top-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.product-top-navigation .back-to-shop{margin:0}
+.product-neighbor-nav{display:flex;gap:8px;margin:0}
+.product-neighbor-link{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px 12px;border:1px solid #d9cdb8;border-radius:10px;background:#faf7f1;color:#24453d;text-decoration:none;font-weight:600;font-size:13px;white-space:nowrap;min-height:36px}
 .product-neighbor-link:hover,.product-neighbor-link:focus-visible{background:#efe8dc;outline-offset:3px}
-@media(max-width:540px){.product-neighbor-nav{gap:8px}.product-neighbor-link{font-size:13px;padding:12px 8px;gap:6px}}
+@media(max-width:540px){.product-top-navigation{gap:7px}.product-neighbor-nav{gap:5px}.product-neighbor-link{padding:7px 9px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -36,7 +38,7 @@
   </header>
 
   <main class="product-page">
-    <a class="back-to-shop" href="boutique.html">← Toutes les créations</a>
+    <div class="product-top-navigation"><a class="back-to-shop" href="boutique.html">← Toutes les créations</a></div>
     <div class="product-detail" id="productDetail">
       <p class="product-loading">Chargement de la création…</p>
     </div>
@@ -121,7 +123,7 @@
   <script src="js/products.js?v=20261026-1"></script>
   <script src="js/favorites.js?v=2"></script>
   <script src="js/cart.js?v=20261011-2"></script>
-  <script src="js/product.js?v=20261026-3"></script>
+  <script src="js/product.js?v=20261026-4"></script>
   <script>
     const checkout = document.getElementById("checkoutButton");
     if (checkout) {
