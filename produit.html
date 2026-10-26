@@ -7,6 +7,12 @@
   <meta name="theme-color" content="#faf7f1">
   <title>Création — Maison Mansoa</title>
   <link rel="stylesheet" href="css/style.css?v=20261010-44">
+<style>
+.product-neighbor-nav{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;width:100%;margin:24px 0 8px}
+.product-neighbor-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border:1px solid #d9cdb8;border-radius:14px;background:#faf7f1;color:#24453d;text-decoration:none;font-weight:600;min-height:52px;flex:1;text-align:center}
+.product-neighbor-link:hover,.product-neighbor-link:focus-visible{background:#efe8dc;outline-offset:3px}
+@media(max-width:540px){.product-neighbor-nav{gap:8px}.product-neighbor-link{font-size:13px;padding:12px 8px;gap:6px}}
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -115,7 +121,7 @@
   <script src="js/products.js?v=20261026-1"></script>
   <script src="js/favorites.js?v=2"></script>
   <script src="js/cart.js?v=20261011-2"></script>
-  <script src="js/product.js?v=20261010-6"></script>
+  <script src="js/product.js?v=20261026-2"></script>
   <script>
     const checkout = document.getElementById("checkoutButton");
     if (checkout) {
