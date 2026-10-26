@@ -356,6 +356,7 @@ function displayProduct() {
 
   productDetail.innerHTML = `
 
+    ${createProductNavigation(product)}
     ${createGallery(product)}
 
 
@@ -427,7 +428,6 @@ function displayProduct() {
       </div>
 
     </section>
-    ${createProductNavigation(product)}
   `;
 
 
