@@ -243,6 +243,27 @@ function createGallery(product) {
 }
 
 
+// Navigation entre les créations d'une même catégorie, sans toucher au panier.
+function createProductNavigation(current) {
+  const siblings = products.filter(item => item.categorie === current.categorie);
+  if (siblings.length < 2) return "";
+  const index = siblings.findIndex(item => item.id === current.id);
+  if (index < 0) return "";
+  const previous = siblings[(index - 1 + siblings.length) % siblings.length];
+  const next = siblings[(index + 1) % siblings.length];
+  const link = item => "produit.html?id=" + encodeURIComponent(item.id) +
+    "&categorie=" + encodeURIComponent(current.categorie);
+  return `
+    <nav class="product-neighbor-nav" aria-label="Parcourir les créations de cette catégorie">
+      <a href="${link(previous)}" class="product-neighbor-link" aria-label="Création précédente : ${escapeProductText(previous.nom)}">
+        <span aria-hidden="true">←</span><span>Création précédente</span>
+      </a>
+      <a href="${link(next)}" class="product-neighbor-link" aria-label="Création suivante : ${escapeProductText(next.nom)}">
+        <span>Création suivante</span><span aria-hidden="true">→</span>
+      </a>
+    </nav>`;
+}
+
 // -----------------------------------------------------
 // AFFICHAGE DU PRODUIT
 // -----------------------------------------------------
@@ -406,6 +427,7 @@ function displayProduct() {
       </div>
 
     </section>
+    ${createProductNavigation(product)}
   `;
 
 
