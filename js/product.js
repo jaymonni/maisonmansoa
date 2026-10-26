@@ -246,20 +246,22 @@ function createGallery(product) {
 // Navigation entre les créations d'une même catégorie, sans toucher au panier.
 function createProductNavigation(current) {
   const siblings = products.filter(item => item.categorie === current.categorie);
-  if (siblings.length < 2) return "";
-  const index = siblings.findIndex(item => item.id === current.id);
+  // Catégorie isolée : permettre malgré tout de parcourir la boutique.
+  const navigationItems = siblings.length > 1 ? siblings : products;
+  if (navigationItems.length < 2) return "";
+  const index = navigationItems.findIndex(item => item.id === current.id);
   if (index < 0) return "";
-  const previous = siblings[(index - 1 + siblings.length) % siblings.length];
-  const next = siblings[(index + 1) % siblings.length];
+  const previous = navigationItems[(index - 1 + navigationItems.length) % navigationItems.length];
+  const next = navigationItems[(index + 1) % navigationItems.length];
   const link = item => "produit.html?id=" + encodeURIComponent(item.id) +
-    "&categorie=" + encodeURIComponent(current.categorie);
+    "&categorie=" + encodeURIComponent(item.categorie);
   return `
     <nav class="product-neighbor-nav" aria-label="Parcourir les créations de cette catégorie">
       <a href="${link(previous)}" class="product-neighbor-link" aria-label="Création précédente : ${escapeProductText(previous.nom)}">
-        <span aria-hidden="true">←</span><span>Création précédente</span>
+        <span aria-hidden="true">←</span><span>Préc.</span>
       </a>
       <a href="${link(next)}" class="product-neighbor-link" aria-label="Création suivante : ${escapeProductText(next.nom)}">
-        <span>Création suivante</span><span aria-hidden="true">→</span>
+        <span>Suiv.</span><span aria-hidden="true">→</span>
       </a>
     </nav>`;
 }
@@ -356,7 +358,6 @@ function displayProduct() {
 
   productDetail.innerHTML = `
 
-    ${createProductNavigation(product)}
     ${createGallery(product)}
 
 
@@ -431,6 +432,12 @@ function displayProduct() {
   `;
 
 
+  const backLink = document.querySelector(".back-to-shop");
+  if (backLink) {
+    const nav = document.querySelector(".product-neighbor-nav");
+    if (nav) nav.remove();
+    backLink.insertAdjacentHTML("afterend", createProductNavigation(product));
+  }
   activateGallery();
 
 }
