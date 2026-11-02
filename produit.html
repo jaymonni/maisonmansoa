@@ -66,6 +66,23 @@
 }
 .product-page .product-main-image{box-shadow:0 8px 24px rgba(43,53,43,.045)}
 .product-page .product-thumbnails{margin-top:15px}
+
+/* Caractéristiques sous les photos et la description, en disposition horizontale */
+.product-page .product-gallery{padding-top:0}
+.product-page .product-specifications-wide{grid-column:1/-1;width:100%;min-width:0;margin:32px 0 0;padding:25px 0 8px;border-top:1px solid #e5ddd2}
+.product-page .product-specifications-wide .product-characteristics{margin:0;padding:0;border:0}
+.product-page .product-specifications-wide .product-characteristics h2{margin:0 0 22px;font-size:24px}
+.product-page .product-specifications-wide .product-characteristics dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:26px;row-gap:8px}
+.product-page .product-specifications-wide .product-characteristic{display:block;min-width:0;margin:0;padding:14px 0;border-top:1px solid #e9dfd580;font-size:14px;line-height:1.6}
+.product-page .product-specifications-wide .product-characteristic dt{margin-bottom:7px;font-weight:600}
+.product-page .product-specifications-wide .product-characteristic dd{white-space:normal;overflow-wrap:anywhere;font-size:14px;letter-spacing:normal}
+@media(max-width:760px){
+ .product-page .product-specifications-wide .product-characteristics dl{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+ .product-page .product-specifications-wide{margin-top:24px}
+}
+@media(max-width:390px){
+ .product-page .product-specifications-wide .product-characteristics dl{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -175,7 +192,7 @@
   <script src="js/products.js?v=20261026-1"></script>
   <script src="js/favorites.js?v=2"></script>
   <script src="js/cart.js?v=20261011-2"></script>
-  <script src="js/product.js?v=20261102-1"></script>
+  <script src="js/product.js?v=20261102-2"></script>
   <script>
     const checkout = document.getElementById("checkoutButton");
     if (checkout) {
