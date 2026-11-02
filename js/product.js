@@ -33,6 +33,35 @@ const product =
 // FORMAT DU PRIX
 // -----------------------------------------------------
 
+
+function formatReadableDescription(description) {
+  const [story, technical = ""] = description.split("Détails :");
+  const paragraphs = (story.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+    .map(part => part.trim()).filter(Boolean)
+    .map(part => '<p class="description-paragraph">' + part + '</p>').join("");
+
+  if (!technical.trim()) return paragraphs;
+
+  let details = technical.trim();
+  const notes = [];
+  const notePattern = /(?:Pièce unique|Motifs variables selon la découpe|Téléphone et clé non fournis|Existe aussi en mini)\./g;
+  details = details.replace(notePattern, match => {
+    notes.push(match);
+    return "";
+  }).trim().replace(/[;,.\\s]+$/, "");
+
+  const dimensions = details.match(/(?:dimensions?\\s*)?\\d+(?:[,.]\\d+)?\\s*×\\s*\\d+(?:[,.]\\d+)?(?:\\s*×\\s*\\d+(?:[,.]\\d+)?)?\\s*cm/i);
+  let dimensionsHtml = "";
+  if (dimensions) {
+    dimensionsHtml = '<p class="description-measure"><strong>Dimensions :</strong> ' + dimensions[0].replace(/^dimensions?\\s*/i, "") + '</p>';
+    details = details.replace(dimensions[0], "").replace(/^[\\s,;]+|[\\s,;]+$/g, "").replace(/;\\s*;/g, ";");
+  }
+  return paragraphs
+    + (details ? '<p class="description-details"><strong>Détails :</strong> ' + details + '</p>' : "")
+    + dimensionsHtml
+    + notes.map(note => '<p class="description-note">' + note + '</p>').join("");
+}
+
 function formatProductPrice(price) {
 
   return price.toLocaleString(
@@ -388,7 +417,7 @@ function displayProduct() {
 
 
       <p class="product-description">
-        ${product.description}
+        ${formatReadableDescription(product.description)}
       </p>
 
 
