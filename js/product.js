@@ -421,13 +421,6 @@ function displayProduct() {
       </div>
 
 
-      <div class="product-specifications">
-
-        ${createCharacteristics(product)}
-
-      </div>
-
-
       <button type="button" class="product-favorite-button ${MansoaFavorites.has(product.id) ? "is-favorite" : ""}" data-favorite-id="${product.id}" aria-pressed="${MansoaFavorites.has(product.id)}" aria-label="${MansoaFavorites.has(product.id) ? "Retirer des favoris" : "Ajouter aux favoris"}">${MansoaFavorites.has(product.id) ? "♥" : "♡"} Favoris</button>
 
       ${addButton}
@@ -457,6 +450,10 @@ function displayProduct() {
 
       </div>
 
+    </section>
+
+    <section class="product-specifications product-specifications-wide" aria-label="Caractéristiques de la création">
+      ${createCharacteristics(product)}
     </section>
   `;
 
