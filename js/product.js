@@ -416,9 +416,9 @@ function displayProduct() {
       </p>
 
 
-      <p class="product-description">
+      <div class="product-description">
         ${formatReadableDescription(product.description)}
-      </p>
+      </div>
 
 
       <div class="product-specifications">
