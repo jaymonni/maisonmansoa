@@ -29,6 +29,23 @@
  .product-page .product-characteristic{padding:14px 0;gap:10px;font-size:14px}
  .product-page .product-characteristic-dimensions dd{white-space:normal;font-size:13px}
 }
+/* Description : bloc plus léger, sans toucher aux caractéristiques */
+.product-page .product-description{
+  max-width:48ch;
+  font-size:17px;
+  line-height:2;
+  letter-spacing:.12px;
+  margin:28px 0 38px;
+  color:#343d38;
+}
+@media(max-width:540px){
+  .product-page .product-description{
+    max-width:100%;
+    font-size:16px;
+    line-height:1.95;
+    margin:24px 0 34px;
+  }
+}
 </style>
 </head>
 <body>
