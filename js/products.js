@@ -517,6 +517,7 @@ const products = [
   {
     id: "TP001",
     nom: "Trousse panière en coton faite main",
+    poidsArticleGrammes: 70,
     categorie: "trousses-panieres",
     couleur: "",
     entretien: "",
