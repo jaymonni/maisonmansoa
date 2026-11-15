@@ -30,6 +30,7 @@ const products = [
     id: "PL001",
 
     nom: "Pochette à livre à fleurs",
+    poidsArticleGrammes: 65,
 
     categorie: "protege-livres",
 
@@ -81,6 +82,7 @@ const products = [
     id: "SAC001",
 
     nom: "Sac besace bandoulière taupe et vert d’eau",
+    poidsArticleGrammes: 240,
 
     categorie: "sacs",
 
@@ -135,6 +137,7 @@ const products = [
   {
     id: "PL002",
     nom: "Pochette à livre en velours côtelé",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Vert",
     entretien: "",
@@ -163,6 +166,7 @@ const products = [
   {
     id: "PL003",
     nom: "Pochette à livre en velours côtelé",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Vert d’eau et fleuri multicolore",
     entretien: "",
@@ -192,6 +196,7 @@ const products = [
   {
     id: "PL004",
     nom: "Pochette à livre en velours côtelé",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Rose",
     entretien: "",
@@ -212,6 +217,7 @@ const products = [
   {
     id: "SAC002",
     nom: "Sac bandoulière à rayures blanc et rouge, esprit basque",
+    poidsArticleGrammes: 240,
     categorie: "sacs",
     couleur: "Blanc et rouge",
     entretien: "",
@@ -231,6 +237,7 @@ const products = [
   {
     id: "SAC003",
     nom: "Sac bandoulière à rayures bleu et blanc, esprit marin",
+    poidsArticleGrammes: 240,
     categorie: "sacs",
     couleur: "Bleu et blanc, touche moutarde",
     entretien: "",
@@ -250,6 +257,7 @@ const products = [
   {
     id: "SAC004",
     nom: "Sac bandoulière kaki à motifs hibiscus",
+    poidsArticleGrammes: 240,
     categorie: "sacs",
     couleur: "Kaki",
     entretien: "",
@@ -269,6 +277,7 @@ const products = [
   {
     id: "MINI001",
     nom: "Sac bandoulière Tropical Mini kaki",
+    poidsArticleGrammes: 120,
     categorie: "minis",
     couleur: "Kaki",
     entretien: "",
@@ -288,6 +297,7 @@ const products = [
   {
     id: "MINI002",
     nom: "Sac bandoulière Vert Mini",
+    poidsArticleGrammes: 120,
     categorie: "minis",
     couleur: "Vert",
     entretien: "",
@@ -307,6 +317,7 @@ const products = [
   {
     id: "PLH001",
     nom: "Pochette à livre homme en velours côtelé vert sauge",
+    poidsArticleGrammes: 65,
     categorie: "pochettes-homme",
     couleur: "Vert sauge",
     entretien: "",
@@ -326,6 +337,7 @@ const products = [
   {
     id: "PLH002",
     nom: "Pochette à livre homme kaki",
+    poidsArticleGrammes: 65,
     categorie: "pochettes-homme",
     couleur: "Kaki",
     entretien: "",
@@ -345,6 +357,7 @@ const products = [
   {
     id: "PL005",
     nom: "Pochette à livre ou liseuse en velours côtelé beige et tissu provençal Souleiado",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Beige et fleuri",
     entretien: "",
@@ -364,6 +377,7 @@ const products = [
   {
     id: "PL006",
     nom: "Pochette à livre ou liseuse en velours côtelé vert amande et tissu fleuri",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Vert amande et fleuri",
     entretien: "",
@@ -383,6 +397,7 @@ const products = [
   {
     id: "PL007",
     nom: "Pochette à livre ou liseuse en velours côtelé beige sauge et tissu fleuri bordeaux",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Beige sauge et bordeaux fleuri",
     entretien: "",
@@ -402,6 +417,7 @@ const products = [
   {
     id: "PL008",
     nom: "Pochette à livre ou liseuse en velours côtelé bleu et tissu provençal Souleiado",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Bleu et motifs colorés",
     entretien: "",
@@ -421,6 +437,7 @@ const products = [
   {
     id: "PL009",
     nom: "Pochette à livre ou liseuse en velours côtelé rouge et tissu provençal Souleiado",
+    poidsArticleGrammes: 65,
     categorie: "protege-livres",
     couleur: "Rouge et motifs colorés",
     entretien: "",
@@ -440,6 +457,7 @@ const products = [
   {
     id: "PT001",
     nom: "Pochette téléphone pour sac à dos avec porte-clé",
+    poidsArticleGrammes: 90,
     categorie: "pochettes-telephone",
     couleur: "",
     entretien: "",
@@ -459,6 +477,7 @@ const products = [
   {
     id: "PT002",
     nom: "Pochette téléphone rose pour sac à dos avec porte-clé",
+    poidsArticleGrammes: 90,
     categorie: "pochettes-telephone",
     couleur: "Rose",
     entretien: "",
@@ -478,6 +497,7 @@ const products = [
   {
     id: "PT003",
     nom: "Pochette téléphone verte pour sac à dos avec porte-clé",
+    poidsArticleGrammes: 90,
     categorie: "pochettes-telephone",
     couleur: "Vert",
     entretien: "",
