@@ -441,16 +441,32 @@ function updateShipping(productSubtotal) {
     : productSubtotal;
   const rates = shippingRates[destinationSelect?.value] || [];
   const rate = rates.find(item=>item.id===carrierSelect?.value);
-  // Le poids emballé n'est pas connu pour tous les produits.
-  // Plusieurs articles peuvent dépasser 500 g : ne pas afficher de total trompeur.
-  const eligible = cart.length === 1 && cart[0] === "SAC001";
-  const showEstimate = cart.length > 0 && eligible && Boolean(rate);
+  // Poids du colis : additionner uniquement les poids emballés connus.
+  // Pour les autres références, renseigner poidsEmballeGrammes dans products.js
+  // après pesée réelle. Ne jamais inventer un poids ni un tarif supérieur à 500 g.
+  const packagedWeights = cart.map(id => {
+    const product = getProduct(id);
+    if (!product) return null;
+    if (Number.isFinite(product.poidsEmballeGrammes) && product.poidsEmballeGrammes > 0) {
+      return product.poidsEmballeGrammes;
+    }
+    // Seule tranche validée dans le panier historique : SAC001 <= 500 g.
+    return id === "SAC001" ? 500 : null;
+  });
+  const weightsKnown = packagedWeights.every(weight => weight !== null);
+  const totalPackagedWeight = weightsKnown
+    ? packagedWeights.reduce((sum, weight) => sum + weight, 0)
+    : null;
+  const eligible = cart.length > 0 && weightsKnown && totalPackagedWeight <= 500;
+  const showEstimate = eligible && Boolean(rate);
   if (shippingPriceElement) shippingPriceElement.textContent = showEstimate ? formatCartPrice(rate.price) : "À confirmer";
   if (shippingNoteElement) shippingNoteElement.textContent = !cart.length
     ? "Ajoutez une création pour estimer la livraison."
-    : !eligible
-      ? "Poids emballé à confirmer : tarif et total de livraison non calculables pour ce panier."
-      : !rate
+    : !weightsKnown
+      ? "Poids emballé à confirmer pour un ou plusieurs articles : livraison non calculable."
+      : !eligible
+        ? "Colis de plus de 500 g : tarif de livraison à confirmer."
+        : !rate
         ? "Destination à confirmer avant de calculer la livraison."
         : "Estimation pour un sac emballé de 500 g maximum. Aucun paiement possible actuellement.";
   cartTotal.textContent = showEstimate ? formatCartPrice(subtotal+rate.price) : formatCartPrice(subtotal)+" + livraison à confirmer";
