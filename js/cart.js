@@ -441,22 +441,17 @@ function updateShipping(productSubtotal) {
     : productSubtotal;
   const rates = shippingRates[destinationSelect?.value] || [];
   const rate = rates.find(item=>item.id===carrierSelect?.value);
-  // Poids du colis : additionner uniquement les poids emballés connus.
-  // Pour les autres références, renseigner poidsEmballeGrammes dans products.js
-  // après pesée réelle. Ne jamais inventer un poids ni un tarif supérieur à 500 g.
-  const packagedWeights = cart.map(id => {
-    const product = getProduct(id);
-    if (!product) return null;
-    if (Number.isFinite(product.poidsEmballeGrammes) && product.poidsEmballeGrammes > 0) {
-      return product.poidsEmballeGrammes;
-    }
-    // Seule tranche validée dans le panier historique : SAC001 <= 500 g.
-    return id === "SAC001" ? 500 : null;
-  });
-  const weightsKnown = packagedWeights.every(weight => weight !== null);
+  // Un seul emballage d'expédition de 25 g par colis.
+  // Les poids des créations seules sont renseignés dans products.js.
+  const packagingWeightGrams = 25;
+  const articleWeights = cart.map(id => getProduct(id)?.poidsArticleGrammes);
+  const weightsKnown = articleWeights.every(weight =>
+    Number.isFinite(weight) && weight > 0
+  );
   const totalPackagedWeight = weightsKnown
-    ? packagedWeights.reduce((sum, weight) => sum + weight, 0)
+    ? articleWeights.reduce((sum, weight) => sum + weight, packagingWeightGrams)
     : null;
+  // Les tarifs approuvés ne concernent que les colis de 500 g maximum.
   const eligible = cart.length > 0 && weightsKnown && totalPackagedWeight <= 500;
   const showEstimate = eligible && Boolean(rate);
   if (shippingPriceElement) shippingPriceElement.textContent = showEstimate ? formatCartPrice(rate.price) : "À confirmer";
@@ -468,7 +463,7 @@ function updateShipping(productSubtotal) {
         ? "Colis de plus de 500 g : tarif de livraison à confirmer."
         : !rate
         ? "Destination à confirmer avant de calculer la livraison."
-        : "Estimation pour un sac emballé de 500 g maximum. Aucun paiement possible actuellement.";
+        : "Estimation pour un colis de 500 g maximum, emballage de 25 g inclus. Aucun paiement possible actuellement.";
   cartTotal.textContent = showEstimate ? formatCartPrice(subtotal+rate.price) : formatCartPrice(subtotal)+" + livraison à confirmer";
 }
 destinationSelect?.addEventListener("change",populateCarriers);
