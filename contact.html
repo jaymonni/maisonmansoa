@@ -39,8 +39,8 @@
         <span class="contact-symbol" aria-hidden="true">✉</span>
         <h2>Écrivez-nous</h2>
         <p>Vous souhaitez un renseignement sur un article ou une création ? N'hésitez pas à nous écrire.</p>
-        <p class="contact-muted">Notre adresse e-mail sera communiquée ici prochainement.</p>
-        <p>En attendant, vous pouvez découvrir toutes nos créations dans la boutique.</p>
+        <p class="contact-muted"><a href="mailto:gineste-garcia.nathalie@hotmail.com">gineste-garcia.nathalie@hotmail.com</a></p>
+        <p>Vous pouvez aussi nous laisser un message grâce au bouton « Écrire un message » en bas de la page. Réponse par e-mail dès que possible.</p>
         <a href="boutique.html">Découvrir la boutique →</a>
       </div>
       <div class="contact-panel contact-panel-light">
@@ -102,5 +102,21 @@
   <script src="js/products.js?v=20261012-11"></script>
   <script src="js/favorites.js?v=2"></script>
   <script src="js/cart.js?v=20261011-2"></script>
+<div class="mansoa-message-widget" id="mansoaMessageWidget">
+  <button type="button" id="mansoaMessageToggle" class="mansoa-message-toggle" aria-expanded="false" aria-controls="mansoaMessagePanel">✉ Écrire un message</button>
+  <section id="mansoaMessagePanel" class="mansoa-message-panel" aria-label="Écrire à Maison Mansoa" hidden>
+    <div class="mansoa-message-head"><strong>Un petit mot à Maison Mansoa ♡</strong><button type="button" id="mansoaMessageClose" aria-label="Fermer">×</button></div>
+    <p>Posez votre question ici. Votre application de messagerie s'ouvrira pour envoyer le message par e-mail. Ce service n'est pas un chat en direct.</p>
+    <form id="mansoaMessageForm">
+      <label for="mansoaMessageName">Votre prénom</label><input id="mansoaMessageName" maxlength="80" autocomplete="given-name" required>
+      <label for="mansoaMessageEmail">Votre e-mail</label><input id="mansoaMessageEmail" type="email" maxlength="200" autocomplete="email" required>
+      <label for="mansoaMessageText">Votre message</label><textarea id="mansoaMessageText" rows="4" maxlength="2000" required></textarea>
+      <button type="submit">Préparer mon e-mail →</button>
+    </form>
+    <p class="mansoa-message-note">Aucune donnée n'est enregistrée sur ce site. L'envoi se fait depuis votre messagerie.</p>
+  </section>
+</div>
+<link rel="stylesheet" href="css/messagerie.css?v=1">
+<script src="js/messagerie.js?v=1" defer></script>
 </body>
 </html>
