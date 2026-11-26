@@ -6,7 +6,7 @@
   <meta name="description" content="Contacter Maison Mansoa et retrouver les informations pratiques de la boutique artisanale.">
   <title>Contact — Maison Mansoa</title>
   <link rel="stylesheet" href="css/style.css?v=20261010-42">
-</head>
+<style>.mansoa-message-widget{z-index:10000!important}.mansoa-message-panel{box-sizing:border-box;max-height:min(520px,calc(100dvh - 100px))!important;padding:14px!important}.mansoa-message-panel p{margin:6px 0}.mansoa-message-panel #chatLog{display:flex;flex-direction:column;gap:6px;max-height:150px!important}.mansoa-message-panel .chat-bubble{padding:9px 12px;border-radius:12px;background:#f0e9df;max-width:85%;align-self:flex-start;white-space:pre-wrap}.mansoa-message-panel .chat-bubble.visitor{background:#dcebe1;align-self:flex-end}.chat-bubble small{display:block;font-size:10px;margin-top:5px;color:#555}.mansoa-message-panel textarea{box-sizing:border-box;resize:vertical}</style></head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Maison Mansoa, retour à l'accueil">
@@ -106,17 +106,17 @@
   <button type="button" id="mansoaMessageToggle" class="mansoa-message-toggle" aria-expanded="false" aria-controls="mansoaMessagePanel">✉ Écrire un message</button>
   <section id="mansoaMessagePanel" class="mansoa-message-panel" aria-label="Écrire à Maison Mansoa" hidden>
     <div class="mansoa-message-head"><strong>Un petit mot à Maison Mansoa ♡</strong><button type="button" id="mansoaMessageClose" aria-label="Fermer">×</button></div>
-    <p>Bienvenue ! Posez votre question ici.</p>
+    <p>Bonjour et bienvenue chez Maison Mansoa ♡ Posez votre question, nous vous répondrons dès que possible, même si nous ne sommes pas disponibles immédiatement.</p>
     <form id="mansoaMessageForm">
       <label for="mansoaMessageName">Votre prénom</label><input id="mansoaMessageName" maxlength="80" autocomplete="given-name" required>
       <div id="chatLog" role="log" style="max-height:180px;overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap"></div><p id="chatStatus" role="status"></p>
-      <label for="mansoaMessageText">Votre message</label><textarea id="mansoaMessageText" rows="4" maxlength="2000" required></textarea>
+      <label for="mansoaMessageText">Votre message</label><textarea id="mansoaMessageText" rows="2" maxlength="2000" required></textarea>
       <button type="submit">Envoyer mon message →</button>
     </form>
     <p class="mansoa-message-note">Page de test : utilisez uniquement des messages fictifs. Les messages sont enregistrés dans Firebase. Revenez avec le même navigateur pour lire les réponses.</p>
   </section>
 </div>
 <link rel="stylesheet" href="css/messagerie.css?v=1">
-<script type="module" src="js/chat-client.js?v=1"></script>
+<script type="module" src="js/chat-client.js?v=2"></script>
 </body>
 </html>
