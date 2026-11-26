@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head><meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contacter Maison Mansoa et retrouver les informations pratiques de la boutique artisanale.">
+  <title>Contact — Maison Mansoa</title>
+  <link rel="stylesheet" href="css/style.css?v=20261010-42">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Mansoa, retour à l'accueil">
+      <span class="brand-name">Maison Mansoa</span>
+      <span class="brand-subtitle">CRÉATIONS FAITES MAIN</span>
+    </a>
+        <nav class="mansoa-nav" aria-label="Navigation principale">
+      <a href="index.html" >Accueil</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="histoire.html">Notre histoire</a>
+      <a href="livraison.html">Livraison</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+<div class="header-actions"><div class="language-switch" role="group" aria-label="Langue / Language"><button type="button" data-lang="fr" class="active" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  <a class="floating-favorites" href="boutique.html?favoris=1" aria-label="Voir mes favoris" title="Mes favoris"><span aria-hidden="true">♡</span><span class="favorites-text">Favoris</span><strong class="favorites-count" id="favoritesCount">0</strong></a>
+  <button class="cart-button" id="cartButton"  type="button" aria-label="Ouvrir le panier" aria-controls="cartDrawer">
+      <span>Panier</span><strong id="cartCount">0</strong>
+    </button>
+  </div>
+  </header>
+  <main class="contact-page">
+    <a class="back-to-shop" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 23px;border:2px solid #24483b;border-radius:999px;background:#24483b;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(25,55,45,.2)" href="boutique.html">← Retour à la boutique</a>
+    <section class="contact-intro" aria-labelledby="contactTitle">
+      <span class="eyebrow">Échangeons</span>
+      <h1 id="contactTitle">Une question ? Parlons-en !</h1>
+      <p>Une question sur une création, ses dimensions ou sa livraison ? Nous serons ravis de vous renseigner et de vous accompagner dans votre découverte de Maison Mansoa.</p>
+    </section>
+    <section class="contact-content" aria-label="Informations de contact">
+      <div class="contact-panel">
+        <span class="contact-symbol" aria-hidden="true">✉</span>
+        <h2>Écrivez-nous</h2>
+        <p>Vous souhaitez un renseignement sur un article ou une création ? N'hésitez pas à nous écrire.</p>
+        <p class="contact-muted"><a href="mailto:gineste-garcia.nathalie@hotmail.com">gineste-garcia.nathalie@hotmail.com</a></p>
+        <p>Vous pouvez aussi nous laisser un message grâce au bouton « Écrire un message » en bas de la page. Nous vous répondrons dès que possible.</p>
+        <a href="boutique.html">Découvrir la boutique →</a>
+      </div>
+      <div class="contact-panel contact-panel-light">
+        <span class="contact-symbol" aria-hidden="true">♡</span>
+        <h2>Des créations faites avec le cœur</h2>
+        <p>Chez Maison Mansoa, chaque accessoire est imaginé et cousu à la main avec passion. Nous apportons un soin particulier aux tissus, aux détails et aux finitions.</p>
+        <p>Pour connaître les dimensions, les matières et voir les photos, rendez-vous sur la fiche de chaque création.</p>
+        <a href="boutique.html">Voir nos créations →</a>
+        <a href="livraison.html">Consulter les informations de livraison →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><strong>Maison Mansoa</strong><p>Créations textiles faites main</p></div>
+    <a href="livraison.html">Livraison et tarifs</a>
+    <a href="boutique.html">Retour à la boutique ↑</a>
+    <div class="legal-footer-links" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px 18px;width:100%;font-size:12px">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cgv.html">CGV</a>
+      <a href="retours.html">Retours</a>
+    </div>
+    <small>© 2026 Maison Mansoa</small>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Votre panier" aria-hidden="true">
+    <div class="cart-header"><h2>Votre panier</h2><button class="cart-close" id="cartClose" type="button" aria-label="Fermer le panier">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Votre panier est vide.</p></div>
+    <div class="cart-footer">
+      <div class="cart-shipping" id="cartShipping">
+        <label for="shippingDestination">Pays ou zone de livraison</label>
+        <select id="shippingDestination">
+          <option value="fr">France métropolitaine</option>
+          <option value="be">Belgique / Luxembourg / Pays-Bas</option>
+          <option value="south">Espagne / Portugal / Italie</option>
+          <option value="pl">Pologne</option>
+          <option value="om1">Guadeloupe, Martinique, Guyane, Réunion, Mayotte et autres territoires OM1</option>
+          <option value="om2">Nouvelle-Calédonie, Polynésie française, Wallis-et-Futuna</option>
+          <option value="eu">Autres pays UE / Suisse</option>
+          <option value="uk">Royaume-Uni</option>
+          <option value="worldb">Norvège, Maghreb et Europe hors UE (zone B)</option>
+          <option value="worldc">Canada, États-Unis et autres destinations (zone C)</option>
+          <option value="other">Autre destination / zone inconnue</option>
+        </select>
+        <label for="shippingCarrier">Mode de livraison</label>
+        <select id="shippingCarrier">
+          <option value="relay">Mondial Relay — point relais</option>
+          <option value="colissimo">Colissimo — domicile</option>
+        </select>
+        <div class="cart-shipping-line"><span>Livraison, emballage compris</span><strong id="cartShippingPrice">À calculer</strong></div>
+        <p id="cartShippingNote" class="cart-shipping-note">Estimation pour un seul colis jusqu'à 500 g.</p>
+      </div>
+      <div class="cart-total"><span>Total estimé</span><strong id="cartTotal">0,00 €</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button" disabled>Commande bientôt disponible</button>
+      <p class="secure-payment">Le paiement en ligne n'est pas encore activé.</p>
+    </div>
+  </aside>
+  <script src="js/i18n.js?v=20261011-2"></script>
+  <script src="js/products.js?v=20261012-11"></script>
+  <script src="js/favorites.js?v=2"></script>
+  <script src="js/cart.js?v=20261011-2"></script>
+<div class="mansoa-message-widget" id="mansoaMessageWidget">
+  <button type="button" id="mansoaMessageToggle" class="mansoa-message-toggle" aria-expanded="false" aria-controls="mansoaMessagePanel">✉ Écrire un message</button>
+  <section id="mansoaMessagePanel" class="mansoa-message-panel" aria-label="Écrire à Maison Mansoa" hidden>
+    <div class="mansoa-message-head"><strong>Un petit mot à Maison Mansoa ♡</strong><button type="button" id="mansoaMessageClose" aria-label="Fermer">×</button></div>
+    <p>Bienvenue ! Posez votre question ici.</p>
+    <form id="mansoaMessageForm">
+      <label for="mansoaMessageName">Votre prénom</label><input id="mansoaMessageName" maxlength="80" autocomplete="given-name" required>
+      <div id="chatLog" role="log" style="max-height:180px;overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap"></div><p id="chatStatus" role="status"></p>
+      <label for="mansoaMessageText">Votre message</label><textarea id="mansoaMessageText" rows="4" maxlength="2000" required></textarea>
+      <button type="submit">Envoyer mon message →</button>
+    </form>
+    <p class="mansoa-message-note">Page de test : utilisez uniquement des messages fictifs. Les messages sont enregistrés dans Firebase. Revenez avec le même navigateur pour lire les réponses.</p>
+  </section>
+</div>
+<link rel="stylesheet" href="css/messagerie.css?v=1">
+<script type="module" src="js/chat-client.js?v=1"></script>
+</body>
+</html>
